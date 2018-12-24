@@ -1,0 +1,6 @@
+framework module EZYGradientView {
+  umbrella header "EZYGradientView-umbrella.h"
+
+  export *
+  module * { export * }
+}

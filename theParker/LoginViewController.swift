@@ -104,7 +104,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.actInd = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        self.actInd = UIActivityIndicatorView(style: .gray)
         self.actInd.color = UIColor.white
         if DeviceType.IS_IPHONE_5{
             self.actInd.frame = CGRect(x: 45, y: -8, width: 50.0, height: 50.0)
@@ -350,7 +350,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         let storageRef = Storage.storage().reference().child("user/\(uid)")
         
         //firebase needs image as data convert img to data
-        guard let imageData = UIImageJPEGRepresentation(image, 0.75) else { return }
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
         
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
@@ -358,11 +358,13 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         storageRef.putData(imageData, metadata: metaData) { metaData, error in
             //if there are no errors and image in metadata
             if error == nil, metaData != nil {
-                if let url = metaData?.downloadURL() {
-                    completion(url)
-                } else {
-                    completion(nil)
-                }
+                storageRef.downloadURL(completion: { (url, error) in
+                    if let url = url {
+                        completion(url)
+                    } else {
+                        completion(nil)
+                    }
+                })
                 // success!
             } else {
                 // failed
@@ -737,14 +739,15 @@ extension LoginViewController: UIImagePickerControllerDelegate, UINavigationCont
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             self.UserImage.image = pickedImage
         }
-        
+
         picker.dismiss(animated: true, completion: nil)
     }
+    
 }
 
 

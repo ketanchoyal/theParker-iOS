@@ -1,0 +1,6 @@
+framework module RKPieChart {
+  umbrella header "RKPieChart-umbrella.h"
+
+  export *
+  module * { export * }
+}

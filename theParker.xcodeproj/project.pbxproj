@@ -7,21 +7,170 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97E9EC4921D19160009D124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9EC4821D19160009D124F /* AppDelegate.swift */; };
-		97E9EC4B21D19160009D124F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9EC4A21D19160009D124F /* ViewController.swift */; };
-		97E9EC4E21D19160009D124F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC4C21D19160009D124F /* Main.storyboard */; };
-		97E9EC5021D19161009D124F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC4F21D19161009D124F /* Assets.xcassets */; };
+		05F238F5650E2A8D97AD6418 /* Pods_theParker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4071BD13F20B6292D4B20F5 /* Pods_theParker.framework */; };
 		97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5121D19161009D124F /* LaunchScreen.storyboard */; };
+		97E9EC5B21D1946F009D124F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */; };
+		97E9EC6121D1988E009D124F /* post.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5D21D1988E009D124F /* post.xib */; };
+		97E9EC6221D1988E009D124F /* Front.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9EC5E21D1988E009D124F /* Front.swift */; };
+		97E9EC6321D1988E009D124F /* Front.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5F21D1988E009D124F /* Front.xib */; };
+		97E9EC6421D1988E009D124F /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9EC6021D1988E009D124F /* post.swift */; };
+		97E9EC9F21D1989F009D124F /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6621D1989E009D124F /* T.json */; };
+		97E9ECA021D1989F009D124F /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6721D1989E009D124F /* Switch.json */; };
+		97E9ECA121D1989F009D124F /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6921D1989E009D124F /* TwitterHeart.json */; };
+		97E9ECA221D1989F009D124F /* A.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6A21D1989E009D124F /* A.json */; };
+		97E9ECA321D1989F009D124F /* X.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6B21D1989E009D124F /* X.json */; };
+		97E9ECA421D1989F009D124F /* car.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6C21D1989E009D124F /* car.json */; };
+		97E9ECA521D1989F009D124F /* BlinkingCursor.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6D21D1989E009D124F /* BlinkingCursor.json */; };
+		97E9ECA621D1989F009D124F /* M.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6E21D1989E009D124F /* M.json */; };
+		97E9ECA721D1989F009D124F /* L.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6F21D1989E009D124F /* L.json */; };
+		97E9ECA821D1989F009D124F /* 9squares-AlBoardman.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7021D1989E009D124F /* 9squares-AlBoardman.json */; };
+		97E9ECA921D1989F009D124F /* MotionCorpse-Jrcanest.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7121D1989E009D124F /* MotionCorpse-Jrcanest.json */; };
+		97E9ECAA21D1989F009D124F /* Y.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7221D1989E009D124F /* Y.json */; };
+		97E9ECAB21D1989F009D124F /* U.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7321D1989E009D124F /* U.json */; };
+		97E9ECAC21D1989F009D124F /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7421D1989E009D124F /* location.json */; };
+		97E9ECAD21D1989F009D124F /* HamburgerArrow.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7521D1989E009D124F /* HamburgerArrow.json */; };
+		97E9ECAE21D1989F009D124F /* K.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7621D1989E009D124F /* K.json */; };
+		97E9ECAF21D1989F009D124F /* R.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7721D1989E009D124F /* R.json */; };
+		97E9ECB021D1989F009D124F /* G.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7821D1989E009D124F /* G.json */; };
+		97E9ECB121D1989F009D124F /* vcTransition1.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7921D1989E009D124F /* vcTransition1.json */; };
+		97E9ECB221D1989F009D124F /* F.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7A21D1989E009D124F /* F.json */; };
+		97E9ECB321D1989F009D124F /* LottieLogo2.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7B21D1989E009D124F /* LottieLogo2.json */; };
+		97E9ECB421D1989F009D124F /* lottie-ios.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7C21D1989E009D124F /* lottie-ios.podspec.json */; };
+		97E9ECB521D1989F009D124F /* S.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7D21D1989E009D124F /* S.json */; };
+		97E9ECB621D1989F009D124F /* Boat_Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7E21D1989E009D124F /* Boat_Loader.json */; };
+		97E9ECB721D1989F009D124F /* J.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC7F21D1989E009D124F /* J.json */; };
+		97E9ECB821D1989F009D124F /* GeometryTransformTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8021D1989E009D124F /* GeometryTransformTest.json */; };
+		97E9ECB921D1989F009D124F /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8121D1989E009D124F /* done.json */; };
+		97E9ECBA21D1989F009D124F /* I.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8221D1989E009D124F /* I.json */; };
+		97E9ECBB21D1989F009D124F /* Watermelon.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8321D1989E009D124F /* Watermelon.json */; };
+		97E9ECBC21D1989F009D124F /* IconTransitions.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8421D1989E009D124F /* IconTransitions.json */; };
+		97E9ECBD21D1989F009D124F /* vcTransition2.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8521D1989E009D124F /* vcTransition2.json */; };
+		97E9ECBE21D1989F009D124F /* E.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8621D1989E009D124F /* E.json */; };
+		97E9ECBF21D1989F009D124F /* LottieLogo1.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8721D1989E009D124F /* LottieLogo1.json */; };
+		97E9ECC021D1989F009D124F /* package.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8821D1989E009D124F /* package.json */; };
+		97E9ECC121D1989F009D124F /* Apostrophe.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8921D1989E009D124F /* Apostrophe.json */; };
+		97E9ECC221D1989F009D124F /* P.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8A21D1989E009D124F /* P.json */; };
+		97E9ECC321D1989F009D124F /* Q.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8B21D1989E009D124F /* Q.json */; };
+		97E9ECC421D1989F009D124F /* Switch_States.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8C21D1989E009D124F /* Switch_States.json */; };
+		97E9ECC521D1989F009D124F /* D.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8D21D1989E009D124F /* D.json */; };
+		97E9ECC621D1989F009D124F /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8E21D1989E009D124F /* Contents.json */; };
+		97E9ECC721D1989F009D124F /* Colon.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC8F21D1989E009D124F /* Colon.json */; };
+		97E9ECC821D1989F009D124F /* setValueTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9021D1989E009D124F /* setValueTest.json */; };
+		97E9ECC921D1989F009D124F /* H.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9121D1989E009D124F /* H.json */; };
+		97E9ECCA21D1989F009D124F /* C.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9221D1989E009D124F /* C.json */; };
+		97E9ECCB21D1989F009D124F /* V.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9321D1989E009D124F /* V.json */; };
+		97E9ECCC21D1989F009D124F /* Comma.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9421D1989E009D124F /* Comma.json */; };
+		97E9ECCD21D1989F009D124F /* O.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9521D1989E009D124F /* O.json */; };
+		97E9ECCE21D1989F009D124F /* Z.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9621D1989E009D124F /* Z.json */; };
+		97E9ECCF21D1989F009D124F /* keypathTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9721D1989E009D124F /* keypathTest.json */; };
+		97E9ECD021D1989F009D124F /* N.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9821D1989E009D124F /* N.json */; };
+		97E9ECD121D1989F009D124F /* bouncy_mapmaker.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9921D1989E009D124F /* bouncy_mapmaker.json */; };
+		97E9ECD221D1989F009D124F /* PinJump.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9A21D1989E009D124F /* PinJump.json */; };
+		97E9ECD321D1989F009D124F /* W.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9B21D1989E009D124F /* W.json */; };
+		97E9ECD421D1989F009D124F /* LottieLogo1_masked.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9C21D1989E009D124F /* LottieLogo1_masked.json */; };
+		97E9ECD521D1989F009D124F /* B.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9D21D1989E009D124F /* B.json */; };
+		97E9ECD621D1989F009D124F /* timeremap.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC9E21D1989E009D124F /* timeremap.json */; };
+		97E9ECD921D19A6F009D124F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9ECD721D19A6E009D124F /* Main.storyboard */; };
+		97E9ECDA21D19A6F009D124F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E9ECD821D19A6F009D124F /* Assets.xcassets */; };
+		97E9ECDE21D19A91009D124F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECDD21D19A91009D124F /* SWRevealViewController.m */; };
+		97E9ECE321D19AFF009D124F /* ForanimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */; };
+		97E9ECE421D19AFF009D124F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECE021D19AFE009D124F /* LoginViewController.swift */; };
+		97E9ECE521D19AFF009D124F /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECE121D19AFE009D124F /* MainPageViewController.swift */; };
+		97E9ECE621D19AFF009D124F /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECE221D19AFF009D124F /* ProfileDetailViewController.swift */; };
+		97E9ECEE21D19B13009D124F /* OfferParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECE821D19B11009D124F /* OfferParkingViewController.swift */; };
+		97E9ECEF21D19B13009D124F /* PostMapPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECE921D19B11009D124F /* PostMapPinViewController.swift */; };
+		97E9ECF021D19B13009D124F /* ScrollPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECEA21D19B11009D124F /* ScrollPostViewController.swift */; };
+		97E9ECF121D19B13009D124F /* MyCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECEB21D19B12009D124F /* MyCarsViewController.swift */; };
+		97E9ECF221D19B13009D124F /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */; };
+		97E9ECF321D19B13009D124F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECED21D19B13009D124F /* SettingsViewController.swift */; };
+		97E9ECF521D19D4C009D124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECF421D19D4C009D124F /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DB9C679F4A9E3AC3E9AE601 /* Pods-theParker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theParker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-theParker/Pods-theParker.debug.xcconfig"; sourceTree = "<group>"; };
 		97E9EC4521D19160009D124F /* theParker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theParker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		97E9EC4821D19160009D124F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		97E9EC4A21D19160009D124F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		97E9EC4D21D19160009D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		97E9EC4F21D19161009D124F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97E9EC5221D19161009D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E9EC5421D19161009D124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97E9EC5D21D1988E009D124F /* post.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = post.xib; sourceTree = "<group>"; };
+		97E9EC5E21D1988E009D124F /* Front.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Front.swift; sourceTree = "<group>"; };
+		97E9EC5F21D1988E009D124F /* Front.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Front.xib; sourceTree = "<group>"; };
+		97E9EC6021D1988E009D124F /* post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
+		97E9EC6621D1989E009D124F /* T.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = T.json; sourceTree = "<group>"; };
+		97E9EC6721D1989E009D124F /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
+		97E9EC6821D1989E009D124F /* Parker-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Parker-Bridging-Header.h"; sourceTree = "<group>"; };
+		97E9EC6921D1989E009D124F /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
+		97E9EC6A21D1989E009D124F /* A.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = A.json; sourceTree = "<group>"; };
+		97E9EC6B21D1989E009D124F /* X.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = X.json; sourceTree = "<group>"; };
+		97E9EC6C21D1989E009D124F /* car.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
+		97E9EC6D21D1989E009D124F /* BlinkingCursor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlinkingCursor.json; sourceTree = "<group>"; };
+		97E9EC6E21D1989E009D124F /* M.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = M.json; sourceTree = "<group>"; };
+		97E9EC6F21D1989E009D124F /* L.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = L.json; sourceTree = "<group>"; };
+		97E9EC7021D1989E009D124F /* 9squares-AlBoardman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9squares-AlBoardman.json"; sourceTree = "<group>"; };
+		97E9EC7121D1989E009D124F /* MotionCorpse-Jrcanest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "MotionCorpse-Jrcanest.json"; sourceTree = "<group>"; };
+		97E9EC7221D1989E009D124F /* Y.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Y.json; sourceTree = "<group>"; };
+		97E9EC7321D1989E009D124F /* U.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = U.json; sourceTree = "<group>"; };
+		97E9EC7421D1989E009D124F /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		97E9EC7521D1989E009D124F /* HamburgerArrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HamburgerArrow.json; sourceTree = "<group>"; };
+		97E9EC7621D1989E009D124F /* K.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = K.json; sourceTree = "<group>"; };
+		97E9EC7721D1989E009D124F /* R.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = R.json; sourceTree = "<group>"; };
+		97E9EC7821D1989E009D124F /* G.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = G.json; sourceTree = "<group>"; };
+		97E9EC7921D1989E009D124F /* vcTransition1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vcTransition1.json; sourceTree = "<group>"; };
+		97E9EC7A21D1989E009D124F /* F.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = F.json; sourceTree = "<group>"; };
+		97E9EC7B21D1989E009D124F /* LottieLogo2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo2.json; sourceTree = "<group>"; };
+		97E9EC7C21D1989E009D124F /* lottie-ios.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-ios.podspec.json"; sourceTree = "<group>"; };
+		97E9EC7D21D1989E009D124F /* S.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = S.json; sourceTree = "<group>"; };
+		97E9EC7E21D1989E009D124F /* Boat_Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Boat_Loader.json; sourceTree = "<group>"; };
+		97E9EC7F21D1989E009D124F /* J.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = J.json; sourceTree = "<group>"; };
+		97E9EC8021D1989E009D124F /* GeometryTransformTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GeometryTransformTest.json; sourceTree = "<group>"; };
+		97E9EC8121D1989E009D124F /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = done.json; sourceTree = "<group>"; };
+		97E9EC8221D1989E009D124F /* I.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = I.json; sourceTree = "<group>"; };
+		97E9EC8321D1989E009D124F /* Watermelon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watermelon.json; sourceTree = "<group>"; };
+		97E9EC8421D1989E009D124F /* IconTransitions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IconTransitions.json; sourceTree = "<group>"; };
+		97E9EC8521D1989E009D124F /* vcTransition2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vcTransition2.json; sourceTree = "<group>"; };
+		97E9EC8621D1989E009D124F /* E.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = E.json; sourceTree = "<group>"; };
+		97E9EC8721D1989E009D124F /* LottieLogo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1.json; sourceTree = "<group>"; };
+		97E9EC8821D1989E009D124F /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		97E9EC8921D1989E009D124F /* Apostrophe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Apostrophe.json; sourceTree = "<group>"; };
+		97E9EC8A21D1989E009D124F /* P.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = P.json; sourceTree = "<group>"; };
+		97E9EC8B21D1989E009D124F /* Q.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Q.json; sourceTree = "<group>"; };
+		97E9EC8C21D1989E009D124F /* Switch_States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch_States.json; sourceTree = "<group>"; };
+		97E9EC8D21D1989E009D124F /* D.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = D.json; sourceTree = "<group>"; };
+		97E9EC8E21D1989E009D124F /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		97E9EC8F21D1989E009D124F /* Colon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Colon.json; sourceTree = "<group>"; };
+		97E9EC9021D1989E009D124F /* setValueTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setValueTest.json; sourceTree = "<group>"; };
+		97E9EC9121D1989E009D124F /* H.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = H.json; sourceTree = "<group>"; };
+		97E9EC9221D1989E009D124F /* C.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = C.json; sourceTree = "<group>"; };
+		97E9EC9321D1989E009D124F /* V.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = V.json; sourceTree = "<group>"; };
+		97E9EC9421D1989E009D124F /* Comma.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Comma.json; sourceTree = "<group>"; };
+		97E9EC9521D1989E009D124F /* O.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = O.json; sourceTree = "<group>"; };
+		97E9EC9621D1989E009D124F /* Z.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Z.json; sourceTree = "<group>"; };
+		97E9EC9721D1989E009D124F /* keypathTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keypathTest.json; sourceTree = "<group>"; };
+		97E9EC9821D1989E009D124F /* N.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = N.json; sourceTree = "<group>"; };
+		97E9EC9921D1989E009D124F /* bouncy_mapmaker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bouncy_mapmaker.json; sourceTree = "<group>"; };
+		97E9EC9A21D1989E009D124F /* PinJump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PinJump.json; sourceTree = "<group>"; };
+		97E9EC9B21D1989E009D124F /* W.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = W.json; sourceTree = "<group>"; };
+		97E9EC9C21D1989E009D124F /* LottieLogo1_masked.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1_masked.json; sourceTree = "<group>"; };
+		97E9EC9D21D1989E009D124F /* B.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = B.json; sourceTree = "<group>"; };
+		97E9EC9E21D1989E009D124F /* timeremap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeremap.json; sourceTree = "<group>"; };
+		97E9ECD721D19A6E009D124F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		97E9ECD821D19A6F009D124F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97E9ECDB21D19A8E009D124F /* theParker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "theParker-Bridging-Header.h"; sourceTree = "<group>"; };
+		97E9ECDC21D19A90009D124F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		97E9ECDD21D19A91009D124F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForanimationsViewController.swift; sourceTree = "<group>"; };
+		97E9ECE021D19AFE009D124F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		97E9ECE121D19AFE009D124F /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		97E9ECE221D19AFF009D124F /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
+		97E9ECE821D19B11009D124F /* OfferParkingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferParkingViewController.swift; sourceTree = "<group>"; };
+		97E9ECE921D19B11009D124F /* PostMapPinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostMapPinViewController.swift; sourceTree = "<group>"; };
+		97E9ECEA21D19B11009D124F /* ScrollPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPostViewController.swift; sourceTree = "<group>"; };
+		97E9ECEB21D19B12009D124F /* MyCarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCarsViewController.swift; sourceTree = "<group>"; };
+		97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		97E9ECED21D19B13009D124F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		97E9ECF421D19D4C009D124F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C29E5AA57B12B47A0BA6E563 /* Pods-theParker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theParker.release.xcconfig"; path = "Pods/Target Support Files/Pods-theParker/Pods-theParker.release.xcconfig"; sourceTree = "<group>"; };
+		F4071BD13F20B6292D4B20F5 /* Pods_theParker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_theParker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F238F5650E2A8D97AD6418 /* Pods_theParker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +190,8 @@
 			children = (
 				97E9EC4721D19160009D124F /* theParker */,
 				97E9EC4621D19160009D124F /* Products */,
+				CE68D39F683915218D289D38 /* Pods */,
+				AAF16646215E94E0E4E43BB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +206,129 @@
 		97E9EC4721D19160009D124F /* theParker */ = {
 			isa = PBXGroup;
 			children = (
-				97E9EC4821D19160009D124F /* AppDelegate.swift */,
-				97E9EC4A21D19160009D124F /* ViewController.swift */,
-				97E9EC4C21D19160009D124F /* Main.storyboard */,
-				97E9EC4F21D19161009D124F /* Assets.xcassets */,
+				97E9EC5C21D1988E009D124F /* slideViews */,
+				97E9EC6521D1989E009D124F /* LottieAnimationsJSON */,
+				97E9ECF421D19D4C009D124F /* AppDelegate.swift */,
+				97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */,
+				97E9ECE021D19AFE009D124F /* LoginViewController.swift */,
+				97E9ECE121D19AFE009D124F /* MainPageViewController.swift */,
+				97E9ECE221D19AFF009D124F /* ProfileDetailViewController.swift */,
+				97E9ECE721D19B11009D124F /* offerParking */,
+				97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */,
+				97E9ECEB21D19B12009D124F /* MyCarsViewController.swift */,
+				97E9ECED21D19B13009D124F /* SettingsViewController.swift */,
+				97E9ECD721D19A6E009D124F /* Main.storyboard */,
+				97E9ECD821D19A6F009D124F /* Assets.xcassets */,
 				97E9EC5121D19161009D124F /* LaunchScreen.storyboard */,
+				97E9ECDC21D19A90009D124F /* SWRevealViewController.h */,
+				97E9ECDD21D19A91009D124F /* SWRevealViewController.m */,
+				97E9ECDB21D19A8E009D124F /* theParker-Bridging-Header.h */,
 				97E9EC5421D19161009D124F /* Info.plist */,
+				97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */,
 			);
 			path = theParker;
+			sourceTree = "<group>";
+		};
+		97E9EC5C21D1988E009D124F /* slideViews */ = {
+			isa = PBXGroup;
+			children = (
+				97E9EC5D21D1988E009D124F /* post.xib */,
+				97E9EC5E21D1988E009D124F /* Front.swift */,
+				97E9EC5F21D1988E009D124F /* Front.xib */,
+				97E9EC6021D1988E009D124F /* post.swift */,
+			);
+			path = slideViews;
+			sourceTree = "<group>";
+		};
+		97E9EC6521D1989E009D124F /* LottieAnimationsJSON */ = {
+			isa = PBXGroup;
+			children = (
+				97E9EC6621D1989E009D124F /* T.json */,
+				97E9EC6721D1989E009D124F /* Switch.json */,
+				97E9EC6821D1989E009D124F /* Parker-Bridging-Header.h */,
+				97E9EC6921D1989E009D124F /* TwitterHeart.json */,
+				97E9EC6A21D1989E009D124F /* A.json */,
+				97E9EC6B21D1989E009D124F /* X.json */,
+				97E9EC6C21D1989E009D124F /* car.json */,
+				97E9EC6D21D1989E009D124F /* BlinkingCursor.json */,
+				97E9EC6E21D1989E009D124F /* M.json */,
+				97E9EC6F21D1989E009D124F /* L.json */,
+				97E9EC7021D1989E009D124F /* 9squares-AlBoardman.json */,
+				97E9EC7121D1989E009D124F /* MotionCorpse-Jrcanest.json */,
+				97E9EC7221D1989E009D124F /* Y.json */,
+				97E9EC7321D1989E009D124F /* U.json */,
+				97E9EC7421D1989E009D124F /* location.json */,
+				97E9EC7521D1989E009D124F /* HamburgerArrow.json */,
+				97E9EC7621D1989E009D124F /* K.json */,
+				97E9EC7721D1989E009D124F /* R.json */,
+				97E9EC7821D1989E009D124F /* G.json */,
+				97E9EC7921D1989E009D124F /* vcTransition1.json */,
+				97E9EC7A21D1989E009D124F /* F.json */,
+				97E9EC7B21D1989E009D124F /* LottieLogo2.json */,
+				97E9EC7C21D1989E009D124F /* lottie-ios.podspec.json */,
+				97E9EC7D21D1989E009D124F /* S.json */,
+				97E9EC7E21D1989E009D124F /* Boat_Loader.json */,
+				97E9EC7F21D1989E009D124F /* J.json */,
+				97E9EC8021D1989E009D124F /* GeometryTransformTest.json */,
+				97E9EC8121D1989E009D124F /* done.json */,
+				97E9EC8221D1989E009D124F /* I.json */,
+				97E9EC8321D1989E009D124F /* Watermelon.json */,
+				97E9EC8421D1989E009D124F /* IconTransitions.json */,
+				97E9EC8521D1989E009D124F /* vcTransition2.json */,
+				97E9EC8621D1989E009D124F /* E.json */,
+				97E9EC8721D1989E009D124F /* LottieLogo1.json */,
+				97E9EC8821D1989E009D124F /* package.json */,
+				97E9EC8921D1989E009D124F /* Apostrophe.json */,
+				97E9EC8A21D1989E009D124F /* P.json */,
+				97E9EC8B21D1989E009D124F /* Q.json */,
+				97E9EC8C21D1989E009D124F /* Switch_States.json */,
+				97E9EC8D21D1989E009D124F /* D.json */,
+				97E9EC8E21D1989E009D124F /* Contents.json */,
+				97E9EC8F21D1989E009D124F /* Colon.json */,
+				97E9EC9021D1989E009D124F /* setValueTest.json */,
+				97E9EC9121D1989E009D124F /* H.json */,
+				97E9EC9221D1989E009D124F /* C.json */,
+				97E9EC9321D1989E009D124F /* V.json */,
+				97E9EC9421D1989E009D124F /* Comma.json */,
+				97E9EC9521D1989E009D124F /* O.json */,
+				97E9EC9621D1989E009D124F /* Z.json */,
+				97E9EC9721D1989E009D124F /* keypathTest.json */,
+				97E9EC9821D1989E009D124F /* N.json */,
+				97E9EC9921D1989E009D124F /* bouncy_mapmaker.json */,
+				97E9EC9A21D1989E009D124F /* PinJump.json */,
+				97E9EC9B21D1989E009D124F /* W.json */,
+				97E9EC9C21D1989E009D124F /* LottieLogo1_masked.json */,
+				97E9EC9D21D1989E009D124F /* B.json */,
+				97E9EC9E21D1989E009D124F /* timeremap.json */,
+			);
+			path = LottieAnimationsJSON;
+			sourceTree = "<group>";
+		};
+		97E9ECE721D19B11009D124F /* offerParking */ = {
+			isa = PBXGroup;
+			children = (
+				97E9ECE821D19B11009D124F /* OfferParkingViewController.swift */,
+				97E9ECE921D19B11009D124F /* PostMapPinViewController.swift */,
+				97E9ECEA21D19B11009D124F /* ScrollPostViewController.swift */,
+			);
+			path = offerParking;
+			sourceTree = "<group>";
+		};
+		AAF16646215E94E0E4E43BB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4071BD13F20B6292D4B20F5 /* Pods_theParker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE68D39F683915218D289D38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DB9C679F4A9E3AC3E9AE601 /* Pods-theParker.debug.xcconfig */,
+				C29E5AA57B12B47A0BA6E563 /* Pods-theParker.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +338,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97E9EC5721D19161009D124F /* Build configuration list for PBXNativeTarget "theParker" */;
 			buildPhases = (
+				92D43B890CBE83485EEC6BB1 /* [CP] Check Pods Manifest.lock */,
 				97E9EC4121D19160009D124F /* Sources */,
 				97E9EC4221D19160009D124F /* Frameworks */,
 				97E9EC4321D19160009D124F /* Resources */,
+				D4599C4A18F139D5C11D3ED1 /* [CP] Embed Pods Frameworks */,
+				451B880F06B602C9250C5C08 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +366,7 @@
 				TargetAttributes = {
 					97E9EC4421D19160009D124F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -122,35 +393,201 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E9ECB221D1989F009D124F /* F.json in Resources */,
+				97E9ECD221D1989F009D124F /* PinJump.json in Resources */,
+				97E9EC6121D1988E009D124F /* post.xib in Resources */,
+				97E9ECC821D1989F009D124F /* setValueTest.json in Resources */,
+				97E9ECC221D1989F009D124F /* P.json in Resources */,
+				97E9ECD021D1989F009D124F /* N.json in Resources */,
 				97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */,
-				97E9EC5021D19161009D124F /* Assets.xcassets in Resources */,
-				97E9EC4E21D19160009D124F /* Main.storyboard in Resources */,
+				97E9ECA421D1989F009D124F /* car.json in Resources */,
+				97E9ECBD21D1989F009D124F /* vcTransition2.json in Resources */,
+				97E9ECC321D1989F009D124F /* Q.json in Resources */,
+				97E9EC6321D1988E009D124F /* Front.xib in Resources */,
+				97E9ECD521D1989F009D124F /* B.json in Resources */,
+				97E9ECB021D1989F009D124F /* G.json in Resources */,
+				97E9ECAA21D1989F009D124F /* Y.json in Resources */,
+				97E9ECA621D1989F009D124F /* M.json in Resources */,
+				97E9ECC721D1989F009D124F /* Colon.json in Resources */,
+				97E9ECB821D1989F009D124F /* GeometryTransformTest.json in Resources */,
+				97E9ECA921D1989F009D124F /* MotionCorpse-Jrcanest.json in Resources */,
+				97E9ECD321D1989F009D124F /* W.json in Resources */,
+				97E9ECA221D1989F009D124F /* A.json in Resources */,
+				97E9ECCE21D1989F009D124F /* Z.json in Resources */,
+				97E9ECD121D1989F009D124F /* bouncy_mapmaker.json in Resources */,
+				97E9ECB621D1989F009D124F /* Boat_Loader.json in Resources */,
+				97E9ECC621D1989F009D124F /* Contents.json in Resources */,
+				97E9ECDA21D19A6F009D124F /* Assets.xcassets in Resources */,
+				97E9ECB121D1989F009D124F /* vcTransition1.json in Resources */,
+				97E9ECC121D1989F009D124F /* Apostrophe.json in Resources */,
+				97E9ECA021D1989F009D124F /* Switch.json in Resources */,
+				97E9ECC521D1989F009D124F /* D.json in Resources */,
+				97E9ECB721D1989F009D124F /* J.json in Resources */,
+				97E9ECCA21D1989F009D124F /* C.json in Resources */,
+				97E9ECCB21D1989F009D124F /* V.json in Resources */,
+				97E9ECAE21D1989F009D124F /* K.json in Resources */,
+				97E9ECBF21D1989F009D124F /* LottieLogo1.json in Resources */,
+				97E9ECA121D1989F009D124F /* TwitterHeart.json in Resources */,
+				97E9ECD621D1989F009D124F /* timeremap.json in Resources */,
+				97E9ECB921D1989F009D124F /* done.json in Resources */,
+				97E9ECB521D1989F009D124F /* S.json in Resources */,
+				97E9ECCD21D1989F009D124F /* O.json in Resources */,
+				97E9ECD421D1989F009D124F /* LottieLogo1_masked.json in Resources */,
+				97E9ECB421D1989F009D124F /* lottie-ios.podspec.json in Resources */,
+				97E9ECC021D1989F009D124F /* package.json in Resources */,
+				97E9ECCF21D1989F009D124F /* keypathTest.json in Resources */,
+				97E9ECA721D1989F009D124F /* L.json in Resources */,
+				97E9ECA821D1989F009D124F /* 9squares-AlBoardman.json in Resources */,
+				97E9ECA521D1989F009D124F /* BlinkingCursor.json in Resources */,
+				97E9EC9F21D1989F009D124F /* T.json in Resources */,
+				97E9ECA321D1989F009D124F /* X.json in Resources */,
+				97E9ECBC21D1989F009D124F /* IconTransitions.json in Resources */,
+				97E9ECC921D1989F009D124F /* H.json in Resources */,
+				97E9EC5B21D1946F009D124F /* GoogleService-Info.plist in Resources */,
+				97E9ECD921D19A6F009D124F /* Main.storyboard in Resources */,
+				97E9ECC421D1989F009D124F /* Switch_States.json in Resources */,
+				97E9ECCC21D1989F009D124F /* Comma.json in Resources */,
+				97E9ECB321D1989F009D124F /* LottieLogo2.json in Resources */,
+				97E9ECAD21D1989F009D124F /* HamburgerArrow.json in Resources */,
+				97E9ECBB21D1989F009D124F /* Watermelon.json in Resources */,
+				97E9ECBE21D1989F009D124F /* E.json in Resources */,
+				97E9ECAC21D1989F009D124F /* location.json in Resources */,
+				97E9ECAB21D1989F009D124F /* U.json in Resources */,
+				97E9ECAF21D1989F009D124F /* R.json in Resources */,
+				97E9ECBA21D1989F009D124F /* I.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		451B880F06B602C9250C5C08 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-theParker/Pods-theParker-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-theParker/Pods-theParker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92D43B890CBE83485EEC6BB1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-theParker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4599C4A18F139D5C11D3ED1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-theParker/Pods-theParker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/EZYGradientView/EZYGradientView.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GooglePlacesAPI/GooglePlacesAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/GooglePlacesSearchController/GooglePlacesSearchController.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RKPieChart/RKPieChart.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZYGradientView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesSearchController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RKPieChart.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-theParker/Pods-theParker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97E9EC4121D19160009D124F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97E9EC4B21D19160009D124F /* ViewController.swift in Sources */,
-				97E9EC4921D19160009D124F /* AppDelegate.swift in Sources */,
+				97E9ECE421D19AFF009D124F /* LoginViewController.swift in Sources */,
+				97E9ECE521D19AFF009D124F /* MainPageViewController.swift in Sources */,
+				97E9ECF221D19B13009D124F /* DescriptionViewController.swift in Sources */,
+				97E9ECF521D19D4C009D124F /* AppDelegate.swift in Sources */,
+				97E9EC6221D1988E009D124F /* Front.swift in Sources */,
+				97E9ECF021D19B13009D124F /* ScrollPostViewController.swift in Sources */,
+				97E9ECDE21D19A91009D124F /* SWRevealViewController.m in Sources */,
+				97E9ECE621D19AFF009D124F /* ProfileDetailViewController.swift in Sources */,
+				97E9EC6421D1988E009D124F /* post.swift in Sources */,
+				97E9ECF321D19B13009D124F /* SettingsViewController.swift in Sources */,
+				97E9ECE321D19AFF009D124F /* ForanimationsViewController.swift in Sources */,
+				97E9ECEE21D19B13009D124F /* OfferParkingViewController.swift in Sources */,
+				97E9ECEF21D19B13009D124F /* PostMapPinViewController.swift in Sources */,
+				97E9ECF121D19B13009D124F /* MyCarsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		97E9EC4C21D19160009D124F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97E9EC4D21D19160009D124F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		97E9EC5121D19161009D124F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,8 +717,10 @@
 		};
 		97E9EC5821D19161009D124F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DB9C679F4A9E3AC3E9AE601 /* Pods-theParker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3ZBX77VJ3;
 				INFOPLIST_FILE = theParker/Info.plist;
@@ -291,6 +730,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ketanchoyal.theParker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "theParker/theParker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,8 +739,10 @@
 		};
 		97E9EC5921D19161009D124F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C29E5AA57B12B47A0BA6E563 /* Pods-theParker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3ZBX77VJ3;
 				INFOPLIST_FILE = theParker/Info.plist;
@@ -309,6 +752,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ketanchoyal.theParker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "theParker/theParker-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

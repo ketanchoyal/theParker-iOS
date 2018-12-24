@@ -17,8 +17,8 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.barTintColor = self.hexStringToUIColor(hex: "#4C177D")
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        let attributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.title = "PARKER"

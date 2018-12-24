@@ -74,8 +74,8 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.barTintColor = self.hexStringToUIColor(hex: "#4C177D")
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        let attributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationItem.title = "PARKER"
@@ -449,7 +449,7 @@ extension MainPageViewController {
     
     func ScrollHandling(){
         
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard (Auth.auth().currentUser?.uid) != nil else { return }
         self.ref = Database.database().reference()
         
         handleG = self.ref?.child("count").child("g").observe(.value, with: { (snapshot) in

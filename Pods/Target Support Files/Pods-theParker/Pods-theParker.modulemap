@@ -1,0 +1,6 @@
+framework module Pods_theParker {
+  umbrella header "Pods-theParker-umbrella.h"
+
+  export *
+  module * { export * }
+}
