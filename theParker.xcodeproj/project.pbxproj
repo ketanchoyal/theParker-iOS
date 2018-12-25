@@ -88,6 +88,7 @@
 		97E9ECF221D19B13009D124F /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */; };
 		97E9ECF321D19B13009D124F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECED21D19B13009D124F /* SettingsViewController.swift */; };
 		97E9ECF521D19D4C009D124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECF421D19D4C009D124F /* AppDelegate.swift */; };
+		97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8421D2D76E0015917F /* E-WalletVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,7 +107,6 @@
 		97E9EC6021D1988E009D124F /* post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
 		97E9EC6621D1989E009D124F /* T.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = T.json; sourceTree = "<group>"; };
 		97E9EC6721D1989E009D124F /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
-		97E9EC6821D1989E009D124F /* Parker-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Parker-Bridging-Header.h"; sourceTree = "<group>"; };
 		97E9EC6921D1989E009D124F /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
 		97E9EC6A21D1989E009D124F /* A.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = A.json; sourceTree = "<group>"; };
 		97E9EC6B21D1989E009D124F /* X.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = X.json; sourceTree = "<group>"; };
@@ -177,6 +177,7 @@
 		97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		97E9ECED21D19B13009D124F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		97E9ECF421D19D4C009D124F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		97F01C8421D2D76E0015917F /* E-WalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-WalletVC.swift"; sourceTree = "<group>"; };
 		C29E5AA57B12B47A0BA6E563 /* Pods-theParker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theParker.release.xcconfig"; path = "Pods/Target Support Files/Pods-theParker/Pods-theParker.release.xcconfig"; sourceTree = "<group>"; };
 		F4071BD13F20B6292D4B20F5 /* Pods_theParker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_theParker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -232,25 +233,17 @@
 		97E9EC4721D19160009D124F /* theParker */ = {
 			isa = PBXGroup;
 			children = (
-				971393F121D2988800BCB212 /* Utilities */,
+				97F01C8321D2D5FC0015917F /* Supporting Files */,
 				971393EE21D2979B00BCB212 /* View */,
+				97F01C8221D2D5B70015917F /* Controller */,
+				971393F121D2988800BCB212 /* Utilities */,
 				97E9EC5C21D1988E009D124F /* slideViews */,
 				97E9EC6521D1989E009D124F /* LottieAnimationsJSON */,
 				97E9ECF421D19D4C009D124F /* AppDelegate.swift */,
-				97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */,
-				97E9ECE021D19AFE009D124F /* LoginViewController.swift */,
-				97E9ECE121D19AFE009D124F /* MainPageViewController.swift */,
-				97E9ECE221D19AFF009D124F /* ProfileDetailViewController.swift */,
-				97E9ECE721D19B11009D124F /* offerParking */,
-				97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */,
-				97E9ECEB21D19B12009D124F /* MyCarsViewController.swift */,
-				97E9ECED21D19B13009D124F /* SettingsViewController.swift */,
+				97E9ECDB21D19A8E009D124F /* theParker-Bridging-Header.h */,
 				97E9ECD721D19A6E009D124F /* Main.storyboard */,
 				97E9ECD821D19A6F009D124F /* Assets.xcassets */,
 				97E9EC5121D19161009D124F /* LaunchScreen.storyboard */,
-				97E9ECDC21D19A90009D124F /* SWRevealViewController.h */,
-				97E9ECDD21D19A91009D124F /* SWRevealViewController.m */,
-				97E9ECDB21D19A8E009D124F /* theParker-Bridging-Header.h */,
 				97E9EC5421D19161009D124F /* Info.plist */,
 				97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */,
 			);
@@ -273,7 +266,6 @@
 			children = (
 				97E9EC6621D1989E009D124F /* T.json */,
 				97E9EC6721D1989E009D124F /* Switch.json */,
-				97E9EC6821D1989E009D124F /* Parker-Bridging-Header.h */,
 				97E9EC6921D1989E009D124F /* TwitterHeart.json */,
 				97E9EC6A21D1989E009D124F /* A.json */,
 				97E9EC6B21D1989E009D124F /* X.json */,
@@ -340,6 +332,31 @@
 				97E9ECEA21D19B11009D124F /* ScrollPostViewController.swift */,
 			);
 			path = offerParking;
+			sourceTree = "<group>";
+		};
+		97F01C8221D2D5B70015917F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				97E9ECE721D19B11009D124F /* offerParking */,
+				97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */,
+				97E9ECEB21D19B12009D124F /* MyCarsViewController.swift */,
+				97E9ECED21D19B13009D124F /* SettingsViewController.swift */,
+				97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */,
+				97E9ECE021D19AFE009D124F /* LoginViewController.swift */,
+				97E9ECE121D19AFE009D124F /* MainPageViewController.swift */,
+				97E9ECE221D19AFF009D124F /* ProfileDetailViewController.swift */,
+				97F01C8421D2D76E0015917F /* E-WalletVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		97F01C8321D2D5FC0015917F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				97E9ECDC21D19A90009D124F /* SWRevealViewController.h */,
+				97E9ECDD21D19A91009D124F /* SWRevealViewController.m */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		AAF16646215E94E0E4E43BB5 /* Frameworks */ = {
@@ -612,6 +629,7 @@
 				971393F021D297DC00BCB212 /* InsetTextField.swift in Sources */,
 				97E9ECEE21D19B13009D124F /* OfferParkingViewController.swift in Sources */,
 				971393F521D2A18C00BCB212 /* CircleImage.swift in Sources */,
+				97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */,
 				97E9ECEF21D19B13009D124F /* PostMapPinViewController.swift in Sources */,
 				97E9ECF121D19B13009D124F /* MyCarsViewController.swift in Sources */,
 			);

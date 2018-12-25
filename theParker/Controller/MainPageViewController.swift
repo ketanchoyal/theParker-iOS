@@ -12,24 +12,18 @@ enum Located {
 }
 
 class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate{
-
+    
     var timer = Timer()
     var timerCount = Timer()
     var timershow = Timer()
     var markers:[GMSMarker] = []
     var pintimer = Timer()
-   
-   
-    
     
     
     @IBOutlet weak var HeightGoogleMapsCONST: NSLayoutConstraint!
     @IBOutlet var MainView: UIView!
     @IBOutlet weak var googleMaps: GMSMapView!
     @IBOutlet weak var menu: UIBarButtonItem!
-    
-    
-   
     
     @IBOutlet weak var BookingStack: UIStackView!
     @IBOutlet weak var CarName: UILabel!
@@ -42,10 +36,7 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
     @IBAction func bookingbtnclicked(_ sender: Any) {
         
         
-        
     }
-    
-    
     
     var CurLocationNow:CLLocation?
     var locationManager = CLLocationManager()
@@ -59,7 +50,7 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
     var pins:[String:Any]?
     var countG:Int?
     var showpins:[[Int:[String:Any]]] = []
-
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,9 +62,9 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         UINavigationBar.appearance().titleTextAttributes = attributes
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationItem.title = "THE PARKER"
-    
+        
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,17 +76,17 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         print("I AM A CODER")
         // Do any additional setup after loading the view.
         
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startMonitoringSignificantLocationChanges()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startMonitoringSignificantLocationChanges()
         
-            menu.target = revealViewController()
-            menu.action = #selector(SWRevealViewController.revealToggle(_:))
+        menu.target = revealViewController()
+        menu.action = #selector(SWRevealViewController.revealToggle(_:))
         
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         let camera = GMSCameraPosition.camera(withLatitude: -7.9293122, longitude: 112.5879156, zoom: 15.0)
         
@@ -109,7 +100,7 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         self.setforSE()
         
         self.scheduledTimerWithTimeInterval()
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -117,150 +108,150 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         self.navigationItem.title = ""
     }
     
-func createMarker(titleMarker: String, iconMarker: UIImage, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-    let marker = GMSMarker()
-    marker.position = CLLocationCoordinate2DMake(latitude, longitude)
-    marker.title = titleMarker
-    marker.icon = iconMarker
-    marker.map = googleMaps
-}
-
-//MARK: - Location Manager delegates
-
-func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    print("Error to get location : \(error)")
-}
-
-func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    
-    let location = locations.last
-    self.CurLocationNow = location
-    //        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
-    
-    //        self.googleMaps?.animate(to: camera)
-    self.locationManager.stopUpdatingLocation()
-    
-}
-
-// MARK: - GMSMapViewDelegate
-
-func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-    googleMaps.isMyLocationEnabled = true
-}
-
-func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-    googleMaps.isMyLocationEnabled = true
-    
-    if (gesture) {
-        mapView.selectedMarker = nil
+    func createMarker(titleMarker: String, iconMarker: UIImage, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(latitude, longitude)
+        marker.title = titleMarker
+        marker.icon = iconMarker
+        marker.map = googleMaps
     }
-}
-
-func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-    googleMaps.isMyLocationEnabled = true
-    print("TAPPED TAPPED")
     
-    let DataNeeded:[String] = marker.userData as! [String]
-    self.CarName.text = DataNeeded[2]
-    self.LocationInfo.text = DataNeeded[0]
-    self.Description.text = DataNeeded[5]
-    self.TimeInfo.text = marker.title
-    self.PriceInfo.text = marker.snippet
-    self.BookingStack.isHidden = false
-    return false
-}
-
-func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-    print("COORDINATE \(coordinate)") // when you tapped coordinate
-}
-
-func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
-    googleMaps.isMyLocationEnabled = true
-    googleMaps.selectedMarker = nil
-    return false
-}
-
-
-
-//MARK: - this is function for create direction path, from start location to desination location
-
-func drawPath(startLocation: CLLocation, endLocation: CLLocation)
-{
-    let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
-    let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
+    //MARK: - Location Manager delegates
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error to get location : \(error)")
+    }
     
-    let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving"
-    
-    Alamofire.request(url).responseJSON { response in
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        do {
-            let json = try JSON(data: response.data!)
-            let routes = json["routes"].arrayValue
-            
-            for route in routes
-            {
-                let routeOverviewPolyline = route["overview_polyline"].dictionary
-                let points = routeOverviewPolyline?["points"]?.stringValue
-                let path = GMSPath.init(fromEncodedPath: points!)
-                let polyline = GMSPolyline.init(path: path)
-                polyline.strokeWidth = 4
-                polyline.strokeColor = UIColor.blue
-                polyline.map = self.googleMaps
-            }
-        } catch {
-            print(error)
+        let location = locations.last
+        self.CurLocationNow = location
+        //        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
+        
+        //        self.googleMaps?.animate(to: camera)
+        self.locationManager.stopUpdatingLocation()
+        
+    }
+    
+    // MARK: - GMSMapViewDelegate
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        googleMaps.isMyLocationEnabled = true
+    }
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        googleMaps.isMyLocationEnabled = true
+        
+        if (gesture) {
+            mapView.selectedMarker = nil
         }
     }
-}
-
-func Direction(startLocation: CLLocation, endLocation: CLLocation) {
-    let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
-    let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
     
-    if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-        UIApplication.shared.openURL(URL(string:
-            "comgooglemaps://?saddr=\(origin)&daddr=\(destination)&center=37.423725,-122.0877&directionsmode=driving&zoom=17")!)
-         
-    } else {
-        self.alert(message: "Install Google Maps first!")
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        googleMaps.isMyLocationEnabled = true
+        print("TAPPED TAPPED")
+        
+        let DataNeeded:[String] = marker.userData as! [String]
+        self.CarName.text = DataNeeded[2]
+        self.LocationInfo.text = DataNeeded[0]
+        self.Description.text = DataNeeded[5]
+        self.TimeInfo.text = marker.title
+        self.PriceInfo.text = marker.snippet
+        self.BookingStack.isHidden = false
+        return false
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        print("COORDINATE \(coordinate)") // when you tapped coordinate
+    }
+    
+    func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+        googleMaps.isMyLocationEnabled = true
+        googleMaps.selectedMarker = nil
+        return false
     }
     
     
-}
-
-
-
-func touchSearchBar()     {
-    let autoCompleteController = GMSAutocompleteViewController()
-    autoCompleteController.delegate = self
     
-    // selected location
-    locationSelected = .startLocation
+    //MARK: - this is function for create direction path, from start location to desination location
     
-    // Change text color
-    self.locationManager.stopUpdatingLocation()
+    func drawPath(startLocation: CLLocation, endLocation: CLLocation)
+    {
+        let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
+        let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
+        
+        
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving"
+        
+        Alamofire.request(url).responseJSON { response in
+            
+            do {
+                let json = try JSON(data: response.data!)
+                let routes = json["routes"].arrayValue
+                
+                for route in routes
+                {
+                    let routeOverviewPolyline = route["overview_polyline"].dictionary
+                    let points = routeOverviewPolyline?["points"]?.stringValue
+                    let path = GMSPath.init(fromEncodedPath: points!)
+                    let polyline = GMSPolyline.init(path: path)
+                    polyline.strokeWidth = 4
+                    polyline.strokeColor = UIColor.blue
+                    polyline.map = self.googleMaps
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
     
-    self.present(autoCompleteController, animated: true, completion: nil)
+    func Direction(startLocation: CLLocation, endLocation: CLLocation) {
+        let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
+        let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
+        
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+            UIApplication.shared.openURL(URL(string:
+                "comgooglemaps://?saddr=\(origin)&daddr=\(destination)&center=37.423725,-122.0877&directionsmode=driving&zoom=17")!)
+            
+        } else {
+            self.alert(message: "Install Google Maps first!")
+        }
+        
+        
+    }
     
-}
-
-@IBAction func searchGoogleMaps(_ sender: Any) {
     
     
-    self.touchSearchBar()
+    func touchSearchBar()     {
+        let autoCompleteController = GMSAutocompleteViewController()
+        autoCompleteController.delegate = self
+        
+        // selected location
+        locationSelected = .startLocation
+        
+        // Change text color
+        self.locationManager.stopUpdatingLocation()
+        
+        self.present(autoCompleteController, animated: true, completion: nil)
+        
+    }
     
-}
-
-func textFieldDidBeginEditing(_ textField: UITextField) {
-    touchSearchBar()
-}
-
-// MARK: SHOW DIRECTION WITH BUTTON
-@IBAction func SetView(_ sender: Any) {
-    self.Direction(startLocation: self.CurLocationNow!, endLocation: locationStart)
-}
-
+    @IBAction func searchGoogleMaps(_ sender: Any) {
+        
+        
+        self.touchSearchBar()
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        touchSearchBar()
+    }
+    
+    // MARK: SHOW DIRECTION WITH BUTTON
+    @IBAction func SetView(_ sender: Any) {
+        self.Direction(startLocation: self.CurLocationNow!, endLocation: locationStart)
+    }
+    
 }
 
 
@@ -281,7 +272,7 @@ extension MainPageViewController: GMSAutocompleteViewControllerDelegate {
         
         
         locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-       // createMarker(titleMarker: "Location Start", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        // createMarker(titleMarker: "Location Start", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         
         
         
@@ -416,26 +407,26 @@ extension MainPageViewController {
     func handlingGlobalPins(){
         print("GGGG here")
         if self.countG! > 1 {
-        for c in 1...self.countG! {
-            self.ref = Database.database().reference()
-            
-            HandlePins = self.ref?.child("GlobalPins").child("\(c)").observe(.value, with: { (snapshot) in
-                print("Printing C")
-                print(c)
-                if let value1 = snapshot.value as? [String:Any]{
-                    let valueactual = [c:value1]
-               // print(valueactual)
-                    self.showpins.append(valueactual)
-                    //print(valueactual)
-                   // print(self.showpins)
-                }
+            for c in 1...self.countG! {
+                self.ref = Database.database().reference()
                 
-                if c == self.countG!{
-                    self.IamshowingPins()
-                }
-                
-            })
-        }
+                HandlePins = self.ref?.child("GlobalPins").child("\(c)").observe(.value, with: { (snapshot) in
+                    print("Printing C")
+                    print(c)
+                    if let value1 = snapshot.value as? [String:Any]{
+                        let valueactual = [c:value1]
+                        // print(valueactual)
+                        self.showpins.append(valueactual)
+                        //print(valueactual)
+                        // print(self.showpins)
+                    }
+                    
+                    if c == self.countG!{
+                        self.IamshowingPins()
+                    }
+                    
+                })
+            }
         }
     }
     
@@ -474,82 +465,82 @@ extension MainPageViewController {
             
             print("Showing Pins")
             for c in 0...self.showpins.count{
-                 var neededata:[String] = []
+                var neededata:[String] = []
                 let marker = GMSMarker()
                 if c < self.showpins.count {
-                for (key,value) in self.showpins[c]{
-                    for (key2,val) in value {
-                        var count = 0
-                        
-                        var latt:Double = 0.0
-                        var long:Double = 0.0
-                        
-                        if key2 == "pinloc"{
-                            let dicval = val as! [String:Double]
-                            for (keyy,vall) in dicval {
-                                if keyy == "lat"{
-                                    latt = vall
+                    for (key,value) in self.showpins[c]{
+                        for (key2,val) in value {
+                            var count = 0
+                            
+                            var latt:Double = 0.0
+                            var long:Double = 0.0
+                            
+                            if key2 == "pinloc"{
+                                let dicval = val as! [String:Double]
+                                for (keyy,vall) in dicval {
+                                    if keyy == "lat"{
+                                        latt = vall
+                                    }
+                                    if keyy == "long"{
+                                        long = vall
+                                    }
+                                    marker.position = CLLocationCoordinate2DMake(latt, long)
+                                    print(marker.position)
                                 }
-                                if keyy == "long"{
-                                    long = vall
-                                }
-                                marker.position = CLLocationCoordinate2DMake(latt, long)
-                                print(marker.position)
                             }
-                        }
-                        
-                        if key2 == "Time"{
-                            let time = val as! String
-                            marker.title = "\(time)"
-                            print(marker.title!)
-                            count += 1
-                        }
-                        if key2 == "Price"{
-                            let snip = val as! String
-                            marker.snippet = "\(snip)"
-                            print(marker.snippet!)
-                            count += 1
-                            print("DONE DONE DONE")
-                            print(marker)
                             
-                            marker.appearAnimation = .pop
-                        }
-                        
-                        if key2 == "Car"{
+                            if key2 == "Time"{
+                                let time = val as! String
+                                marker.title = "\(time)"
+                                print(marker.title!)
+                                count += 1
+                            }
+                            if key2 == "Price"{
+                                let snip = val as! String
+                                marker.snippet = "\(snip)"
+                                print(marker.snippet!)
+                                count += 1
+                                print("DONE DONE DONE")
+                                print(marker)
+                                
+                                marker.appearAnimation = .pop
+                            }
                             
-                           neededata.append(val as! String)
+                            if key2 == "Car"{
+                                
+                                neededata.append(val as! String)
+                            }
+                            
+                            if key2 == "Location"{
+                                neededata.append(val as! String)
+                            }
+                            
+                            if key2 == "Description"{
+                                neededata.append(val as! String)
+                            }
+                            
+                            if key2 == "Day"{
+                                let rollNumber:String = String(format: "%@", val as! CVarArg)
+                                neededata.append(rollNumber)
+                            }
+                            
+                            if key2 == "Month"{
+                                let rollNumber:String = String(format: "%@", val as! CVarArg)
+                                neededata.append(rollNumber)
+                            }
+                            
+                            if key2 == "Year" {
+                                print(val)
+                                let rollNumber:String = String(format: "%@", val as! CVarArg)
+                                neededata.append(rollNumber)
+                            }
+                            print("countbro")
+                            
                         }
-                        
-                        if key2 == "Location"{
-                            neededata.append(val as! String)
-                        }
-                        
-                        if key2 == "Description"{
-                            neededata.append(val as! String)
-                        }
-                        
-                        if key2 == "Day"{
-                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-                            neededata.append(rollNumber)
-                        }
-                        
-                        if key2 == "Month"{
-                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-                            neededata.append(rollNumber)
-                        }
-                        
-                        if key2 == "Year" {
-                            print(val)
-                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-                            neededata.append(rollNumber)
-                        }
-                        print("countbro")
                         
                     }
                     
                 }
-                
-            }
                 marker.userData = neededata
                 self.markers.append(marker)
             }
@@ -562,20 +553,20 @@ extension MainPageViewController {
     func showmarkers(){
         for c in 0...self.markers.count-1{
             print(markers[c])
-           
-            //self.markers[c].map = googleMaps
+            
+            self.markers[c].map = googleMaps
             
             
         }
-        self.ppintimer()
+        //self.ppintimer()
     }
     
     func ppintimer(){
-       pintimer =  Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.pintimedone), userInfo: nil, repeats: true)
+        pintimer =  Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.pintimedone), userInfo: nil, repeats: true)
     }
     
-   @objc func pintimedone(){
-    
+    @objc func pintimedone() {
+        
         let mdate = Date()
         let mcalendar = Calendar.current
         let day = mcalendar.component(.day, from: mdate)
@@ -583,7 +574,9 @@ extension MainPageViewController {
         let year = mcalendar.component(.year, from: mdate)
         var hour = mcalendar.component(.hour, from: mdate)
         let minutes = mcalendar.component(.minute, from: mdate)
-    
+        
+        print(markers.count)
+        
         for c in 0...self.markers.count-2{
             
             if hour > 12 {
@@ -592,33 +585,36 @@ extension MainPageViewController {
             
             let stringArray = markers[c].title?.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
             
-            let DataNeeded:[String] = markers[c].userData as! [String]
+            let DataNeeded : [String] = markers[c].userData as! [String]
             
-            if Int(DataNeeded[1])! < year {
-               
+            print("DataNeeded")
+            print(DataNeeded)
+            
+            if Int(DataNeeded[3])! < year {
+                
                 markers[c].map = nil
             }
                 
-            else if Int(DataNeeded[3])! < month {
+            else if Int(DataNeeded[1])! < month {
                 
-               markers[c].map = nil
+                markers[c].map = nil
             }
                 
-            else if Int(DataNeeded[4])! < day {
-               
-               markers[c].map = nil
+            else if Int(DataNeeded[6])! < day {
+                
+                markers[c].map = nil
             }
                 
             else if Int(stringArray![0])! < hour {
                 
-               markers[c].map = nil
+                markers[c].map = nil
             }
                 
             else if Int(stringArray![1])! < minutes {
                 
-               markers[c].map = nil
+                markers[c].map = nil
             }
-            
+                
             else {
                 markers[c].map = self.googleMaps
             }

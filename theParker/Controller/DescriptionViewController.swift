@@ -5,7 +5,7 @@ class DescriptionViewController: UIViewController, UIScrollViewDelegate {
     
     
     let page1 = ["MainHeading":"Find Car parking near you","CenterImage":"way.png","explain":"Just search in the maps where you want your car parking."]
-    let page2 = ["MainHeading":"Give your parking for credits","CenterImage":"parking(1).png","explain":"Share your location for users to see your parking location."]
+    let page2 = ["MainHeading":"Give your parking for Extra Cash","CenterImage":"parking(1).png","explain":"Share your location for users to see your parking location."]
     let page3 = ["MainHeading":"User Friendly App","CenterImage":"userF.png","explain":"select location and we will direct you there."]
     let page4 = ["MainHeading":"Your Car is in good hands","CenterImage":"shaky.png","explain":"We park your car in one of our secure areas."]
     
@@ -98,8 +98,8 @@ extension DescriptionViewController{
     func addgrad(){
         let gradientView = EZYGradientView()
         gradientView.frame = self.view.bounds
-        gradientView.firstColor = self.hexStringToUIColor(hex: "#000000")
-        gradientView.secondColor = self.hexStringToUIColor(hex: "#4B0082")
+        gradientView.firstColor = HextoUIColor.instance.hexString(hex: "#000000")
+        gradientView.secondColor = HextoUIColor.instance.hexString(hex: "#4B0082")
         gradientView.angleº = 180.0
         gradientView.colorRatio = 0.4
         gradientView.fadeIntensity = 1.0
@@ -110,27 +110,6 @@ extension DescriptionViewController{
         self.view.insertSubview(gradientView, at: 0)
     }
     
-    func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        
-        if ((cString.count) != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
 }
 
 extension DescriptionViewController{

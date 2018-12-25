@@ -8,10 +8,10 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     
     @IBOutlet var RootView: UIView!
     @IBOutlet weak var UserImage: UIImageView!
-    @IBOutlet weak var TopSignUP: NSLayoutConstraint!
-    @IBOutlet weak var TopLogin: NSLayoutConstraint!
-    @IBOutlet weak var signuppageWIDTH: NSLayoutConstraint!
-    @IBOutlet weak var signuppageHEIGHT: NSLayoutConstraint!
+//    @IBOutlet weak var TopSignUP: NSLayoutConstraint!
+//    @IBOutlet weak var TopLogin: NSLayoutConstraint!
+//    @IBOutlet weak var signuppageWIDTH: NSLayoutConstraint!
+//    @IBOutlet weak var signuppageHEIGHT: NSLayoutConstraint!
     @IBOutlet weak var signupCONPASS: UITextField!
     @IBOutlet weak var FirebaseLOGINbtn: UIButton!
     @IBOutlet weak var signupPASS: UITextField!
@@ -23,26 +23,30 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var CarLogoView: UIView!
     @IBOutlet weak var FBbtnView: UIButton!
     @IBOutlet weak var GooglebtnView: UIButton!
-    @IBOutlet weak var MainLogoHeight: NSLayoutConstraint!
+//    @IBOutlet weak var MainLogoHeight: NSLayoutConstraint!
+//    @IBOutlet weak var LoginpageHEIGHT: NSLayoutConstraint!
+    @IBOutlet weak var T: UIView!
+    @IBOutlet weak var H: UIView!
+    @IBOutlet weak var EE: UIView!
+    @IBOutlet weak var P: UIView!
     @IBOutlet weak var K: UIView!
     @IBOutlet weak var A: UIView!
     @IBOutlet weak var R: UIView!
     @IBOutlet weak var E: UIView!
     @IBOutlet weak var RR: UIView!
-    @IBOutlet weak var logbtnviewTRA: NSLayoutConstraint!
-    @IBOutlet weak var graforPlus: NSLayoutConstraint!
-    @IBOutlet weak var graStackBOT: NSLayoutConstraint!
-    @IBOutlet weak var graSTackTop: NSLayoutConstraint!
+//    @IBOutlet weak var logbtnviewTRA: NSLayoutConstraint!
+//    @IBOutlet weak var graforPlus: NSLayoutConstraint!
+//    @IBOutlet weak var graStackBOT: NSLayoutConstraint!
+//    @IBOutlet weak var graSTackTop: NSLayoutConstraint!
+    @IBOutlet weak var gradientViewHeight: NSLayoutConstraint!
     @IBOutlet weak var gradientStack: UIStackView!
     @IBOutlet weak var LOGINSTACKVIEW: UIStackView!
     @IBOutlet weak var LOGSTACK: UIStackView!
-    @IBOutlet weak var LogStackHEIGHT: NSLayoutConstraint!
-    @IBOutlet weak var LogStackWIDTH: NSLayoutConstraint!
-    @IBOutlet weak var LoginpageWIDTH: NSLayoutConstraint!
-    @IBOutlet weak var LoginpageHEIGHT: NSLayoutConstraint!
-    @IBOutlet weak var LottieView: UIView!
-    @IBOutlet weak var LoginstackviewBTM: NSLayoutConstraint!
-    @IBOutlet weak var LogInStackviewHGT: NSLayoutConstraint!
+//    @IBOutlet weak var LogStackHEIGHT: NSLayoutConstraint!
+//    @IBOutlet weak var LogStackWIDTH: NSLayoutConstraint!
+//    @IBOutlet weak var LoginpageWIDTH: NSLayoutConstraint!
+//    @IBOutlet weak var LoginstackviewBTM: NSLayoutConstraint!
+//    @IBOutlet weak var LogInStackviewHGT: NSLayoutConstraint!
     @IBOutlet weak var MainLogin: UIButton!
     @IBOutlet weak var MainSIGn: UIButton!
     @IBOutlet weak var LGBTNView: UIView!
@@ -97,14 +101,17 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         
         self.actInd = UIActivityIndicatorView(style: .gray)
         self.actInd.color = UIColor.white
-        if DeviceType.IS_IPHONE_5{
-            self.actInd.frame = CGRect(x: 45, y: -8, width: 50.0, height: 50.0)
-            
-        }
-        else {
-            self.actInd.frame = CGRect(x: 0, y: 0, width: 50.0, height: 50.0)
-            self.actInd.center = LGBTNView.center
-        }
+//        if DeviceType.IS_IPHONE_5{
+//            self.actInd.frame = CGRect(x: 45, y: -8, width: 50.0, height: 50.0)
+//
+//        }
+//        else {
+//            self.actInd.frame = CGRect(x: 0, y: 0, width: 50.0, height: 50.0)
+//            self.actInd.center = LGBTNView.center
+//        }
+        
+        self.actInd.frame = CGRect(x: 0, y: 0, width: 50.0, height: 50.0)
+        self.actInd.center = LGBTNView.center
         
         self.LGBTNView.addSubview(actInd)
         
@@ -129,22 +136,14 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         
-        if DeviceType.IS_IPHONE_5 {
-         self.iphone5SE()
+        if UIDevice().userInterfaceIdiom == .phone {
+            let nativeHeight = UIScreen.main.nativeBounds.height
+            if nativeHeight == 1136 {
+                self.GradientView.frame.size.height = 250
+                self.view.layoutIfNeeded()
+            }
         }
-        
-        if DeviceType.IS_IPHONE_6 {
-            self.iphone678()
-        }
-        
-        if DeviceType.IS_IPHONE_6P {
-            self.iphone678P()
-        }
-        
-        if DeviceType.IS_IPHONE_X {
-            self.iphoneX()
-        }
-        
+
         self.user.delegate = self
         self.pass.delegate = self
         self.addgrad()
@@ -506,7 +505,7 @@ extension LoginViewController{
         static let SCREEN_MAX_LENGTH = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
         static let SCREEN_MIN_LENGTH = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
     }
-    
+
     struct DeviceType
     {
         static let IS_IPHONE_5 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
@@ -514,19 +513,10 @@ extension LoginViewController{
         static let IS_IPHONE_6P = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
         static let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
     }
-    
+
     func iphone5SE(){
-        self.MainLogoHeight.constant = 280.0
-        self.graSTackTop.constant = 40.0
-        self.graStackBOT.constant = 60.0
-        self.signuppageWIDTH.constant = 315.0
-        self.signuppageHEIGHT.constant = 260.0
-        self.LoginpageWIDTH.constant = 150.0
-        self.LoginpageHEIGHT.constant = 260.0
-        self.LogStackWIDTH.constant = 140.0
-        self.LogStackHEIGHT.constant = 250.0
-        self.LogInStackviewHGT.constant = 30.0
-        self.LoginstackviewBTM.constant = 5.0
+        gradientViewHeight.constant = 250
+        self.view.layoutIfNeeded()
         self.LOGSTACK.spacing = 0
         self.SIGNUPVIEW.layoutIfNeeded()
         self.gradientStack.layoutIfNeeded()
@@ -536,43 +526,43 @@ extension LoginViewController{
         self.LOGSTACK.layoutIfNeeded()
         self.updateViewConstraints()
     }
-    func iphone678(){
-        self.MainLogoHeight.constant = 280.0
-        self.graSTackTop.constant = 40.0
-        self.graStackBOT.constant = 60.0
-        self.signuppageWIDTH.constant = 315.0
-        self.signuppageHEIGHT.constant = 320.0
-        self.LoginpageWIDTH.constant = 150.0
-        self.LoginpageHEIGHT.constant = 320.0
-        self.LogStackWIDTH.constant = 140.0
-        self.LogStackHEIGHT.constant = 300.0
-        self.LogInStackviewHGT.constant = 60.0
-        self.LoginstackviewBTM.constant = 5.0
-        self.LOGSTACK.spacing = 30
-        self.SIGNUPVIEW.layoutIfNeeded()
-        self.gradientStack.layoutIfNeeded()
-        self.GradientView.layoutIfNeeded()
-        self.LOGINSTACKVIEW.layoutIfNeeded()
-        self.loginView.layoutIfNeeded()
-        self.LOGSTACK.layoutIfNeeded()
-        self.updateViewConstraints()
-    }
-    func iphone678P(){
-        self.logbtnviewTRA.constant = 0
-        self.MainLogoHeight.constant = 300
-        self.graforPlus.constant = 40.0
-        self.LGBTNView.layoutIfNeeded()
-        self.GradientView.layoutIfNeeded()
-        self.updateViewConstraints()
-    }
-    
-    func iphoneX(){
-     /*   self.TopLogin.constant = 350.0
-        self.TopSignUP.constant = 300.0
-        self.loginView.layoutIfNeeded()
-        self.SIGNUPVIEW.layoutIfNeeded()
-        self.updateViewConstraints()*/
-    }
+//    func iphone678(){
+//        self.MainLogoHeight.constant = 280.0
+//        self.graSTackTop.constant = 40.0
+//        self.graStackBOT.constant = 60.0
+//        self.signuppageWIDTH.constant = 315.0
+//        self.signuppageHEIGHT.constant = 320.0
+//        self.LoginpageWIDTH.constant = 150.0
+//        self.LoginpageHEIGHT.constant = 320.0
+//        self.LogStackWIDTH.constant = 140.0
+//        self.LogStackHEIGHT.constant = 300.0
+//        self.LogInStackviewHGT.constant = 60.0
+//        self.LoginstackviewBTM.constant = 5.0
+//        self.LOGSTACK.spacing = 30
+//        self.SIGNUPVIEW.layoutIfNeeded()
+//        self.gradientStack.layoutIfNeeded()
+//        self.GradientView.layoutIfNeeded()
+//        self.LOGINSTACKVIEW.layoutIfNeeded()
+//        self.loginView.layoutIfNeeded()
+//        self.LOGSTACK.layoutIfNeeded()
+//        self.updateViewConstraints()
+//    }
+//    func iphone678P(){
+//        self.logbtnviewTRA.constant = 0
+//        self.MainLogoHeight.constant = 300
+//        self.graforPlus.constant = 40.0
+//        self.LGBTNView.layoutIfNeeded()
+//        self.GradientView.layoutIfNeeded()
+//        self.updateViewConstraints()
+//    }
+//
+//    func iphoneX(){
+//     /*   self.TopLogin.constant = 350.0
+//        self.TopSignUP.constant = 300.0
+//        self.loginView.layoutIfNeeded()
+//        self.SIGNUPVIEW.layoutIfNeeded()
+//        self.updateViewConstraints()*/
+//    }
     
    
     
@@ -583,7 +573,10 @@ extension LoginViewController{
     }
  
     func animationsLOT(){
-        let animations = LOTAnimationView(name: "P")
+        let Tanimations = LOTAnimationView(name: "T")
+        let Hanimations = LOTAnimationView(name: "H")
+        let EEanimations = LOTAnimationView(name: "E")
+        let Panimations = LOTAnimationView(name: "P")
         let Aanimations = LOTAnimationView(name: "A")
         let Ranimations = LOTAnimationView(name: "R")
         let Kanimations = LOTAnimationView(name: "K")
@@ -591,8 +584,10 @@ extension LoginViewController{
         let RRanimations = LOTAnimationView(name: "R")
         
         
-        
-        self.lotanime(animations, self.LottieView)
+        self.lotanime(Tanimations, self.T)
+        self.lotanime(Hanimations, self.H)
+        self.lotanime(EEanimations, self.EE)
+        self.lotanime(Panimations, self.P)
         self.lotanime(Aanimations, self.A)
         self.lotanime(RRanimations, self.RR)
         self.lotanime(Kanimations, self.K)
