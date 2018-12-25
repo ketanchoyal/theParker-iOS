@@ -74,16 +74,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wa-Ei-3z8">
-                                <rect key="frame" x="-33" y="0.0" width="438" height="350"/>
+                                <rect key="frame" x="-33" y="0.0" width="438" height="320"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0oF-9C-CPc">
-                                        <rect key="frame" x="34" y="70" width="396" height="230"/>
+                                        <rect key="frame" x="34" y="70" width="396" height="220"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZF-sZ-OGD">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="115"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="396" height="110"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parking(1)" translatesAutoresizingMaskIntoConstraints="NO" id="pdf-4E-WXs">
-                                                        <rect key="frame" x="70" y="-17.5" width="256" height="150"/>
+                                                        <rect key="frame" x="70" y="-20" width="256" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="256" id="5bf-jq-L5T"/>
                                                             <constraint firstAttribute="height" constant="150" id="QTm-bh-r8n"/>
@@ -97,10 +97,10 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Uew-i7-FmL">
-                                                <rect key="frame" x="0.0" y="115" width="396" height="115"/>
+                                                <rect key="frame" x="0.0" y="110" width="396" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiZ-1k-vSc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="198" height="115"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="198" height="110"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
                                                         <state key="normal" title="Login">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,7 +110,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-cE-AY8">
-                                                        <rect key="frame" x="198" y="0.0" width="198" height="115"/>
+                                                        <rect key="frame" x="198" y="0.0" width="198" height="110"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <state key="normal" title="Sign Up ">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,7 +128,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="392" id="2ax-hk-6uO">
                                         <variation key="heightClass=compact" constant="150"/>
-                                        <variation key="heightClass=regular" constant="350"/>
+                                        <variation key="heightClass=regular" constant="320"/>
                                     </constraint>
                                     <constraint firstItem="0oF-9C-CPc" firstAttribute="leading" secondItem="8wa-Ei-3z8" secondAttribute="leading" constant="34" id="54B-uV-krc"/>
                                     <constraint firstItem="0oF-9C-CPc" firstAttribute="top" secondItem="8wa-Ei-3z8" secondAttribute="top" constant="96" id="8IO-Db-WRu">
@@ -138,11 +138,11 @@
                                     <constraint firstAttribute="trailing" secondItem="0oF-9C-CPc" secondAttribute="trailing" constant="8" id="wpY-hv-htk"/>
                                     <constraint firstAttribute="bottom" secondItem="0oF-9C-CPc" secondAttribute="bottom" constant="30" id="zn9-YI-q8f">
                                         <variation key="heightClass=compact" constant="50"/>
-                                        <variation key="heightClass=regular" constant="50"/>
+                                        <variation key="heightClass=regular" constant="30"/>
                                     </constraint>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Np-ak-1P2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Np-ak-1P2" customClass="RoundedUIView" customModule="theParker" customModuleProvider="target">
                                 <rect key="frame" x="31" y="261" width="313" height="358"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uTz-mg-B4S" userLabel="SinStack">
@@ -269,8 +269,13 @@
                                     <constraint firstAttribute="width" constant="313" id="nb0-II-d7p"/>
                                     <constraint firstAttribute="trailing" secondItem="uTz-mg-B4S" secondAttribute="trailing" constant="20" id="sD4-sv-hQK"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VT-8j-6Lc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VT-8j-6Lc" customClass="RoundedUIView" customModule="theParker" customModuleProvider="target">
                                 <rect key="frame" x="31" y="261" width="313" height="358"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nyQ-Pu-vlN" userLabel="LOGSTACK">
@@ -369,11 +374,16 @@
                                         <variation key="heightClass=compact-widthClass=compact" constant="150"/>
                                     </constraint>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Qfb-0J-3AR" userLabel="loginStack">
                                 <rect key="frame" x="15" y="577" width="345" height="60"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cui-w3-QX2">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cui-w3-QX2" customClass="RoundedUIView" customModule="theParker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="172.5" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPN-in-To5">

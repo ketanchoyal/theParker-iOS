@@ -156,15 +156,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         self.UserImage.layer.borderColor = UIColor.black.cgColor
         self.UserImage.layer.cornerRadius = self.UserImage.frame.height/2
         self.UserImage.clipsToBounds = true
-        
-//        self.LGBTNView.layer.cornerRadius = 15
-//        self.LGBTNView.clipsToBounds = true
-//
-//        self.SIGNUPVIEW.layer.cornerRadius = 30
-//        self.SIGNUPVIEW.clipsToBounds = true
-//
-//        self.loginView.layer.cornerRadius = 30
-//        self.loginView.clipsToBounds = true
+
         
         // Do any additional setup after loading the view.
     }
