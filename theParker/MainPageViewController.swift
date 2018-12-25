@@ -70,7 +70,7 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationItem.title = "PARKER"
+        self.navigationItem.title = "THE PARKER"
     
     }
 
@@ -82,7 +82,7 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         self.BookingStack.isHidden = true
         self.ScrollHandling()
         self.fetchTimer()
-        print("I AMMMMMMMM INNININININ IMMAIMAIMAIAM")
+        print("I AM A CODER")
         // Do any additional setup after loading the view.
         
             locationManager = CLLocationManager()
@@ -471,8 +471,6 @@ extension MainPageViewController {
     
     @objc func thanshow(){
         if !self.showpins.isEmpty{
-            
-         
             
             print("Showing Pins")
             for c in 0...self.showpins.count{

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		05F238F5650E2A8D97AD6418 /* Pods_theParker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4071BD13F20B6292D4B20F5 /* Pods_theParker.framework */; };
+		971393F021D297DC00BCB212 /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393EF21D297DC00BCB212 /* InsetTextField.swift */; };
+		971393F321D298C100BCB212 /* HextoUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F221D298C100BCB212 /* HextoUIColor.swift */; };
+		971393F521D2A18C00BCB212 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F421D2A18C00BCB212 /* CircleImage.swift */; };
+		971393F721D2A1DC00BCB212 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F621D2A1DC00BCB212 /* RoundedUIView.swift */; };
 		97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5121D19161009D124F /* LaunchScreen.storyboard */; };
 		97E9EC5B21D1946F009D124F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */; };
 		97E9EC6121D1988E009D124F /* post.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5D21D1988E009D124F /* post.xib */; };
@@ -88,6 +92,10 @@
 
 /* Begin PBXFileReference section */
 		1DB9C679F4A9E3AC3E9AE601 /* Pods-theParker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theParker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-theParker/Pods-theParker.debug.xcconfig"; sourceTree = "<group>"; };
+		971393EF21D297DC00BCB212 /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
+		971393F221D298C100BCB212 /* HextoUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HextoUIColor.swift; sourceTree = "<group>"; };
+		971393F421D2A18C00BCB212 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		971393F621D2A1DC00BCB212 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		97E9EC4521D19160009D124F /* theParker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theParker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E9EC5221D19161009D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E9EC5421D19161009D124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,6 +193,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		971393EE21D2979B00BCB212 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				971393F421D2A18C00BCB212 /* CircleImage.swift */,
+				971393EF21D297DC00BCB212 /* InsetTextField.swift */,
+				971393F621D2A1DC00BCB212 /* RoundedUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		971393F121D2988800BCB212 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				971393F221D298C100BCB212 /* HextoUIColor.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		97E9EC3C21D19160009D124F = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +232,8 @@
 		97E9EC4721D19160009D124F /* theParker */ = {
 			isa = PBXGroup;
 			children = (
+				971393F121D2988800BCB212 /* Utilities */,
+				971393EE21D2979B00BCB212 /* View */,
 				97E9EC5C21D1988E009D124F /* slideViews */,
 				97E9EC6521D1989E009D124F /* LottieAnimationsJSON */,
 				97E9ECF421D19D4C009D124F /* AppDelegate.swift */,
@@ -570,6 +598,7 @@
 			files = (
 				97E9ECE421D19AFF009D124F /* LoginViewController.swift in Sources */,
 				97E9ECE521D19AFF009D124F /* MainPageViewController.swift in Sources */,
+				971393F321D298C100BCB212 /* HextoUIColor.swift in Sources */,
 				97E9ECF221D19B13009D124F /* DescriptionViewController.swift in Sources */,
 				97E9ECF521D19D4C009D124F /* AppDelegate.swift in Sources */,
 				97E9EC6221D1988E009D124F /* Front.swift in Sources */,
@@ -577,9 +606,12 @@
 				97E9ECDE21D19A91009D124F /* SWRevealViewController.m in Sources */,
 				97E9ECE621D19AFF009D124F /* ProfileDetailViewController.swift in Sources */,
 				97E9EC6421D1988E009D124F /* post.swift in Sources */,
+				971393F721D2A1DC00BCB212 /* RoundedUIView.swift in Sources */,
 				97E9ECF321D19B13009D124F /* SettingsViewController.swift in Sources */,
 				97E9ECE321D19AFF009D124F /* ForanimationsViewController.swift in Sources */,
+				971393F021D297DC00BCB212 /* InsetTextField.swift in Sources */,
 				97E9ECEE21D19B13009D124F /* OfferParkingViewController.swift in Sources */,
+				971393F521D2A18C00BCB212 /* CircleImage.swift in Sources */,
 				97E9ECEF21D19B13009D124F /* PostMapPinViewController.swift in Sources */,
 				97E9ECF121D19B13009D124F /* MyCarsViewController.swift in Sources */,
 			);

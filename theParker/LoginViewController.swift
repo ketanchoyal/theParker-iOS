@@ -29,7 +29,6 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var R: UIView!
     @IBOutlet weak var E: UIView!
     @IBOutlet weak var RR: UIView!
-    @IBOutlet weak var LGBTNVIEWVIEW: UIView!
     @IBOutlet weak var logbtnviewTRA: NSLayoutConstraint!
     @IBOutlet weak var graforPlus: NSLayoutConstraint!
     @IBOutlet weak var graStackBOT: NSLayoutConstraint!
@@ -158,48 +157,15 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         self.UserImage.layer.cornerRadius = self.UserImage.frame.height/2
         self.UserImage.clipsToBounds = true
         
-        self.LGBTNView.layer.cornerRadius = 15
-        self.LGBTNView.clipsToBounds = true
+//        self.LGBTNView.layer.cornerRadius = 15
+//        self.LGBTNView.clipsToBounds = true
+//
+//        self.SIGNUPVIEW.layer.cornerRadius = 30
+//        self.SIGNUPVIEW.clipsToBounds = true
+//
+//        self.loginView.layer.cornerRadius = 30
+//        self.loginView.clipsToBounds = true
         
-        self.SIGNUPVIEW.layer.cornerRadius = 30
-        self.SIGNUPVIEW.clipsToBounds = true
-        
-        self.loginView.layer.cornerRadius = 30
-        self.loginView.clipsToBounds = true
-        
-        let myColor : UIColor = self.hexStringToUIColor(hex: "#d7d2cc")
-        
-        self.signupNAme.layer.cornerRadius = 15
-        self.signupNAme.clipsToBounds = true
-        self.signupNAme.layer.borderColor = myColor.cgColor
-        self.signupNAme.layer.borderWidth = 2
-        
-        self.signupPASS.layer.cornerRadius = 15
-        self.signupPASS.clipsToBounds = true
-        self.signupPASS.layer.borderColor = myColor.cgColor
-        self.signupPASS.layer.borderWidth = 2
-        
-        self.signupEmail.layer.cornerRadius = 15
-        self.signupEmail.clipsToBounds = true
-        self.signupEmail.layer.borderColor = myColor.cgColor
-        self.signupEmail.layer.borderWidth = 2
-        
-        
-        self.signupCONPASS.layer.cornerRadius = 15
-        self.signupCONPASS.clipsToBounds = true
-        self.signupCONPASS.layer.borderColor = myColor.cgColor
-        self.signupCONPASS.layer.borderWidth = 2
-        
-        self.user.layer.cornerRadius = 15
-        self.user.layer.borderColor = myColor.cgColor
-        self.user.layer.borderWidth = 2
-        
-        self.pass.layer.cornerRadius = 15
-        self.pass.layer.borderColor = myColor.cgColor
-        self.pass.layer.borderWidth = 2
-        
-        self.user.clipsToBounds = true
-        self.pass.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     @IBAction func loginbtn(_ sender: Any) {
@@ -241,9 +207,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     }
     
     
-    @IBAction func signInFIrebase(_ sender: UIButton) {
-        
-        
+    @IBAction func signUpFIrebase(_ sender: UIButton) {
         
         if self.signupNAme.text == "" || self.signupPASS.text == "" || self.signupEmail.text == "" || self.signupCONPASS.text == "" {
             self.alert(message: "Empty Field!")
@@ -334,7 +298,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         self.present(alert, animated: true, completion: nil)
     }
     
-    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
+    func uploadProfileImage(_ image:UIImage, completion: @escaping (_ url:URL?)->()) {
         
         //refer to firebase storage and get user id, otherwise return
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -652,33 +616,11 @@ extension LoginViewController{
         
     }
     
-    func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        
-        if ((cString.count) != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
-    
     func addgrad(){
         let gradientView = EZYGradientView()
         gradientView.frame = GradientView.bounds
-        gradientView.firstColor = self.hexStringToUIColor(hex: "#000000")
-        gradientView.secondColor = self.hexStringToUIColor(hex: "#4B0082")
+        gradientView.firstColor = HextoUIColor.instance.hexString(hex: "#000000")
+        gradientView.secondColor = HextoUIColor.instance.hexString(hex: "#4B0082")
         gradientView.angleº = 180.0
         gradientView.colorRatio = 0.4
         gradientView.fadeIntensity = 1.0
@@ -693,8 +635,8 @@ extension LoginViewController{
     func Logingrad(){
         let gradientView = EZYGradientView()
         gradientView.frame = LGBTNView.bounds
-        gradientView.firstColor = self.hexStringToUIColor(hex: "#111111")
-        gradientView.secondColor = self.hexStringToUIColor(hex: "#4B0082")
+        gradientView.firstColor = HextoUIColor.instance.hexString(hex: "#111111")
+        gradientView.secondColor = HextoUIColor.instance.hexString(hex: "#4B0082")
         gradientView.angleº = 90.0
         gradientView.colorRatio = 0.4
         gradientView.fadeIntensity = 1.5
