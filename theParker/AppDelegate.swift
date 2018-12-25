@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Parker
-//
-//  Created by Rahul Dhiman on 05/03/18.
-//  Copyright © 2018 Rahul Dhiman. All rights reserved.
-//
-
 import UIKit
 import Firebase
 import FirebaseMessaging

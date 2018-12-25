@@ -1,11 +1,3 @@
-//
-//  LoginViewController.swift
-//  Parker
-//
-//  Created by Rahul Dhiman on 06/03/18.
-//  Copyright © 2018 Rahul Dhiman. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import Firebase

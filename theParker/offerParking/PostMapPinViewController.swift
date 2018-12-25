@@ -1,10 +1,3 @@
-//
-//  PostMapPinViewController.swift
-//  Parker
-//
-//  Created by Rahul Dhiman on 20/03/18.
-//  Copyright © 2018 Rahul Dhiman. All rights reserved.
-//
 
 import UIKit
 import GoogleMaps
@@ -262,14 +255,13 @@ extension PostMapPinViewController{
         //Going deep into firebase hierarchy
         self.HandleLocation = self.ref?.child("user").child(uid).child("ArrayPins").observe(.value, with: { (snapshot) in
             
-            if let value = snapshot.childrenCount as? UInt{
+            guard let value = snapshot.childrenCount as? UInt else { return }
                 
                 print("VALUE VALUE")
                 print(value)
                 let vvalue = Int(value)
                 self.FetchedArray = vvalue
                 
-            }
         })
     }
 }
@@ -292,7 +284,7 @@ extension PostMapPinViewController{
             self.appendArray(completion: { success in
                 if success {
                     print("Yahoo Yahoo Yahooo")
-                    
+                    //self.performSegue(withIdentifier: "sspin", sender: nil)
                 }
                 else{
                     print("NO NO NO")

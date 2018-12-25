@@ -1,11 +1,3 @@
-//
-//  OfferParkingViewController.swift
-//  Parker
-//
-//  Created by Rahul Dhiman on 16/03/18.
-//  Copyright © 2018 Rahul Dhiman. All rights reserved.
-//
-
 import UIKit
 
 class OfferParkingViewController: UIViewController {
