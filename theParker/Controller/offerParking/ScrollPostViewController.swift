@@ -122,7 +122,7 @@ extension ScrollPostViewController{
     }
     
     @objc func FinalSUb (sender: UIButton){
-        //print("BALLE BALLE BALLE BALLE BALLE")
+        
         self.fireFetch()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
@@ -153,9 +153,6 @@ extension ScrollPostViewController{
     
     func alert(message:String )
     {
-        
-        
-        
         let alertview = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alertview.addAction(UIAlertAction(title: "Try Again!", style: .default, handler: {
             action in
@@ -180,7 +177,6 @@ extension ScrollPostViewController{
         })
         
         handleU = self.ref?.child("user").child(uid).child("u").observe(.value, with: { (snapshot) in
-            
             
             if let value1 = snapshot.value as? Int{
                 

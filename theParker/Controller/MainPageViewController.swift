@@ -274,19 +274,11 @@ extension MainPageViewController: GMSAutocompleteViewControllerDelegate {
         locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         // createMarker(titleMarker: "Location Start", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         
-        
-        
-        
         if locationStart.coordinate.longitude != 0.0 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.googleMaps.animate(toZoom: 16.0)
             })
         }
-        
-        
-        
-        
-        
         
         self.googleMaps.camera = camera
         self.dismiss(animated: true, completion: nil)
@@ -406,10 +398,9 @@ extension MainPageViewController {
     
     func handlingGlobalPins(){
         print("GGGG here")
-        if self.countG! > 1 {
+        self.ref = Database.database().reference()
+        if self.countG! > 0 {
             for c in 1...self.countG! {
-                self.ref = Database.database().reference()
-                
                 HandlePins = self.ref?.child("GlobalPins").child("\(c)").observe(.value, with: { (snapshot) in
                     print("Printing C")
                     print(c)
@@ -418,13 +409,12 @@ extension MainPageViewController {
                         // print(valueactual)
                         self.showpins.append(valueactual)
                         //print(valueactual)
-                        // print(self.showpins)
+                        //print(self.showpins)
                     }
                     
                     if c == self.countG!{
                         self.IamshowingPins()
                     }
-                    
                 })
             }
         }
@@ -468,7 +458,7 @@ extension MainPageViewController {
                 var neededata:[String] = []
                 let marker = GMSMarker()
                 if c < self.showpins.count {
-                    for (key,value) in self.showpins[c]{
+                    for (_,value) in self.showpins[c] {
                         for (key2,val) in value {
                             var count = 0
                             

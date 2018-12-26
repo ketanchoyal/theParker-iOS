@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="724"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3F2-Pv-9ZN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="579.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="611"/>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WiF-TL-ijX">
-                                        <rect key="frame" x="0.0" y="579.33333333333337" width="375" height="144.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="611" width="375" height="113"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-xF-diF">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
@@ -33,7 +33,7 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.66092631270000002" green="0.331260744" blue="0.89342084389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyQ-bh-BtG">
-                                                <rect key="frame" x="0.0" y="47.000000000000007" width="375" height="97.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="47" width="375" height="66"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -439,6 +439,11 @@
                                                     <action selector="loginbtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pza-xO-w2s"/>
                                                 </connections>
                                             </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3Hz-fl-Reb">
+                                                <rect key="frame" x="77" y="16" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -517,8 +522,6 @@
                         <outlet property="H" destination="Als-OG-rwM" id="uTV-bE-v0n"/>
                         <outlet property="K" destination="tip-vo-Vsa" id="U4J-Hd-kcO"/>
                         <outlet property="LGBTNView" destination="cui-w3-QX2" id="SDP-cl-UdN"/>
-                        <outlet property="LOGINSTACKVIEW" destination="Qfb-0J-3AR" id="bs0-ZX-P04"/>
-                        <outlet property="LOGSTACK" destination="nyQ-Pu-vlN" id="5o8-uJ-6sk"/>
                         <outlet property="MainLogin" destination="IiZ-1k-vSc" id="Nju-Uz-HYj"/>
                         <outlet property="MainSIGn" destination="LNe-cE-AY8" id="zIC-Kf-uTp"/>
                         <outlet property="P" destination="5OA-eP-Tcg" id="3KC-pj-J4M"/>
@@ -528,8 +531,8 @@
                         <outlet property="SIGNUPVIEW" destination="4Np-ak-1P2" id="eKp-na-RaG"/>
                         <outlet property="T" destination="lCx-dg-faR" id="hVy-NI-rHg"/>
                         <outlet property="UserImage" destination="c49-OO-fmH" id="BSc-hm-l6R"/>
+                        <outlet property="actInd" destination="3Hz-fl-Reb" id="u4L-b2-49S"/>
                         <outlet property="firebasesignupBTN" destination="HPN-in-To5" id="f2T-5d-vDd"/>
-                        <outlet property="gradientStack" destination="0oF-9C-CPc" id="6t1-mo-P3k"/>
                         <outlet property="gradientViewHeight" destination="2ax-hk-6uO" id="uxo-1S-QPe"/>
                         <outlet property="loginView" destination="9VT-8j-6Lc" id="VFc-Vw-aaW"/>
                         <outlet property="pass" destination="393-s4-mS8" id="dJV-18-bB4"/>
@@ -657,24 +660,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c6e-Cr-eKj">
                                         <rect key="frame" x="0.0" y="247.33333333333331" width="238" height="247.33333333333331"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g5-v0-eZi">
-                                                <rect key="frame" x="0.0" y="0.0" width="238" height="82.333333333333329"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                <state key="normal" title="  Offer Your Parking">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="Tdx-mW-ZA2" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="VMv-tZ-MBF"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOj-PZ-EMW">
-                                                <rect key="frame" x="0.0" y="82.333333333333371" width="238" height="82.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="238" height="82.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="  Looking For Parking">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="qrb-mi-BMO" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="7B3-g7-3f4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g5-v0-eZi">
+                                                <rect key="frame" x="0.0" y="82.333333333333371" width="238" height="82.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="  Offer Your Parking">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="Tdx-mW-ZA2" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="VMv-tZ-MBF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3O-cI-hme">
@@ -692,24 +695,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mY2-5U-Mcy">
                                         <rect key="frame" x="0.0" y="494.66666666666657" width="238" height="247.33333333333331"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-3r-0so">
-                                                <rect key="frame" x="0.0" y="0.0" width="238" height="82.333333333333329"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                <state key="normal" title="  Settings">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="3ez-Xg-nNJ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Zes-d1-UP9"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub2-CQ-T8c">
-                                                <rect key="frame" x="0.0" y="82.333333333333371" width="238" height="82.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="238" height="82.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="  E-Wallet">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="qPd-Wc-ESC" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="sQh-4S-UcB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-3r-0so">
+                                                <rect key="frame" x="0.0" y="82.333333333333371" width="238" height="82.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="  Settings">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="3ez-Xg-nNJ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Zes-d1-UP9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Suk-g2-mGE">
@@ -1258,6 +1261,6 @@
         <image name="plus-sign-in-a-black-circle" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7B3-g7-3f4"/>
+        <segue reference="nxI-eh-Esk"/>
     </inferredMetricsTieBreakers>
 </document>

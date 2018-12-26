@@ -254,9 +254,9 @@
 			isa = PBXGroup;
 			children = (
 				97E9EC5D21D1988E009D124F /* post.xib */,
-				97E9EC5E21D1988E009D124F /* Front.swift */,
-				97E9EC5F21D1988E009D124F /* Front.xib */,
 				97E9EC6021D1988E009D124F /* post.swift */,
+				97E9EC5F21D1988E009D124F /* Front.xib */,
+				97E9EC5E21D1988E009D124F /* Front.swift */,
 			);
 			path = slideViews;
 			sourceTree = "<group>";

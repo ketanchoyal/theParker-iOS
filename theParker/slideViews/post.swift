@@ -45,9 +45,6 @@ class post: UIView, UITextFieldDelegate {
     
     @IBAction func DoneButtonDone(_ sender: Any) {
         
-
-        
-        
         if PlaceDescription.text != nil {
             DataDescription = PlaceDescription.text!
         }
@@ -67,7 +64,6 @@ class post: UIView, UITextFieldDelegate {
         if MyPrice.text != nil {
              DataMyPrice = MyPrice.text!
         }
- 
         
         if DataDescription == ""{
             self.alert(message: "Description")
@@ -107,10 +103,6 @@ class post: UIView, UITextFieldDelegate {
             let databaseRefGlobal = Database.database().reference().child("GlobalPins/\(count!+1)")
             let countUser = Database.database().reference().child("count")
             let countmin = Database.database().reference().child("user/\(uid)")
-           
-            
-            
-            
             
             let userObject = [
                 "Description":DataDescription,
@@ -124,40 +116,28 @@ class post: UIView, UITextFieldDelegate {
                 ] as [String:Any]
             
             let userObject2 = [
-                "Description":DataDescription,
-                "Location":DataLocation,
-                "Car":DataCar,
-                "Time":DataTime,
-                "Price":DataTotalPrice,
-                "Day":day,
-                "Month":month,
-                "Year":year
-                ] as [String:Any]
-            
-            let userObject3 = [
                 "g": count!+1
                 ] as [String:Any]
             
-            let userObject4 = [
+            let userObject3 = [
                 "u": userCount!+1
                 ] as [String:Any]
             
-            databaseRef.updateChildValues(userObject){ error, ref in
+            databaseRef.updateChildValues(userObject){ (error, ref) in
                // completion(error == nil)
+                
             }
-            databaseRefGlobal.updateChildValues(userObject2){ error, ref in
+            databaseRefGlobal.updateChildValues(userObject){ (error, ref) in
                 //completion(error == nil)
             }
-            countUser.updateChildValues(userObject3){ error, ref in
+            countUser.updateChildValues(userObject2){ (error, ref) in
                 //completion(error == nil)
             }
-            countmin.updateChildValues(userObject4){ error, ref in
+            countmin.updateChildValues(userObject3){ (error, ref) in
                 //completion(error == nil)
             }
  
         }
-    
-    
     }
     
     
@@ -251,9 +231,6 @@ class post: UIView, UITextFieldDelegate {
     
     func alert(message:String )
     {
-        
-        
-        
         let alertview = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alertview.addAction(UIAlertAction(title: "Try Again!", style: .default, handler: {
             action in
