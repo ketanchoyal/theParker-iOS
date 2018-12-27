@@ -20,23 +20,22 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
     var pintimer = Timer()
     
     
-    @IBOutlet weak var HeightGoogleMapsCONST: NSLayoutConstraint!
     @IBOutlet var MainView: UIView!
     @IBOutlet weak var googleMaps: GMSMapView!
     @IBOutlet weak var menu: UIBarButtonItem!
     
-    @IBOutlet weak var BookingStack: UIStackView!
-    @IBOutlet weak var CarName: UILabel!
-    @IBOutlet weak var TimeInfo: UILabel!
-    @IBOutlet weak var PriceInfo: UILabel!
-    @IBOutlet weak var LocationInfo: UILabel!
-    @IBOutlet weak var Description: UILabel!
-    @IBOutlet weak var BookButton: UIButton!
-    
-    @IBAction func bookingbtnclicked(_ sender: Any) {
-        
-        
-    }
+//    @IBOutlet weak var BookingStack: UIStackView!
+//    @IBOutlet weak var CarName: UILabel!
+//    @IBOutlet weak var TimeInfo: UILabel!
+//    @IBOutlet weak var PriceInfo: UILabel!
+//    @IBOutlet weak var LocationInfo: UILabel!
+//    @IBOutlet weak var Description: UILabel!
+//    @IBOutlet weak var BookButton: UIButton!
+//
+//    @IBAction func bookingbtnclicked(_ sender: Any) {
+//
+//
+//    }
     
     var CurLocationNow:CLLocation?
     var locationManager = CLLocationManager()
@@ -56,7 +55,7 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.barTintColor = self.hexStringToUIColor(hex: "#4C177D")
+        navigationController?.navigationBar.barTintColor = HextoUIColor.instance.hexString(hex: "#4C177D")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
@@ -69,8 +68,8 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         super.viewDidLoad()
         
         
-        self.BookButton.layer.cornerRadius = 10
-        self.BookingStack.isHidden = true
+//        self.BookButton.layer.cornerRadius = 10
+//        self.BookingStack.isHidden = true
         self.ScrollHandling()
         self.fetchTimer()
         print("I AM A CODER")
@@ -97,7 +96,7 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         self.googleMaps.settings.compassButton = true
         self.googleMaps.settings.zoomGestures = true
         
-        self.setforSE()
+//        self.setforSE()
         
         self.scheduledTimerWithTimeInterval()
         
@@ -152,12 +151,12 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
         print("TAPPED TAPPED")
         
         let DataNeeded:[String] = marker.userData as! [String]
-        self.CarName.text = DataNeeded[2]
-        self.LocationInfo.text = DataNeeded[0]
-        self.Description.text = DataNeeded[5]
-        self.TimeInfo.text = marker.title
-        self.PriceInfo.text = marker.snippet
-        self.BookingStack.isHidden = false
+//        self.CarName.text = DataNeeded[2]
+//        self.LocationInfo.text = DataNeeded[0]
+//        self.Description.text = DataNeeded[5]
+//        self.TimeInfo.text = marker.title
+//        self.PriceInfo.text = marker.snippet
+//        self.BookingStack.isHidden = false
         return false
     }
     
@@ -301,51 +300,24 @@ extension MainPageViewController: GMSAutocompleteViewControllerDelegate {
 
 extension MainPageViewController {
     
-    func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        
-        if ((cString.count) != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
-    
-    
-    
-    struct ScreenSize
-    {
-        static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
-        static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
-        static let SCREEN_MAX_LENGTH = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
-        static let SCREEN_MIN_LENGTH = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
-    }
-    
-    struct DeviceType
-    {
-        static let IS_IPHONE_5 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
-        static let IS_IPHONE_6 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
-        static let IS_IPHONE_6P = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-        static let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
-    }
+//    struct ScreenSize
+//    {
+//        static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
+//        static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+//        static let SCREEN_MAX_LENGTH = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
+//        static let SCREEN_MIN_LENGTH = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
+//    }
+//
+//    struct DeviceType
+//    {
+//        static let IS_IPHONE_5 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
+//        static let IS_IPHONE_6 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
+//        static let IS_IPHONE_6P = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
+//        static let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
+//    }
     
     func alert(message:String )
     {
-        
-        
-        
         let alertview = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alertview.addAction(UIAlertAction(title: "Try Again!", style: .default, handler: {
             action in
@@ -387,14 +359,14 @@ extension MainPageViewController {
         
     }
     
-    func setforSE(){
-        if DeviceType.IS_IPHONE_5 {
-            self.HeightGoogleMapsCONST.constant -= 100
-        }
-        if DeviceType.IS_IPHONE_6{
-            self.HeightGoogleMapsCONST.constant -= 50
-        }
-    }
+//    func setforSE(){
+//        if DeviceType.IS_IPHONE_5 {
+//            self.HeightGoogleMapsCONST.constant -= 100
+//        }
+//        if DeviceType.IS_IPHONE_6{
+//            self.HeightGoogleMapsCONST.constant -= 50
+//        }
+//    }
     
     func handlingGlobalPins(){
         print("GGGG here")
@@ -478,16 +450,17 @@ extension MainPageViewController {
                                     print(marker.position)
                                 }
                             }
-                            
-                            if key2 == "Time"{
-                                let time = val as! String
-                                marker.title = "\(time)"
-                                print(marker.title!)
-                                count += 1
-                            }
+//
+//                            if key2 == "Time"{
+//                                let time = val as! String
+//                                marker.title = "\(time)"
+//                                print(marker.title!)
+//                                count += 1
+//                            }
                             if key2 == "Price"{
                                 let snip = val as! String
                                 marker.snippet = "\(snip)"
+                                marker.title = "Baki hai"
                                 print(marker.snippet!)
                                 count += 1
                                 print("DONE DONE DONE")
@@ -496,35 +469,35 @@ extension MainPageViewController {
                                 marker.appearAnimation = .pop
                             }
                             
-                            if key2 == "Car"{
-                                
-                                neededata.append(val as! String)
-                            }
-                            
-                            if key2 == "Location"{
-                                neededata.append(val as! String)
-                            }
-                            
-                            if key2 == "Description"{
-                                neededata.append(val as! String)
-                            }
-                            
-                            if key2 == "Day"{
-                                let rollNumber:String = String(format: "%@", val as! CVarArg)
-                                neededata.append(rollNumber)
-                            }
-                            
-                            if key2 == "Month"{
-                                let rollNumber:String = String(format: "%@", val as! CVarArg)
-                                neededata.append(rollNumber)
-                            }
-                            
-                            if key2 == "Year" {
-                                print(val)
-                                let rollNumber:String = String(format: "%@", val as! CVarArg)
-                                neededata.append(rollNumber)
-                            }
-                            print("countbro")
+//                            if key2 == "Car"{
+//
+//                                neededata.append(val as! String)
+//                            }
+//
+//                            if key2 == "Location"{
+//                                neededata.append(val as! String)
+//                            }
+//
+//                            if key2 == "Description"{
+//                                neededata.append(val as! String)
+//                            }
+//
+//                            if key2 == "Day"{
+//                                let rollNumber:String = String(format: "%@", val as! CVarArg)
+//                                neededata.append(rollNumber)
+//                            }
+//
+//                            if key2 == "Month"{
+//                                let rollNumber:String = String(format: "%@", val as! CVarArg)
+//                                neededata.append(rollNumber)
+//                            }
+//
+//                            if key2 == "Year" {
+//                                print(val)
+//                                let rollNumber:String = String(format: "%@", val as! CVarArg)
+//                                neededata.append(rollNumber)
+//                            }
+//                            print("countbro")
                             
                         }
                         
@@ -551,67 +524,67 @@ extension MainPageViewController {
         //self.ppintimer()
     }
     
-    func ppintimer(){
-        pintimer =  Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.pintimedone), userInfo: nil, repeats: true)
-    }
-    
-    @objc func pintimedone() {
-        
-        let mdate = Date()
-        let mcalendar = Calendar.current
-        let day = mcalendar.component(.day, from: mdate)
-        let month = mcalendar.component(.month, from: mdate)
-        let year = mcalendar.component(.year, from: mdate)
-        var hour = mcalendar.component(.hour, from: mdate)
-        let minutes = mcalendar.component(.minute, from: mdate)
-        
-        print(markers.count)
-        
-        for c in 0...self.markers.count-2{
-            
-            if hour > 12 {
-                hour = hour - 12
-            }
-            
-            let stringArray = markers[c].title?.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
-            
-            let DataNeeded : [String] = markers[c].userData as! [String]
-            
-            print("DataNeeded")
-            print(DataNeeded)
-            
-            if Int(DataNeeded[3])! < year {
-                
-                markers[c].map = nil
-            }
-                
-            else if Int(DataNeeded[1])! < month {
-                
-                markers[c].map = nil
-            }
-                
-            else if Int(DataNeeded[6])! < day {
-                
-                markers[c].map = nil
-            }
-                
-            else if Int(stringArray![0])! < hour {
-                
-                markers[c].map = nil
-            }
-                
-            else if Int(stringArray![1])! < minutes {
-                
-                markers[c].map = nil
-            }
-                
-            else {
-                markers[c].map = self.googleMaps
-            }
-            
-            
-        }
-    }
+//    func ppintimer(){
+//        pintimer =  Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.pintimedone), userInfo: nil, repeats: true)
+//    }
+//
+//    @objc func pintimedone() {
+//
+//        let mdate = Date()
+//        let mcalendar = Calendar.current
+//        let day = mcalendar.component(.day, from: mdate)
+//        let month = mcalendar.component(.month, from: mdate)
+//        let year = mcalendar.component(.year, from: mdate)
+//        var hour = mcalendar.component(.hour, from: mdate)
+//        let minutes = mcalendar.component(.minute, from: mdate)
+//
+//        print(markers.count)
+//
+//        for c in 0...self.markers.count-2{
+//
+//            if hour > 12 {
+//                hour = hour - 12
+//            }
+//
+//            let stringArray = markers[c].title?.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
+//
+//            let DataNeeded : [String] = markers[c].userData as! [String]
+//
+//            print("DataNeeded")
+//            print(DataNeeded)
+//
+//            if Int(DataNeeded[3])! < year {
+//
+//                markers[c].map = nil
+//            }
+//
+//            else if Int(DataNeeded[1])! < month {
+//
+//                markers[c].map = nil
+//            }
+//
+//            else if Int(DataNeeded[6])! < day {
+//
+//                markers[c].map = nil
+//            }
+//
+//            else if Int(stringArray![0])! < hour {
+//
+//                markers[c].map = nil
+//            }
+//
+//            else if Int(stringArray![1])! < minutes {
+//
+//                markers[c].map = nil
+//            }
+//
+//            else {
+//                markers[c].map = self.googleMaps
+//            }
+//
+//
+//        }
+//    }
     
 }
 

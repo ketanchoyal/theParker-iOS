@@ -89,6 +89,10 @@
 		97E9ECF321D19B13009D124F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECED21D19B13009D124F /* SettingsViewController.swift */; };
 		97E9ECF521D19D4C009D124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECF421D19D4C009D124F /* AppDelegate.swift */; };
 		97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8421D2D76E0015917F /* E-WalletVC.swift */; };
+		97F01C8721D42BEC0015917F /* ParkingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8621D42BEC0015917F /* ParkingDetailsVC.swift */; };
+		97F01C8921D430A20015917F /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8821D430A20015917F /* UnderlineTextField.swift */; };
+		97F01C8D21D456290015917F /* AdditionalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8C21D456290015917F /* AdditionalDetailsVC.swift */; };
+		97F01C8F21D456760015917F /* AvailabilityAndPriceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8E21D456760015917F /* AvailabilityAndPriceVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +182,10 @@
 		97E9ECED21D19B13009D124F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		97E9ECF421D19D4C009D124F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97F01C8421D2D76E0015917F /* E-WalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-WalletVC.swift"; sourceTree = "<group>"; };
+		97F01C8621D42BEC0015917F /* ParkingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsVC.swift; sourceTree = "<group>"; };
+		97F01C8821D430A20015917F /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
+		97F01C8C21D456290015917F /* AdditionalDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalDetailsVC.swift; sourceTree = "<group>"; };
+		97F01C8E21D456760015917F /* AvailabilityAndPriceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityAndPriceVC.swift; sourceTree = "<group>"; };
 		C29E5AA57B12B47A0BA6E563 /* Pods-theParker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theParker.release.xcconfig"; path = "Pods/Target Support Files/Pods-theParker/Pods-theParker.release.xcconfig"; sourceTree = "<group>"; };
 		F4071BD13F20B6292D4B20F5 /* Pods_theParker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_theParker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -200,6 +208,7 @@
 				971393F421D2A18C00BCB212 /* CircleImage.swift */,
 				971393EF21D297DC00BCB212 /* InsetTextField.swift */,
 				971393F621D2A1DC00BCB212 /* RoundedUIView.swift */,
+				97F01C8821D430A20015917F /* UnderlineTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +339,9 @@
 				97E9ECE821D19B11009D124F /* OfferParkingViewController.swift */,
 				97E9ECE921D19B11009D124F /* PostMapPinViewController.swift */,
 				97E9ECEA21D19B11009D124F /* ScrollPostViewController.swift */,
+				97F01C8621D42BEC0015917F /* ParkingDetailsVC.swift */,
+				97F01C8C21D456290015917F /* AdditionalDetailsVC.swift */,
+				97F01C8E21D456760015917F /* AvailabilityAndPriceVC.swift */,
 			);
 			path = offerParking;
 			sourceTree = "<group>";
@@ -613,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97F01C8721D42BEC0015917F /* ParkingDetailsVC.swift in Sources */,
 				97E9ECE421D19AFF009D124F /* LoginViewController.swift in Sources */,
 				97E9ECE521D19AFF009D124F /* MainPageViewController.swift in Sources */,
 				971393F321D298C100BCB212 /* HextoUIColor.swift in Sources */,
@@ -624,6 +637,8 @@
 				97E9ECE621D19AFF009D124F /* ProfileDetailViewController.swift in Sources */,
 				97E9EC6421D1988E009D124F /* post.swift in Sources */,
 				971393F721D2A1DC00BCB212 /* RoundedUIView.swift in Sources */,
+				97F01C8D21D456290015917F /* AdditionalDetailsVC.swift in Sources */,
+				97F01C8F21D456760015917F /* AvailabilityAndPriceVC.swift in Sources */,
 				97E9ECF321D19B13009D124F /* SettingsViewController.swift in Sources */,
 				97E9ECE321D19AFF009D124F /* ForanimationsViewController.swift in Sources */,
 				971393F021D297DC00BCB212 /* InsetTextField.swift in Sources */,
@@ -632,6 +647,7 @@
 				97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */,
 				97E9ECEF21D19B13009D124F /* PostMapPinViewController.swift in Sources */,
 				97E9ECF121D19B13009D124F /* MyCarsViewController.swift in Sources */,
+				97F01C8921D430A20015917F /* UnderlineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
