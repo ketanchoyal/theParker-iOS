@@ -205,6 +205,7 @@
 		971393EE21D2979B00BCB212 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				97E9EC5C21D1988E009D124F /* slideViews */,
 				971393F421D2A18C00BCB212 /* CircleImage.swift */,
 				971393EF21D297DC00BCB212 /* InsetTextField.swift */,
 				971393F621D2A1DC00BCB212 /* RoundedUIView.swift */,
@@ -219,6 +220,13 @@
 				971393F221D298C100BCB212 /* HextoUIColor.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		97D1DA3221D62EA400AE76CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		97E9EC3C21D19160009D124F = {
@@ -242,11 +250,11 @@
 		97E9EC4721D19160009D124F /* theParker */ = {
 			isa = PBXGroup;
 			children = (
+				97D1DA3221D62EA400AE76CA /* Model */,
 				97F01C8321D2D5FC0015917F /* Supporting Files */,
 				971393EE21D2979B00BCB212 /* View */,
 				97F01C8221D2D5B70015917F /* Controller */,
 				971393F121D2988800BCB212 /* Utilities */,
-				97E9EC5C21D1988E009D124F /* slideViews */,
 				97E9EC6521D1989E009D124F /* LottieAnimationsJSON */,
 				97E9ECF421D19D4C009D124F /* AppDelegate.swift */,
 				97E9ECDB21D19A8E009D124F /* theParker-Bridging-Header.h */,
