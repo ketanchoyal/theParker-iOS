@@ -12,6 +12,7 @@
 		971393F321D298C100BCB212 /* HextoUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F221D298C100BCB212 /* HextoUIColor.swift */; };
 		971393F521D2A18C00BCB212 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F421D2A18C00BCB212 /* CircleImage.swift */; };
 		971393F721D2A1DC00BCB212 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F621D2A1DC00BCB212 /* RoundedUIView.swift */; };
+		97D1DA3421D6870800AE76CA /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1DA3321D6870800AE76CA /* RoundedLabel.swift */; };
 		97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5121D19161009D124F /* LaunchScreen.storyboard */; };
 		97E9EC5B21D1946F009D124F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */; };
 		97E9EC6121D1988E009D124F /* post.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5D21D1988E009D124F /* post.xib */; };
@@ -101,6 +102,7 @@
 		971393F221D298C100BCB212 /* HextoUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HextoUIColor.swift; sourceTree = "<group>"; };
 		971393F421D2A18C00BCB212 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		971393F621D2A1DC00BCB212 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
+		97D1DA3321D6870800AE76CA /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 		97E9EC4521D19160009D124F /* theParker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theParker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E9EC5221D19161009D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E9EC5421D19161009D124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				971393EF21D297DC00BCB212 /* InsetTextField.swift */,
 				971393F621D2A1DC00BCB212 /* RoundedUIView.swift */,
 				97F01C8821D430A20015917F /* UnderlineTextField.swift */,
+				97D1DA3321D6870800AE76CA /* RoundedLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				97E9ECF221D19B13009D124F /* DescriptionViewController.swift in Sources */,
 				97E9ECF521D19D4C009D124F /* AppDelegate.swift in Sources */,
 				97E9EC6221D1988E009D124F /* Front.swift in Sources */,
+				97D1DA3421D6870800AE76CA /* RoundedLabel.swift in Sources */,
 				97E9ECF021D19B13009D124F /* ScrollPostViewController.swift in Sources */,
 				97E9ECDE21D19A91009D124F /* SWRevealViewController.m in Sources */,
 				97E9ECE621D19AFF009D124F /* ProfileDetailViewController.swift in Sources */,
