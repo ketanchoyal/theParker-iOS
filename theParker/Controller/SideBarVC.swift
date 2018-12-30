@@ -166,7 +166,7 @@ extension SideBarVC {
             guard let uid = Auth.auth().currentUser?.uid else { return }
             self.ref = Database.database().reference()
             //Going deep into firebase hierarchy
-            self.handleName = self.ref?.child("user").child(uid).child("Name").observe(.value, with: { (snapshot) in
+            self.handleName = self.ref?.child("user").child(uid).child("Profile").child("Name").observe(.value, with: { (snapshot) in
                 
                 if let value = snapshot.value as? String{
                     
@@ -175,7 +175,7 @@ extension SideBarVC {
                 }
             })
             
-            self.handleEmail = self.ref?.child("user").child(uid).child("Email").observe(.value, with: { (snapshot) in
+            self.handleEmail = self.ref?.child("user").child(uid).child("Profile").child("Email").observe(.value, with: { (snapshot) in
                 
                 if let value = snapshot.value as? String{
                     
@@ -185,7 +185,7 @@ extension SideBarVC {
                 
             })
             
-            self.handleImgUrl = self.ref?.child("user").child(uid).child("photoURL").observe(.value, with: { (snapshot) in
+            self.handleImgUrl = self.ref?.child("user").child(uid).child("Profile").child("photoURL").observe(.value, with: { (snapshot) in
                 
                 if let value = snapshot.value as? String{
                     

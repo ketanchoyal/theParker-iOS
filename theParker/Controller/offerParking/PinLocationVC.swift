@@ -4,7 +4,7 @@ import GoogleMaps
 import GooglePlaces
 import Firebase
 
-class PostMapPinViewController: UIViewController, GMSMapViewDelegate , CLLocationManagerDelegate{
+class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDelegate{
     
     var timer = Timer()
     var timer1 = Timer()
@@ -66,15 +66,25 @@ class PostMapPinViewController: UIViewController, GMSMapViewDelegate , CLLocatio
     
         if count > 0 {
             print(" BUTTO PREESSSESS HERE")
-            self.LoadIt()
+//            self.LoadIt()
             self.nextBTn.isEnabled = false
+            appendArray { (success) in
+                if success {
+                    self.performSegue(withIdentifier: "parkingDetails", sender: nil)
+                    self.nextBTn.isEnabled = true
+                } else {
+                    self.nextBTn.isEnabled = true
+                    self.alert(message: "Please try again!")
+                    return
+                }
+            }
         }
         
     }
  
 }
 
-extension PostMapPinViewController{
+extension PinLocationVC{
     func scheduledTimerWithTimeInterval(){
         // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload), userInfo: nil, repeats: true)
@@ -117,7 +127,7 @@ extension PostMapPinViewController{
     }
 }
 
-extension PostMapPinViewController{
+extension PinLocationVC{
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error to get location : \(error)")
     }
@@ -165,7 +175,7 @@ extension PostMapPinViewController{
    
 }
 
-extension PostMapPinViewController : UIGestureRecognizerDelegate
+extension PinLocationVC : UIGestureRecognizerDelegate
 {
     @objc func longPress(_ sender: UILongPressGestureRecognizer) {
         let newMarker = GMSMarker(position: MapView.projection.coordinate(for: sender.location(in: MapView)))
@@ -183,15 +193,21 @@ extension PostMapPinViewController : UIGestureRecognizerDelegate
 }
 
 
-extension PostMapPinViewController{
+extension PinLocationVC{
     
     func appendArray(completion: @escaping ((_ success:Bool)->())){
         
         let pushedLoc = String(describing: self.selectedLocation!)
-        let lat:Double = (self.selectedLocation?.latitude)!
-        let lon:Double = (self.selectedLocation?.longitude)!
-        let latlongarrat:[Double] = [lat,lon]
-        performSegue(withIdentifier: "parkingDetails", sender: nil)
+        let lat : Double = (self.selectedLocation?.latitude)!
+        let lon : Double = (self.selectedLocation?.longitude)!
+        let latlongarray:[Double] = [lat,lon]
+        
+        DataService.instance.pinToUpload?.pinloc.removeAll()
+        DataService.instance.pinToUpload?.pinloc.append(lat)
+        DataService.instance.pinToUpload?.pinloc.append(lon)
+        
+        completion(true)
+        
         //self.performSegue(withIdentifier: "sspin", sender: latlongarrat)
         print("PUSHED LOC HERE")
         print(pushedLoc)
@@ -203,7 +219,7 @@ extension PostMapPinViewController{
     }
 }
 
-extension PostMapPinViewController{
+extension PinLocationVC{
     
     func handling(){
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -222,39 +238,39 @@ extension PostMapPinViewController{
     }
 }
 
-extension PostMapPinViewController{
+extension PinLocationVC{
     
     
-    func LoadIt(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-        timer1 = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload1), userInfo: nil, repeats: true)
-    }
-    
-    @objc func chartload1(){
-        
-        if self.FetchedArray == 0 {
-            alert(message: "Sonething went wrong")
-        }
-        else{
-            self.stopTimer1()
-            self.appendArray(completion: { success in
-                if success {
-                    print("Yahoo Yahoo Yahooo")
-                    //self.performSegue(withIdentifier: "sspin", sender: nil)
-                }
-                else{
-                    print("NO NO NO")
-                }
-            })
-        }
-        
-        }
-    
-    
-    func stopTimer1(){
-        timer1.invalidate()
-        
-    }
+//    func LoadIt(){
+//        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+//        timer1 = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload1), userInfo: nil, repeats: true)
+//    }
+//
+//    @objc func chartload1(){
+//
+//        if self.FetchedArray == 0 {
+//            alert(message: "Sonething went wrong")
+//        }
+//        else{
+//            self.stopTimer1()
+//            self.appendArray(completion: { success in
+//                if success {
+//                    print("Yahoo Yahoo Yahooo")
+//                    //self.performSegue(withIdentifier: "sspin", sender: nil)
+//                }
+//                else{
+//                    print("NO NO NO")
+//                }
+//            })
+//        }
+//
+//        }
+//
+//
+//    func stopTimer1(){
+//        timer1.invalidate()
+//
+//    }
 }
 
     

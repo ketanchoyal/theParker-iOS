@@ -14,10 +14,6 @@ class MyCarsVC: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.title = "THE PARKER"
         
-        DataService.instance.getUserData { (success) in
-            //sdjk
-        }
-        
     }
     
     override func viewDidLoad() {

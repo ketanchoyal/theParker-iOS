@@ -95,6 +95,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        DataService.instance.getUserData { (succes, user) in
+            if succes {
+                DataService.instance.Name = user.Name
+                DataService.instance.Email = user.Email
+                DataService.instance.photoURL = user.photoURL
+            }
+        }
         ConnectToFCM(true)
     }
 

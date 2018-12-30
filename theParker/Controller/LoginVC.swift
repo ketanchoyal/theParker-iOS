@@ -292,12 +292,16 @@ class LoginVC: UIViewController , UITextFieldDelegate{
         
         let databaseRef = Database.database().reference().child("user/\(uid)")
         
-        let userObject = [
+        let Profile = [
             "Name": username,
             "Email" : Email,
-            "photoURL": profileImageURL.absoluteString,
+            "photoURL": profileImageURL.absoluteString
+        ] as [String : Any]
+        
+        let userObject = [
+            "Profile" : Profile,
             "ArrayPins": [String("1"):"Blah blah"]
-            ] as [String:Any]
+            ] as [String : Any]
         
         databaseRef.setValue(userObject) { error, ref in
             completion(error == nil)
