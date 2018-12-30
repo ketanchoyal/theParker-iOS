@@ -11,7 +11,7 @@ enum Located {
     case destinationLocation
 }
 
-class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate{
+class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate{
     
     var timer = Timer()
     var timerCount = Timer()
@@ -257,7 +257,7 @@ class MainPageViewController: UIViewController , GMSMapViewDelegate, CLLocationM
 
 
 // MARK: - GMS Auto Complete Delegate, for autocomplete search location
-extension MainPageViewController: GMSAutocompleteViewControllerDelegate {
+extension MainPageVC: GMSAutocompleteViewControllerDelegate {
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         print("Error \(error)")
@@ -298,7 +298,7 @@ extension MainPageViewController: GMSAutocompleteViewControllerDelegate {
     
 }
 
-extension MainPageViewController {
+extension MainPageVC {
     
 //    struct ScreenSize
 //    {

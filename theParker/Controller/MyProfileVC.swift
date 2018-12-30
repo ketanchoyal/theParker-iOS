@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsViewController: UIViewController {
+class MyProfileVC: UIViewController {
 
     @IBOutlet weak var menu: UIBarButtonItem!
     
@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController {
         let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationItem.title = "THE PARKER"
+        self.navigationItem.title = "My Profile"
         
         
     }
@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
 
 }
 
-extension SettingsViewController{
+extension MyProfileVC{
     
     
     func alert(message:String )

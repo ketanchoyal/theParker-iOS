@@ -1,6 +1,6 @@
 import UIKit
 
-class MyCarsViewController: UIViewController {
+class MyCarsVC: UIViewController {
 
     @IBOutlet weak var menu: UIBarButtonItem!
     
@@ -13,6 +13,10 @@ class MyCarsViewController: UIViewController {
         UINavigationBar.appearance().titleTextAttributes = attributes
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.title = "THE PARKER"
+        
+        DataService.instance.getUserData { (success) in
+            //sdjk
+        }
         
     }
     
@@ -29,7 +33,7 @@ class MyCarsViewController: UIViewController {
 
 }
 
-extension MyCarsViewController{
+extension MyCarsVC{
     
     func alert(message:String )
     {

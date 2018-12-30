@@ -4,7 +4,7 @@ import Firebase
 import EZYGradientView
 import Lottie
 
-class LoginViewController: UIViewController , UITextFieldDelegate{
+class LoginVC: UIViewController , UITextFieldDelegate{
     
     @IBOutlet var RootView: UIView!
     @IBOutlet weak var UserImage: UIImageView!
@@ -437,7 +437,7 @@ extension UIView {
     }
 }
 
-extension LoginViewController{
+extension LoginVC{
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
@@ -549,7 +549,7 @@ extension LoginViewController{
     
 }
 
-extension LoginViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension LoginVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
