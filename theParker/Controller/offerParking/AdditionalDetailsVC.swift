@@ -23,6 +23,8 @@ class AdditionalDetailsVC: UIViewController {
         descriptionTextView.delegate = self
         instructionTextView.delegate = self
         
+        print("pin : \(DataService.pinToUpload)")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,14 +60,14 @@ class AdditionalDetailsVC: UIViewController {
     func addData(completionHandler : @escaping (_ complete : Bool) -> ()) {
         let description = descriptionTextView.text
         let instruction = instructionTextView.text
-        var pin = DataService.instance.pinToUpload
+        let pin = DataService.pinToUpload
         
-        if !(description == "Add brief description/selling points of your space. E.g. 5 min walk to bus stop") ||  !description!.isBlank {
-            pin?.description = description
+        if (description != "Add brief description/selling points of your space. E.g. 5 min walk to bus stop") &&  !description!.isBlank {
+            pin.description = description!
         }
         
-        if !(instruction == "Add any special instruction required. E.g. Do not block the sideway") || !instruction!.isBlank {
-            pin?.instructions = instruction
+        if (instruction != "Add any special instruction required. E.g. Do not block the sideway") && !instruction!.isBlank {
+            pin.instructions = instruction!
         }
         completionHandler(true)
     }

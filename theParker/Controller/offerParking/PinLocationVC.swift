@@ -7,12 +7,10 @@ import Firebase
 class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDelegate{
     
     var timer = Timer()
-    var timer1 = Timer()
     var HandleLocation:DatabaseHandle?
     var ref:DatabaseReference?
     var count = 0
     var FetchedArray:Int? = 0
-    var flag = 0
     
     @IBOutlet weak var TopLabel: UILabel!
     @IBOutlet weak var MapView: GMSMapView!
@@ -25,6 +23,10 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
     var locationEnd = CLLocation()
     var selectedLocation : CLLocationCoordinate2D?
     var longPressRecognizer = UILongPressGestureRecognizer()
+    
+//    var pinToUpload : LocationPin?
+//    var lat : Double?
+//    var lon : Double?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -198,24 +200,35 @@ extension PinLocationVC{
     func appendArray(completion: @escaping ((_ success:Bool)->())){
         
         let pushedLoc = String(describing: self.selectedLocation!)
-        let lat : Double = (self.selectedLocation?.latitude)!
-        let lon : Double = (self.selectedLocation?.longitude)!
-        let latlongarray:[Double] = [lat,lon]
+        let lat = (self.selectedLocation?.latitude)!
+        let lon = (self.selectedLocation?.longitude)!
+        let latlongarray : [Double] = [lat,lon]
         
-        DataService.instance.pinToUpload?.pinloc.removeAll()
-        DataService.instance.pinToUpload?.pinloc.append(lat)
-        DataService.instance.pinToUpload?.pinloc.append(lon)
+//        pinToUpload?.pinloc.append(lat)
+//        pinToUpload?.pinloc.append(lon)
+        
+//        pinToUpload?.pinloc.append(lat!)
+//        pinToUpload?.pinloc.append(lon!)
+        
+        DataService.pinToUpload.pinloc.removeAll()
+        DataService.pinToUpload.pinloc.append(lat)
+        DataService.pinToUpload.pinloc.append(lon)
         
         completion(true)
         
-        //self.performSegue(withIdentifier: "sspin", sender: latlongarrat)
+        //self.performSegue(withIdentifier: "sspin", sender: pinToUpload)
         print("PUSHED LOC HERE")
         print(pushedLoc)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let sg = segue.destination as! ScrollPostViewController
-        //sg.latlongstring = sender as! [Double]
+        
+//        let parkingDetails = segue.destination as! ParkingDetailsVC
+//        parkingDetails.pinToUpload?.pinloc.append(lat!)
+//        parkingDetails.pinToUpload?.pinloc.append(lon!)
+        
+//        let sg = segue.destination as! ScrollPostViewController
+//        sg.latlongstring = sender as! [Double]
     }
 }
 

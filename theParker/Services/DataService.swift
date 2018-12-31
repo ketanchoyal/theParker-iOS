@@ -17,11 +17,11 @@ let DB_CURRENT_USER = DB_BASE.child("user").child(userID!)
 class DataService {
     static let instance = DataService()
     
-    var pinToUpload : LocationPin?
+    static var pinToUpload = LocationPin()
     
     public private(set) var REF_BASE = DB_BASE
     public private(set) var REF_USER = DB_USER
-    public private(set) var REF_GLOBAL_PINS = DB_BASE.child("Globalpins")
+    public private(set) var REF_GLOBAL_PINS = DB_BASE.child("GlobalPins")
     public private(set) var REF_GLOBAL_COUNT = DB_BASE.child("count")
     public private(set) var REF_CURRENT_USER = DB_CURRENT_USER
     public private(set) var REF_USER_PINS = DB_CURRENT_USER.child("ArrayPins")
@@ -51,7 +51,9 @@ class DataService {
         }
     }
     
-    func createPinLocation(forpin pin : LocationPin, completionhandeler : @escaping (_ completion : Bool) -> ()) {
+    func createPinLocation(completionhandeler : @escaping (_ completion : Bool) -> ()) {
+        let pin = DataService.pinToUpload
+        
         let by = pin.by
         let description = pin.description
         let instruction = pin.instructions
@@ -59,6 +61,10 @@ class DataService {
         let type = pin.type
         let availability = pin.availability
         let price_hourly = pin.price_hourly
+        let price_daily = pin.price_daily
+        let price_weekly = pin.price_weekly
+        let price_monthly = pin.price_monthly
+        let visibility = pin.visibility
         
         let Features = pin.features
         let pinloc = pin.pinloc
@@ -103,22 +109,25 @@ class DataService {
             "Features" : FeaturesDict,
             "pinloc" : pinlocDict,
             "by" : by,
-            "description" : description!,
-            "instructions" : instruction!,
+            "description" : description,
+            "instructions" : instruction,
             "numberofspot" : numberofspot,
             "availability" : availability,
             "price_hourly" : price_hourly,
+            "price_daily" : price_daily,
+            "price_weekly" : price_weekly,
+            "price_monthly" : price_monthly,
+            "visibility" : visibility,
             "type" : type
             ] as [String : Any]
         
-        REF_USER_PINS.childByAutoId().updateChildValues(pinDetails) { (error, ref) in
+        REF_GLOBAL_PINS.childByAutoId().updateChildValues(pinDetails) { (error, ref) in
             if error == nil {
                 let key = ref.key
-                self.REF_GLOBAL_PINS.child(key!).updateChildValues(pinDetails, withCompletionBlock: { (error, ref) in
-                    if error == nil {
-                        completionhandeler(true)
-                    }
-                })
+                self.REF_USER_PINS.child(key!).setValue(key!)
+                completionhandeler(true)
+            } else {
+                completionhandeler(false)
             }
         }
         

@@ -299,23 +299,7 @@ extension MainPageVC: GMSAutocompleteViewControllerDelegate {
 }
 
 extension MainPageVC {
-    
-//    struct ScreenSize
-//    {
-//        static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
-//        static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
-//        static let SCREEN_MAX_LENGTH = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
-//        static let SCREEN_MIN_LENGTH = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
-//    }
-//
-//    struct DeviceType
-//    {
-//        static let IS_IPHONE_5 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
-//        static let IS_IPHONE_6 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
-//        static let IS_IPHONE_6P = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-//        static let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
-//    }
-    
+
     func alert(message:String )
     {
         let alertview = UIAlertController(title: "", message: message, preferredStyle: .alert)
@@ -359,21 +343,12 @@ extension MainPageVC {
         
     }
     
-//    func setforSE(){
-//        if DeviceType.IS_IPHONE_5 {
-//            self.HeightGoogleMapsCONST.constant -= 100
-//        }
-//        if DeviceType.IS_IPHONE_6{
-//            self.HeightGoogleMapsCONST.constant -= 50
-//        }
-//    }
-    
     func handlingGlobalPins(){
         print("GGGG here")
         self.ref = Database.database().reference()
         if self.countG! > 0 {
             for c in 1...self.countG! {
-                HandlePins = self.ref?.child("GlobalPins").child("\(c)").observe(.value, with: { (snapshot) in
+                HandlePins = self.ref?.child("GlobalPins").observe(.value, with: { (snapshot) in
                     print("Printing C")
                     print(c)
                     if let value1 = snapshot.value as? [String:Any]{
@@ -426,80 +401,77 @@ extension MainPageVC {
         if !self.showpins.isEmpty{
             
             print("Showing Pins")
-            for c in 0...self.showpins.count{
+            for c in self.showpins{
                 var neededata:[String] = []
                 let marker = GMSMarker()
-                if c < self.showpins.count {
-                    for (_,value) in self.showpins[c] {
-                        for (key2,val) in value {
-                            var count = 0
-                            
-                            var latt:Double = 0.0
-                            var long:Double = 0.0
-                            
-                            if key2 == "pinloc"{
-                                let dicval = val as! [String:Double]
-                                for (keyy,vall) in dicval {
-                                    if keyy == "lat"{
-                                        latt = vall
-                                    }
-                                    if keyy == "long"{
-                                        long = vall
-                                    }
-                                    marker.position = CLLocationCoordinate2DMake(latt, long)
-                                    print(marker.position)
+                for (_,value) in c {
+                    for (key2,val) in value {
+                        var count = 0
+                        
+                        var latt:Double = 0.0
+                        var long:Double = 0.0
+                        
+                        if key2 == "pinloc"{
+                            let dicval = val as! [String:Double]
+                            for (keyy,vall) in dicval {
+                                if keyy == "lat"{
+                                    latt = vall
                                 }
+                                if keyy == "long"{
+                                    long = vall
+                                }
+                                marker.position = CLLocationCoordinate2DMake(latt, long)
+                                print(marker.position)
                             }
-//
-//                            if key2 == "Time"{
-//                                let time = val as! String
-//                                marker.title = "\(time)"
-//                                print(marker.title!)
-//                                count += 1
-//                            }
-                            if key2 == "Price"{
-                                let snip = val as! String
-                                marker.snippet = "\(snip)"
-                                marker.title = "Baki hai"
-                                print(marker.snippet!)
-                                count += 1
-                                print("DONE DONE DONE")
-                                print(marker)
-                                
-                                marker.appearAnimation = .pop
-                            }
-                            
-//                            if key2 == "Car"{
-//
-//                                neededata.append(val as! String)
-//                            }
-//
-//                            if key2 == "Location"{
-//                                neededata.append(val as! String)
-//                            }
-//
-//                            if key2 == "Description"{
-//                                neededata.append(val as! String)
-//                            }
-//
-//                            if key2 == "Day"{
-//                                let rollNumber:String = String(format: "%@", val as! CVarArg)
-//                                neededata.append(rollNumber)
-//                            }
-//
-//                            if key2 == "Month"{
-//                                let rollNumber:String = String(format: "%@", val as! CVarArg)
-//                                neededata.append(rollNumber)
-//                            }
-//
-//                            if key2 == "Year" {
-//                                print(val)
-//                                let rollNumber:String = String(format: "%@", val as! CVarArg)
-//                                neededata.append(rollNumber)
-//                            }
-//                            print("countbro")
-                            
                         }
+//
+//                        if key2 == "Time"{
+//                            let time = val as! String
+//                            marker.title = "\(time)"
+//                            print(marker.title!)
+//                            count += 1
+//                        }
+                        if key2 == "Price"{
+                            let snip = val as! String
+                            marker.snippet = "\(snip)"
+                            marker.title = "Baki hai"
+                            print(marker.snippet!)
+                            count += 1
+                            print("DONE DONE DONE")
+                            print(marker)
+                            
+                            marker.appearAnimation = .pop
+                        }
+                        
+//                        if key2 == "Car"{
+//
+//                            neededata.append(val as! String)
+//                        }
+//
+//                        if key2 == "Location"{
+//                            neededata.append(val as! String)
+//                        }
+//
+//                        if key2 == "Description"{
+//                            neededata.append(val as! String)
+//                        }
+//
+//                        if key2 == "Day"{
+//                            let rollNumber:String = String(format: "%@", val as! CVarArg)
+//                            neededata.append(rollNumber)
+//                        }
+//
+//                        if key2 == "Month"{
+//                            let rollNumber:String = String(format: "%@", val as! CVarArg)
+//                            neededata.append(rollNumber)
+//                        }
+//
+//                        if key2 == "Year" {
+//                            print(val)
+//                            let rollNumber:String = String(format: "%@", val as! CVarArg)
+//                            neededata.append(rollNumber)
+//                        }
+//                        print("countbro")
                         
                     }
                     

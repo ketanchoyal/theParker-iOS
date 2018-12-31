@@ -14,6 +14,7 @@
 		971393F321D298C100BCB212 /* HextoUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F221D298C100BCB212 /* HextoUIColor.swift */; };
 		971393F521D2A18C00BCB212 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F421D2A18C00BCB212 /* CircleImage.swift */; };
 		971393F721D2A1DC00BCB212 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393F621D2A1DC00BCB212 /* RoundedUIView.swift */; };
+		9717C5DF21DAB793009AB03A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9717C5DE21DAB793009AB03A /* Constants.swift */; };
 		971E6B8A21D948AE00E0D9F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E6B8921D948AE00E0D9F4 /* User.swift */; };
 		971E6B8C21D94D8900E0D9F4 /* LocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E6B8B21D94D8900E0D9F4 /* LocationPin.swift */; };
 		971E6B8F21D97A1E00E0D9F4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E6B8E21D97A1E00E0D9F4 /* StringExtension.swift */; };
@@ -112,6 +113,7 @@
 		971393F221D298C100BCB212 /* HextoUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HextoUIColor.swift; sourceTree = "<group>"; };
 		971393F421D2A18C00BCB212 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		971393F621D2A1DC00BCB212 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
+		9717C5DE21DAB793009AB03A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		971E6B8921D948AE00E0D9F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		971E6B8B21D94D8900E0D9F4 /* LocationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPin.swift; sourceTree = "<group>"; };
 		971E6B8E21D97A1E00E0D9F4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -386,8 +388,8 @@
 			isa = PBXGroup;
 			children = (
 				97E9ECE821D19B11009D124F /* OfferParkingViewController.swift */,
-				97E9ECE921D19B11009D124F /* PinLocationVC.swift */,
 				97E9ECEA21D19B11009D124F /* ScrollPostViewController.swift */,
+				97E9ECE921D19B11009D124F /* PinLocationVC.swift */,
 				97F01C8621D42BEC0015917F /* ParkingDetailsVC.swift */,
 				97F01C8C21D456290015917F /* AdditionalDetailsVC.swift */,
 				97F01C8E21D456760015917F /* AvailabilityAndPriceVC.swift */,
@@ -400,11 +402,11 @@
 			children = (
 				97E9ECE721D19B11009D124F /* offerParking */,
 				97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */,
+				97E9ECE021D19AFE009D124F /* LoginVC.swift */,
+				97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */,
+				97E9ECE121D19AFE009D124F /* MainPageVC.swift */,
 				97E9ECEB21D19B12009D124F /* MyCarsVC.swift */,
 				97E9ECED21D19B13009D124F /* MyProfileVC.swift */,
-				97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */,
-				97E9ECE021D19AFE009D124F /* LoginVC.swift */,
-				97E9ECE121D19AFE009D124F /* MainPageVC.swift */,
 				97E9ECE221D19AFF009D124F /* SideBarVC.swift */,
 				97F01C8421D2D76E0015917F /* E-WalletVC.swift */,
 				970F907221D79A2500DF84A9 /* BookThisSpotVC.swift */,
@@ -418,6 +420,7 @@
 			children = (
 				97E9ECDC21D19A90009D124F /* SWRevealViewController.h */,
 				97E9ECDD21D19A91009D124F /* SWRevealViewController.m */,
+				9717C5DE21DAB793009AB03A /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				97F01C8F21D456760015917F /* AvailabilityAndPriceVC.swift in Sources */,
 				97E9ECF321D19B13009D124F /* MyProfileVC.swift in Sources */,
 				97E9ECE321D19AFF009D124F /* ForanimationsViewController.swift in Sources */,
+				9717C5DF21DAB793009AB03A /* Constants.swift in Sources */,
 				971E6B8C21D94D8900E0D9F4 /* LocationPin.swift in Sources */,
 				971393F021D297DC00BCB212 /* InsetTextField.swift in Sources */,
 				97E9ECEE21D19B13009D124F /* OfferParkingViewController.swift in Sources */,

@@ -19,11 +19,15 @@ class ParkingDetailsVC: UIViewController {
     @IBOutlet weak var onSiteStaffSwitch: UISwitch!
     @IBOutlet weak var disabledAccessSwitch: UISwitch!
     
+//    var pinToUpload : LocationPin?
+    
     var parkingType : String = "Other"
     var features : [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("pin : \(DataService.pinToUpload)")
         
     }
     
@@ -76,7 +80,7 @@ class ParkingDetailsVC: UIViewController {
     }
     
     func featureAdd() {
-        features.removeAll()
+        features = []
         if coveredSwitch.isOn {
             features.append("Covered")
         }
@@ -96,17 +100,17 @@ class ParkingDetailsVC: UIViewController {
     
     func addDetails(completionhandler : @escaping (_ complete : Bool) -> ()) {
         
-        var pin = DataService.instance.pinToUpload
+        let pin = DataService.pinToUpload
         
-        pin?.features.removeAll()
-        pin?.features = features
+        featureAdd()
+        pin.features = features
         
-        pin?.type = parkingType
+        pin.type = parkingType
         
         let numberOfSpot = noOfSpot.text
         let spots = Int(numberOfSpot!)
         
-        pin?.numberofspot = spots!
+        pin.numberofspot = spots!
         
         completionhandler(true)
     }

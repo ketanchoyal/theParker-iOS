@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="724"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3F2-Pv-9ZN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="592.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="613.33333333333337"/>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WiF-TL-ijX">
-                                        <rect key="frame" x="0.0" y="592.33333333333337" width="375" height="131.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="613.33333333333337" width="375" height="110.66666666666663"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-xF-diF">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
@@ -33,7 +33,7 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.66092631270000002" green="0.331260744" blue="0.89342084389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyQ-bh-BtG">
-                                                <rect key="frame" x="0.0" y="47.000000000000007" width="375" height="84.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="47" width="375" height="63.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1692,7 +1692,7 @@
                                                 </constraints>
                                                 <color key="onTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </switch>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-DV-Iu4" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-DV-Iu4" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="10" width="70" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="QGO-bE-V4N"/>
@@ -1700,7 +1700,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGB-5f-Ivu">
                                                 <rect key="frame" x="173" y="10" width="11" height="30"/>
@@ -1745,7 +1745,7 @@
                                                 </constraints>
                                                 <color key="onTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </switch>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-9g-nMI" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-9g-nMI" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="10" width="70" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="3te-KX-Ppo"/>
@@ -1753,7 +1753,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atl-fQ-kWI">
                                                 <rect key="frame" x="173" y="10" width="11" height="30"/>
@@ -1798,7 +1798,7 @@
                                                 </constraints>
                                                 <color key="onTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </switch>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="500" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtz-gg-mRI" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtz-gg-mRI" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="10" width="70" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Et8-0V-C8A"/>
@@ -1806,7 +1806,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdG-gR-rgE">
                                                 <rect key="frame" x="173" y="10" width="11" height="30"/>
@@ -1859,7 +1859,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdA-49-HSE">
                                                 <rect key="frame" x="173" y="10" width="11" height="30"/>
@@ -1896,7 +1896,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO9-Jh-n8J" customClass="RoundedButton" customModule="theParker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="633" width="343" height="45"/>
+                                <rect key="frame" x="16" y="653" width="343" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Dj4-qc-I9p"/>
                                 </constraints>
@@ -1917,7 +1917,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaR-1Y-Agv">
-                                <rect key="frame" x="87.666666666666686" y="663" width="200" height="0.0"/>
+                                <rect key="frame" x="87.666666666666686" y="683" width="200" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="iIf-cW-BFx"/>
                                 </constraints>
@@ -1925,7 +1925,7 @@
                                 <color key="textColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y8U-GL-Qza">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="y8U-GL-Qza">
                                 <rect key="frame" x="68.666666666666686" y="393.66666666666669" width="238" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="238" id="Sop-9Z-gPe"/>
@@ -1935,6 +1935,9 @@
                                     <segment title="Save for next time"/>
                                 </segments>
                                 <color key="tintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="availabilitySegmentChanged:" destination="7f5-nC-U9k" eventType="valueChanged" id="0vE-gP-Eu8"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTk-mk-Nff">
                                 <rect key="frame" x="0.0" y="728" width="375" height="84"/>
@@ -1950,6 +1953,9 @@
                                 <state key="normal" title="Finish">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="finishBtn:" destination="7f5-nC-U9k" eventType="touchUpInside" id="6Og-wq-bny"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1974,13 +1980,25 @@
                             <constraint firstItem="CaR-1Y-Agv" firstAttribute="centerX" secondItem="waH-qA-yef" secondAttribute="centerX" id="kCm-VU-Y6R"/>
                             <constraint firstItem="etJ-Kc-AOp" firstAttribute="leading" secondItem="dYb-O2-5ce" secondAttribute="leading" id="ltJ-lE-rTv"/>
                             <constraint firstItem="tXK-8R-IZu" firstAttribute="leading" secondItem="waH-qA-yef" secondAttribute="leadingMargin" id="nQU-U9-kI0"/>
-                            <constraint firstItem="etJ-Kc-AOp" firstAttribute="top" secondItem="NO9-Jh-n8J" secondAttribute="bottom" constant="50" id="vv7-zG-7qh"/>
+                            <constraint firstItem="etJ-Kc-AOp" firstAttribute="top" secondItem="NO9-Jh-n8J" secondAttribute="bottom" constant="30" id="vv7-zG-7qh"/>
                             <constraint firstItem="cvu-lJ-sNy" firstAttribute="trailing" secondItem="waH-qA-yef" secondAttribute="trailingMargin" id="vwf-ye-uaN"/>
                             <constraint firstItem="tXK-8R-IZu" firstAttribute="top" secondItem="dYb-O2-5ce" secondAttribute="top" constant="10" id="xdg-LP-xkY"/>
                             <constraint firstItem="cvu-lJ-sNy" firstAttribute="leading" secondItem="waH-qA-yef" secondAttribute="leadingMargin" id="xxI-83-Ejq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dYb-O2-5ce"/>
                     </view>
+                    <connections>
+                        <outlet property="availabilitySegment" destination="y8U-GL-Qza" id="Tqp-jf-xJj"/>
+                        <outlet property="dailyPrice" destination="FcE-9g-nMI" id="40v-dX-oFj"/>
+                        <outlet property="dailySwitch" destination="ASi-32-BCA" id="oHy-4G-wZG"/>
+                        <outlet property="finishButton" destination="etJ-Kc-AOp" id="s8T-eU-A5J"/>
+                        <outlet property="hourlyPrice" destination="sZq-DV-Iu4" id="6GS-lZ-r24"/>
+                        <outlet property="hourlySwitch" destination="hbE-Td-ihr" id="ox6-kv-H3B"/>
+                        <outlet property="monthlyPrice" destination="hSM-ZI-cUY" id="Bnm-qF-J0u"/>
+                        <outlet property="monthlySwitch" destination="4gc-QB-scu" id="WT2-q8-IKx"/>
+                        <outlet property="weeklyPrice" destination="gtz-gg-mRI" id="FcJ-M9-ud5"/>
+                        <outlet property="weeklySwitch" destination="Rb1-ch-we5" id="h8J-ef-nxF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2u-A3-NdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2070,7 +2088,7 @@
                                 <rect key="frame" x="16" y="352.66666666666674" width="343" height="415.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="vehilceInfoCell" rowHeight="70" id="lBL-O6-1Cc" customClass="VehicleInfoCell" customModule="theParker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="vehilceInfoCell" rowHeight="70" id="lBL-O6-1Cc" customClass="VehicleInfoCell" customModule="theParker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lBL-O6-1Cc" id="7C4-Fw-a10">
@@ -2099,7 +2117,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2F-Io-Y8J">
-                                                    <rect key="frame" x="290" y="20" width="30" height="30"/>
+                                                    <rect key="frame" x="298" y="20" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="5l4-oT-ERJ"/>
                                                         <constraint firstAttribute="width" constant="30" id="AeL-Zd-mdf"/>
