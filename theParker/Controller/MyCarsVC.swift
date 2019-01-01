@@ -23,7 +23,9 @@ class MyCarsVC: UIViewController {
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 
-        // Do any additional setup after loading the view.
+        DataService.instance.getGlobalLocationPins { (success) in
+            print(DataService.instance.globalPins)
+        }
     }
 
 

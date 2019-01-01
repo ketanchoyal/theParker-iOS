@@ -110,7 +110,7 @@ class ParkingDetailsVC: UIViewController {
         let numberOfSpot = noOfSpot.text
         let spots = Int(numberOfSpot!)
         
-        pin.numberofspot = spots!
+        pin.numberofspot = numberOfSpot!
         
         completionhandler(true)
     }

@@ -98,7 +98,7 @@ class AvailabilityAndPriceVC: UIViewController {
                 completionhandler(false)
                 return
             } else {
-                pin.price_hourly = Int(hourlyPrice.text!)!
+                pin.price_hourly = hourlyPrice.text!
             }
         }
         
@@ -108,7 +108,7 @@ class AvailabilityAndPriceVC: UIViewController {
                 completionhandler(false)
                 return
             } else {
-                pin.price_weekly = Int(weeklyPrice.text!)!
+                pin.price_weekly = weeklyPrice.text!
             }
         }
         
@@ -118,7 +118,7 @@ class AvailabilityAndPriceVC: UIViewController {
                 completionhandler(false)
                 return
             } else {
-                pin.price_hourly = Int(dailyPrice.text!)!
+                pin.price_hourly = dailyPrice.text!
             }
         }
         
@@ -128,7 +128,7 @@ class AvailabilityAndPriceVC: UIViewController {
                 completionhandler(false)
                 return
             } else {
-                pin.price_hourly = Int(monthlyPrice.text!)!
+                pin.price_hourly = monthlyPrice.text!
             }
         }
         completionhandler(true)

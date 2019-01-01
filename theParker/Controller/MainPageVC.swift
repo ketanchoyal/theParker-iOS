@@ -150,7 +150,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         googleMaps.isMyLocationEnabled = true
         print("TAPPED TAPPED")
         
-        let DataNeeded:[String] = marker.userData as! [String]
+//        let DataNeeded:[String] = marker.userData as! [String]
 //        self.CarName.text = DataNeeded[2]
 //        self.LocationInfo.text = DataNeeded[0]
 //        self.Description.text = DataNeeded[5]
@@ -398,101 +398,103 @@ extension MainPageVC {
     }
     
     @objc func thanshow(){
-        if !self.showpins.isEmpty{
-            
-            print("Showing Pins")
-            for c in self.showpins{
-                var neededata:[String] = []
-                let marker = GMSMarker()
-                for (_,value) in c {
-                    for (key2,val) in value {
-                        var count = 0
-                        
-                        var latt:Double = 0.0
-                        var long:Double = 0.0
-                        
-                        if key2 == "pinloc"{
-                            let dicval = val as! [String:Double]
-                            for (keyy,vall) in dicval {
-                                if keyy == "lat"{
-                                    latt = vall
-                                }
-                                if keyy == "long"{
-                                    long = vall
-                                }
-                                marker.position = CLLocationCoordinate2DMake(latt, long)
-                                print(marker.position)
-                            }
-                        }
+//        if !self.showpins.isEmpty{
 //
-//                        if key2 == "Time"{
-//                            let time = val as! String
-//                            marker.title = "\(time)"
-//                            print(marker.title!)
+//            print("Showing Pins")
+//            for c in self.showpins{
+//                var neededata:[String] = []
+//                let marker = GMSMarker()
+//                for (_,value) in c {
+//                    for (key2,val) in value {
+//                        var count = 0
+//
+//                        var latt:Double = 0.0
+//                        var long:Double = 0.0
+//
+//                        if key2 == "pinloc"{
+//                            let dicval = val as! [String:Double]
+//                            for (keyy,vall) in dicval {
+//                                if keyy == "lat"{
+//                                    latt = vall
+//                                }
+//                                if keyy == "long"{
+//                                    long = vall
+//                                }
+//                                marker.position = CLLocationCoordinate2DMake(latt, long)
+//                                //print(marker.position)
+//                            }
+//                        }
+////
+////                        if key2 == "Time"{
+////                            let time = val as! String
+////                            marker.title = "\(time)"
+////                            print(marker.title!)
+////                            count += 1
+////                        }
+//                        if key2 == "Price"{
+//                            let snip = val as! String
+//                            marker.snippet = "\(snip)"
+//                            marker.title = "Baki hai"
+//                            print(marker.snippet!)
 //                            count += 1
-//                        }
-                        if key2 == "Price"{
-                            let snip = val as! String
-                            marker.snippet = "\(snip)"
-                            marker.title = "Baki hai"
-                            print(marker.snippet!)
-                            count += 1
-                            print("DONE DONE DONE")
-                            print(marker)
-                            
-                            marker.appearAnimation = .pop
-                        }
-                        
-//                        if key2 == "Car"{
+//                            print("DONE DONE DONE")
+//                            //print(marker)
 //
-//                            neededata.append(val as! String)
+//                            marker.appearAnimation = .pop
 //                        }
 //
-//                        if key2 == "Location"{
-//                            neededata.append(val as! String)
-//                        }
+////                        if key2 == "Car"{
+////
+////                            neededata.append(val as! String)
+////                        }
+////
+////                        if key2 == "Location"{
+////                            neededata.append(val as! String)
+////                        }
+////
+////                        if key2 == "Description"{
+////                            neededata.append(val as! String)
+////                        }
+////
+////                        if key2 == "Day"{
+////                            let rollNumber:String = String(format: "%@", val as! CVarArg)
+////                            neededata.append(rollNumber)
+////                        }
+////
+////                        if key2 == "Month"{
+////                            let rollNumber:String = String(format: "%@", val as! CVarArg)
+////                            neededata.append(rollNumber)
+////                        }
+////
+////                        if key2 == "Year" {
+////                            print(val)
+////                            let rollNumber:String = String(format: "%@", val as! CVarArg)
+////                            neededata.append(rollNumber)
+////                        }
+////                        print("countbro")
 //
-//                        if key2 == "Description"{
-//                            neededata.append(val as! String)
-//                        }
+//                    }
 //
-//                        if key2 == "Day"{
-//                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-//                            neededata.append(rollNumber)
-//                        }
-//
-//                        if key2 == "Month"{
-//                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-//                            neededata.append(rollNumber)
-//                        }
-//
-//                        if key2 == "Year" {
-//                            print(val)
-//                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-//                            neededata.append(rollNumber)
-//                        }
-//                        print("countbro")
-                        
-                    }
-                    
-                }
-                marker.userData = neededata
-                self.markers.append(marker)
-            }
+//                }
+//                marker.userData = neededata
+//                self.markers.append(marker)
+//            }
             timershow.invalidate()
-            
-            self.showmarkers()
-        }
+//        }
+            showmarkers()
     }
     
     func showmarkers(){
-        for c in 0...self.markers.count-1{
-            print(markers[c])
-            
-            self.markers[c].map = googleMaps
-            
-            
+        
+        for marker in DataService.instance.markers {
+            marker.map = googleMaps
         }
+        
+//        for c in 0...self.markers.count-1{
+//            print(markers[c])
+//
+//            self.markers[c].map = googleMaps
+//        }
         //self.ppintimer()
     }
     

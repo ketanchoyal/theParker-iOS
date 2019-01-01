@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import GoogleMaps
 
 let DB_BASE = Database.database().reference()
 let DB_USER = DB_BASE.child("user")
@@ -18,6 +19,11 @@ class DataService {
     static let instance = DataService()
     
     static var pinToUpload = LocationPin()
+    
+    var globalPins = [String : LocationPin]()
+    var markers = [GMSMarker]()
+    
+    var myPins = [String : LocationPin]()
     
     public private(set) var REF_BASE = DB_BASE
     public private(set) var REF_USER = DB_USER
@@ -74,29 +80,29 @@ class DataService {
         let count = Features?.count
         if count == 0 || Features == nil {
             FeaturesDict = [
-                "1" : ""
+                "abc" : "No Features"
             ]
         } else if count == 1 {
             FeaturesDict = [
-                "1" : Features![0]
+                "abc" : Features![0]
             ]
         } else if count == 2 {
             FeaturesDict = [
-                "1" : Features![0],
-                "2" : Features![1]
+                "abc" : Features![0],
+                "xyz" : Features![1]
             ]
         } else if count == 3 {
             FeaturesDict = [
-                "1" : Features![0],
-                "2" : Features![1],
-                "3" : Features![2]
+                "abc" : Features![0],
+                "xyz" : Features![1],
+                "pqr" : Features![2]
             ]
         } else {
             FeaturesDict = [
-                "1" : Features![0],
-                "2" : Features![1],
-                "3" : Features![2],
-                "4" : Features![3]
+                "abc" : Features![0],
+                "xyz" : Features![1],
+                "pqr" : Features![2],
+                "mno" : Features![3]
             ]
         }
         
@@ -131,6 +137,74 @@ class DataService {
             }
         }
         
+    }
+    
+    func getGlobalLocationPins(completionHandler : @escaping (_ complete : Bool) -> ()) {
+        REF_GLOBAL_PINS.observe(.value) { (globalPinSnapshot) in
+            guard let globalPinSnapshot = globalPinSnapshot.children.allObjects as? [DataSnapshot] else {
+                completionHandler(false)
+                return }
+            
+            //print(globalPinSnapshot)
+            
+            for globalPin in globalPinSnapshot {
+                let availability = globalPin.childSnapshot(forPath: "availability").value as! String
+                let by = globalPin.childSnapshot(forPath: "by").value as! String
+                let description = globalPin.childSnapshot(forPath: "description").value as! String
+                let instructions = globalPin.childSnapshot(forPath: "instructions").value as! String
+                let numberofspot = globalPin.childSnapshot(forPath: "numberofspot").value as! String
+                let price_daily = globalPin.childSnapshot(forPath: "price_daily").value as! String
+                let price_hourly = globalPin.childSnapshot(forPath: "price_hourly").value as! String
+                let price_monthly = globalPin.childSnapshot(forPath: "price_monthly").value as! String
+                let price_weekly = globalPin.childSnapshot(forPath: "price_weekly").value as! String
+                let type = globalPin.childSnapshot(forPath: "type").value as! String
+                let visibility = globalPin.childSnapshot(forPath: "visibility").value as! String
+                
+                var Features = [String]()
+                if let Features_Snapshot = globalPin.childSnapshot(forPath: "Features").value as? [String : String] {
+                    for (_,feature) in Features_Snapshot {
+                        Features.append(feature)
+                    }
+                }
+                
+                print(Features)
+                
+                let pinloc_Snapshot = globalPin.childSnapshot(forPath: "pinloc").value as? [String : Double]
+                var pinloc = [Double]()
+                
+                var lat : Double = 0.0
+                var long : Double = 0.0
+                
+                
+                for (key, value) in pinloc_Snapshot! {
+                    if key == "lat" {
+                       lat = value
+                    }
+                    if key == "long" {
+                        long = value
+                    }
+                }
+                
+                pinloc.append(lat)
+                pinloc.append(long)
+                
+                print(pinloc)
+                
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2DMake(lat, long)
+                marker.snippet = "₹\(price_hourly)"
+//                marker.icon = UIImage(named: "location_pin")
+                marker.title = ""
+                self.markers.append(marker)
+                
+                let pinKey = globalPin.key
+                
+                let locationPin = LocationPin(by: by, description: description, instructions: instructions, price_hourly: price_hourly, price_daily: price_daily, price_weekly: price_weekly, price_monthly: price_monthly, type: type, availability: availability, visibility: visibility, numberofspot: numberofspot, features: nil, pinloc: pinloc, photos: nil, pinKey: pinKey)
+                
+                self.globalPins[pinKey] = locationPin
+            }
+            completionHandler(true)
+        }
     }
     
 }
