@@ -31,18 +31,14 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.barTintColor = HextoUIColor.instance.hexString(hex: "#4C177D")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationItem.title = "PinLocation"
-        
+
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.handling()
+//        self.handling()
         self.nextBTn.clipsToBounds = true
         
         locationManager = CLLocationManager()
@@ -61,7 +57,7 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
         MapView.isMyLocationEnabled = true
         MapView.settings.compassButton = true
         
-        self.scheduledTimerWithTimeInterval()
+//        self.scheduledTimerWithTimeInterval()
     }
     
     @IBAction func NextButtonClicked(_ sender: Any) {
@@ -87,32 +83,32 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
 }
 
 extension PinLocationVC{
-    func scheduledTimerWithTimeInterval(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload), userInfo: nil, repeats: true)
-    }
-    
-    @objc func chartload(){
-        
-        if self.CurLocationNow?.coordinate.latitude != nil && self.CurLocationNow?.coordinate.longitude != nil {
-            
-            let camera2 = GMSCameraPosition.camera(withLatitude: (self.CurLocationNow?.coordinate.latitude)!, longitude: (self.CurLocationNow?.coordinate.longitude)!, zoom: 18.0)
-            
-            self.MapView.camera = camera2
-            self.MapView.delegate = self
-            self.MapView.isMyLocationEnabled = true
-            self.MapView.settings.myLocationButton = true
-            self.MapView.settings.compassButton = true
-            self.MapView.settings.zoomGestures = true
-            self.stopTimer()
-            
-        }
-    }
-    
-    func stopTimer(){
-        timer.invalidate()
-        
-    }
+//    func scheduledTimerWithTimeInterval(){
+//        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+//        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload), userInfo: nil, repeats: true)
+//    }
+//
+//    @objc func chartload(){
+//
+//        if self.CurLocationNow?.coordinate.latitude != nil && self.CurLocationNow?.coordinate.longitude != nil {
+//
+//            let camera2 = GMSCameraPosition.camera(withLatitude: (self.CurLocationNow?.coordinate.latitude)!, longitude: (self.CurLocationNow?.coordinate.longitude)!, zoom: 18.0)
+//
+//            self.MapView.camera = camera2
+//            self.MapView.delegate = self
+//            self.MapView.isMyLocationEnabled = true
+//            self.MapView.settings.myLocationButton = true
+//            self.MapView.settings.compassButton = true
+//            self.MapView.settings.zoomGestures = true
+//            self.stopTimer()
+//
+//        }
+//    }
+//
+//    func stopTimer(){
+//        timer.invalidate()
+//
+//    }
     
     func alert(message:String )
     {
@@ -188,8 +184,7 @@ extension PinLocationVC : UIGestureRecognizerDelegate
         print(self.selectedLocation!)
     }
     
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool
-    {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
@@ -202,7 +197,7 @@ extension PinLocationVC{
         let pushedLoc = String(describing: self.selectedLocation!)
         let lat = (self.selectedLocation?.latitude)!
         let lon = (self.selectedLocation?.longitude)!
-        let latlongarray : [Double] = [lat,lon]
+//        let latlongarray : [Double] = [lat,lon]
         
 //        pinToUpload?.pinloc.append(lat)
 //        pinToUpload?.pinloc.append(lon)
@@ -234,21 +229,21 @@ extension PinLocationVC{
 
 extension PinLocationVC{
     
-    func handling(){
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        self.ref = Database.database().reference()
-        //Going deep into firebase hierarchy
-        self.HandleLocation = self.ref?.child("user").child(uid).child("ArrayPins").observe(.value, with: { (snapshot) in
-            
-            guard let value = snapshot.childrenCount as? UInt else { return }
-                
-                print("VALUE VALUE")
-                print(value)
-                let vvalue = Int(value)
-                self.FetchedArray = vvalue
-                
-        })
-    }
+//    func handling(){
+//        guard let uid = Auth.auth().currentUser?.uid else { return }
+//        self.ref = Database.database().reference()
+//        //Going deep into firebase hierarchy
+//        self.HandleLocation = self.ref?.child("user").child(uid).child("ArrayPins").observe(.value, with: { (snapshot) in
+//
+//            guard let value = snapshot.childrenCount as? UInt else { return }
+//
+//                print("VALUE VALUE")
+//                print(value)
+//                let vvalue = Int(value)
+//                self.FetchedArray = vvalue
+//
+//        })
+//    }
 }
 
 extension PinLocationVC{

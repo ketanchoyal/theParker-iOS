@@ -24,19 +24,6 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     @IBOutlet weak var googleMaps: GMSMapView!
     @IBOutlet weak var menu: UIBarButtonItem!
     
-//    @IBOutlet weak var BookingStack: UIStackView!
-//    @IBOutlet weak var CarName: UILabel!
-//    @IBOutlet weak var TimeInfo: UILabel!
-//    @IBOutlet weak var PriceInfo: UILabel!
-//    @IBOutlet weak var LocationInfo: UILabel!
-//    @IBOutlet weak var Description: UILabel!
-//    @IBOutlet weak var BookButton: UIButton!
-//
-//    @IBAction func bookingbtnclicked(_ sender: Any) {
-//
-//
-//    }
-    
     var CurLocationNow:CLLocation?
     var locationManager = CLLocationManager()
     var locationSelected = Located.startLocation
@@ -55,23 +42,14 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.barTintColor = HextoUIColor.instance.hexString(hex: "#4C177D")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationItem.title = "THE PARKER"
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        self.BookButton.layer.cornerRadius = 10
-//        self.BookingStack.isHidden = true
-        self.ScrollHandling()
-        self.fetchTimer()
         print("I AM A CODER")
         // Do any additional setup after loading the view.
         
@@ -96,7 +74,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         self.googleMaps.settings.compassButton = true
         self.googleMaps.settings.zoomGestures = true
         
-//        self.setforSE()
+        showGlobalPins()
         
         self.scheduledTimerWithTimeInterval()
         
@@ -150,13 +128,10 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         googleMaps.isMyLocationEnabled = true
         print("TAPPED TAPPED")
         
-//        let DataNeeded:[String] = marker.userData as! [String]
-//        self.CarName.text = DataNeeded[2]
-//        self.LocationInfo.text = DataNeeded[0]
-//        self.Description.text = DataNeeded[5]
-//        self.TimeInfo.text = marker.title
-//        self.PriceInfo.text = marker.snippet
-//        self.BookingStack.isHidden = false
+        let markerData = marker.userData as? LocationPin
+        
+        print(markerData!.numberofspot)
+        
         return false
     }
     
@@ -253,9 +228,6 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     
 }
 
-
-
-
 // MARK: - GMS Auto Complete Delegate, for autocomplete search location
 extension MainPageVC: GMSAutocompleteViewControllerDelegate {
     
@@ -266,8 +238,7 @@ extension MainPageVC: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
         // Change map location
-        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 16.0
-        )
+        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 16.0)
         
         
         locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
@@ -314,8 +285,6 @@ extension MainPageVC {
         
     }
     
-    
-    
     func scheduledTimerWithTimeInterval(){
         // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload), userInfo: nil, repeats: true)
@@ -343,53 +312,13 @@ extension MainPageVC {
         
     }
     
-    func handlingGlobalPins(){
-        print("GGGG here")
-        self.ref = Database.database().reference()
-        if self.countG! > 0 {
-            for c in 1...self.countG! {
-                HandlePins = self.ref?.child("GlobalPins").observe(.value, with: { (snapshot) in
-                    print("Printing C")
-                    print(c)
-                    if let value1 = snapshot.value as? [String:Any]{
-                        let valueactual = [c:value1]
-                        // print(valueactual)
-                        self.showpins.append(valueactual)
-                        //print(valueactual)
-                        //print(self.showpins)
-                    }
-                    
-                    if c == self.countG!{
-                        self.IamshowingPins()
-                    }
-                })
+    func showGlobalPins(){
+        DataService.instance.getGlobalLocationPins { (success) in
+            if success {
+                self.IamshowingPins()
+            } else {
+                self.alert(message: "No Parking Spaces Available")
             }
-        }
-    }
-    
-    func ScrollHandling(){
-        
-        guard (Auth.auth().currentUser?.uid) != nil else { return }
-        self.ref = Database.database().reference()
-        
-        handleG = self.ref?.child("count").child("g").observe(.value, with: { (snapshot) in
-            
-            if let value1 = snapshot.value as? Int{
-                
-                self.countG = Int(value1)
-            }
-            
-        })
-    }
-    
-    func fetchTimer(){
-        timerCount = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.selectFun), userInfo: nil, repeats: true)
-    }
-    
-    @objc func selectFun(){
-        if self.countG != nil {
-            self.handlingGlobalPins()
-            timerCount.invalidate()
         }
     }
     
@@ -398,167 +327,14 @@ extension MainPageVC {
     }
     
     @objc func thanshow(){
-//        if !self.showpins.isEmpty{
-//
-//            print("Showing Pins")
-//            for c in self.showpins{
-//                var neededata:[String] = []
-//                let marker = GMSMarker()
-//                for (_,value) in c {
-//                    for (key2,val) in value {
-//                        var count = 0
-//
-//                        var latt:Double = 0.0
-//                        var long:Double = 0.0
-//
-//                        if key2 == "pinloc"{
-//                            let dicval = val as! [String:Double]
-//                            for (keyy,vall) in dicval {
-//                                if keyy == "lat"{
-//                                    latt = vall
-//                                }
-//                                if keyy == "long"{
-//                                    long = vall
-//                                }
-//                                marker.position = CLLocationCoordinate2DMake(latt, long)
-//                                //print(marker.position)
-//                            }
-//                        }
-////
-////                        if key2 == "Time"{
-////                            let time = val as! String
-////                            marker.title = "\(time)"
-////                            print(marker.title!)
-////                            count += 1
-////                        }
-//                        if key2 == "Price"{
-//                            let snip = val as! String
-//                            marker.snippet = "\(snip)"
-//                            marker.title = "Baki hai"
-//                            print(marker.snippet!)
-//                            count += 1
-//                            print("DONE DONE DONE")
-//                            //print(marker)
-//
-//                            marker.appearAnimation = .pop
-//                        }
-//
-////                        if key2 == "Car"{
-////
-////                            neededata.append(val as! String)
-////                        }
-////
-////                        if key2 == "Location"{
-////                            neededata.append(val as! String)
-////                        }
-////
-////                        if key2 == "Description"{
-////                            neededata.append(val as! String)
-////                        }
-////
-////                        if key2 == "Day"{
-////                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-////                            neededata.append(rollNumber)
-////                        }
-////
-////                        if key2 == "Month"{
-////                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-////                            neededata.append(rollNumber)
-////                        }
-////
-////                        if key2 == "Year" {
-////                            print(val)
-////                            let rollNumber:String = String(format: "%@", val as! CVarArg)
-////                            neededata.append(rollNumber)
-////                        }
-////                        print("countbro")
-//
-//                    }
-//
-//                }
-//                marker.userData = neededata
-//                self.markers.append(marker)
-//            }
+
             timershow.invalidate()
-//        }
             showmarkers()
     }
     
     func showmarkers(){
-        
         for marker in DataService.instance.markers {
             marker.map = googleMaps
         }
-        
-//        for c in 0...self.markers.count-1{
-//            print(markers[c])
-//
-//            self.markers[c].map = googleMaps
-//        }
-        //self.ppintimer()
     }
-    
-//    func ppintimer(){
-//        pintimer =  Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.pintimedone), userInfo: nil, repeats: true)
-//    }
-//
-//    @objc func pintimedone() {
-//
-//        let mdate = Date()
-//        let mcalendar = Calendar.current
-//        let day = mcalendar.component(.day, from: mdate)
-//        let month = mcalendar.component(.month, from: mdate)
-//        let year = mcalendar.component(.year, from: mdate)
-//        var hour = mcalendar.component(.hour, from: mdate)
-//        let minutes = mcalendar.component(.minute, from: mdate)
-//
-//        print(markers.count)
-//
-//        for c in 0...self.markers.count-2{
-//
-//            if hour > 12 {
-//                hour = hour - 12
-//            }
-//
-//            let stringArray = markers[c].title?.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
-//
-//            let DataNeeded : [String] = markers[c].userData as! [String]
-//
-//            print("DataNeeded")
-//            print(DataNeeded)
-//
-//            if Int(DataNeeded[3])! < year {
-//
-//                markers[c].map = nil
-//            }
-//
-//            else if Int(DataNeeded[1])! < month {
-//
-//                markers[c].map = nil
-//            }
-//
-//            else if Int(DataNeeded[6])! < day {
-//
-//                markers[c].map = nil
-//            }
-//
-//            else if Int(stringArray![0])! < hour {
-//
-//                markers[c].map = nil
-//            }
-//
-//            else if Int(stringArray![1])! < minutes {
-//
-//                markers[c].map = nil
-//            }
-//
-//            else {
-//                markers[c].map = self.googleMaps
-//            }
-//
-//
-//        }
-//    }
-    
 }
-

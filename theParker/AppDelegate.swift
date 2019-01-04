@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         IQKeyboardManager.shared.enable = true
         UIApplication.shared.statusBarStyle = .lightContent
         
+        let BarButtonItemAppearance = UIBarButtonItem.appearance()
+        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+        
         // Override point for customization after application launch.
         //Configuring connection with firebase db and the application
         FirebaseApp.configure()
@@ -32,27 +35,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         //listener for changes to user state
         //validation throw for login sign up
         _ = Auth.auth().addStateDidChangeListener { auth, user in
-            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
             if user != nil {
                 let controller = storyboard.instantiateViewController(withIdentifier: "slide") as! SWRevealViewController
-                
                 //updates the view controller
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
-
             } else {
                 //menu screen
                 let controller = storyboard.instantiateViewController(withIdentifier: "des") as! DescriptionViewController         //updates the view controller ( note: put self to explicitly state the
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
-               
             }
         }
-        
-        
-        
+    
         //User Autharisation for push notifications
         //options state the notification states
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (isGranted, err) in
@@ -63,13 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
                 Messaging.messaging().delegate = self
                 DispatchQueue.main.async {
                     //    application.registerForRemoteNotifications()
-                    
                 }
-                
             }
         }
-        
-        
         return true
     }
     

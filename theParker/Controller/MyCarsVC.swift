@@ -3,16 +3,13 @@ import UIKit
 class MyCarsVC: UIViewController {
 
     @IBOutlet weak var menu: UIBarButtonItem!
+    @IBOutlet weak var vehicleTable: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.barTintColor = HextoUIColor.instance.hexString(hex: "#4C177D")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationItem.title = "THE PARKER"
         
     }
     
@@ -20,15 +17,13 @@ class MyCarsVC: UIViewController {
         super.viewDidLoad()
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
-        
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-
-        DataService.instance.getGlobalLocationPins { (success) in
-            print(DataService.instance.globalPins)
-        }
     }
 
-
+    @IBAction func addVehicleTapped(_ sender: Any) {
+        performSegue(withIdentifier: "addVehicleVC", sender: nil)
+    }
+    
 }
 
 extension MyCarsVC{

@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="724"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3F2-Pv-9ZN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="613.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WiF-TL-ijX">
-                                        <rect key="frame" x="0.0" y="613.33333333333337" width="375" height="110.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="617" width="375" height="107"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-xF-diF">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
@@ -33,7 +33,7 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.66092631270000002" green="0.331260744" blue="0.89342084389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyQ-bh-BtG">
-                                                <rect key="frame" x="0.0" y="47" width="375" height="63.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="47" width="375" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -567,7 +567,7 @@
             </objects>
             <point key="canvasLocation" x="-588" y="1090"/>
         </scene>
-        <!--WalletVC-->
+        <!--E-WALLET-->
         <scene sceneID="kMT-YJ-gCe">
             <objects>
                 <viewController id="jNx-qR-e3C" customClass="E_WalletVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
@@ -577,8 +577,9 @@
                         <color key="backgroundColor" red="0.2901960784" green="0.41176470590000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="lfa-e0-LlI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="V4N-1U-90P">
-                        <barButtonItem key="leftBarButtonItem" image="menu-16*16" id="En0-i3-Xg8">
+                    <navigationItem key="navigationItem" title="E-WALLET" largeTitleDisplayMode="never" id="V4N-1U-90P">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu-16*16" id="En0-i3-Xg8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="menuBtn:" destination="jNx-qR-e3C" id="eAO-Yp-qCL"/>
                             </connections>
@@ -772,8 +773,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZHA-Zl-SeJ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -784,7 +787,7 @@
             </objects>
             <point key="canvasLocation" x="484" y="1090"/>
         </scene>
-        <!--Main PageVC-->
+        <!--THE PARKER-->
         <scene sceneID="pya-4N-dSi">
             <objects>
                 <viewController storyboardIdentifier="mainpage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Tg-em-FUt" customClass="MainPageVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
@@ -806,7 +809,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sqd-yr-mVl"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aew-MD-n3I">
+                    <navigationItem key="navigationItem" title="THE PARKER" largeTitleDisplayMode="never" id="aew-MD-n3I">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu-16*16" id="hZS-gi-2ye">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
@@ -1089,7 +1092,7 @@
             </objects>
             <point key="canvasLocation" x="1993" y="1090"/>
         </scene>
-        <!--Offer Parking View Controller-->
+        <!--OFFER-->
         <scene sceneID="JcD-4j-yyN">
             <objects>
                 <viewController id="hYu-lE-V7S" customClass="OfferParkingViewController" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
@@ -1138,8 +1141,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pXV-E1-0hc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Oq4-My-Z9h">
-                        <barButtonItem key="leftBarButtonItem" image="menu-16*16" id="7bK-xx-VAh"/>
+                    <navigationItem key="navigationItem" title="OFFER" largeTitleDisplayMode="never" id="Oq4-My-Z9h">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu-16*16" id="7bK-xx-VAh">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menu" destination="7bK-xx-VAh" id="jeg-GF-HuP"/>
@@ -1149,10 +1154,10 @@
             </objects>
             <point key="canvasLocation" x="1994" y="1814"/>
         </scene>
-        <!--Pin LocationVC-->
+        <!--Pin Location-->
         <scene sceneID="GGM-HL-Yik">
             <objects>
-                <viewController id="S4z-Fi-Ucv" customClass="PinLocationVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Pin Location" id="S4z-Fi-Ucv" customClass="PinLocationVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jxw-9x-fcD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1172,11 +1177,11 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTK-vh-0ad">
                                 <rect key="frame" x="0.0" y="728" width="375" height="84"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10T-50-1yP">
                                 <rect key="frame" x="0.0" y="728" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.66274509803921566" green="0.32941176470588235" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jIT-VJ-Uj1"/>
                                 </constraints>
@@ -1220,10 +1225,10 @@
             </objects>
             <point key="canvasLocation" x="2879" y="1814"/>
         </scene>
-        <!--Parking DetailsVC-->
+        <!--Parking Details-->
         <scene sceneID="7Gs-56-ydL">
             <objects>
-                <viewController id="kmy-mC-d8m" customClass="ParkingDetailsVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Parking Details" id="kmy-mC-d8m" customClass="ParkingDetailsVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W7g-Un-XGD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1423,11 +1428,11 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okT-ph-gKf">
                                 <rect key="frame" x="0.0" y="728" width="375" height="84"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9C-8O-8JJ">
                                 <rect key="frame" x="0.0" y="728" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xEp-bE-TLG"/>
                                 </constraints>
@@ -1484,10 +1489,10 @@
             </objects>
             <point key="canvasLocation" x="3710" y="2156"/>
         </scene>
-        <!--Additional DetailsVC-->
+        <!--Additional Details-->
         <scene sceneID="nMv-pA-qq6">
             <objects>
-                <viewController id="Bcs-da-t0f" customClass="AdditionalDetailsVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Additional Details" id="Bcs-da-t0f" customClass="AdditionalDetailsVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pil-9T-is9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1595,11 +1600,11 @@
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTX-kO-57z">
                                 <rect key="frame" x="0.0" y="728" width="375" height="84"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6a-Ww-5rF">
                                 <rect key="frame" x="0.0" y="728" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="yTX-Wb-Oac"/>
                                 </constraints>
@@ -1658,10 +1663,10 @@
             </objects>
             <point key="canvasLocation" x="4518" y="2156"/>
         </scene>
-        <!--Availability And PriceVC-->
+        <!--Price and Availability-->
         <scene sceneID="tvf-7x-HGt">
             <objects>
-                <viewController id="7f5-nC-U9k" customClass="AvailabilityAndPriceVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Price and Availability" id="7f5-nC-U9k" customClass="AvailabilityAndPriceVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="waH-qA-yef">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1941,11 +1946,11 @@
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTk-mk-Nff">
                                 <rect key="frame" x="0.0" y="728" width="375" height="84"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etJ-Kc-AOp">
                                 <rect key="frame" x="0.0" y="728" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="771-gp-wPK"/>
                                 </constraints>
@@ -2033,7 +2038,7 @@
             </objects>
             <point key="canvasLocation" x="3710" y="1475"/>
         </scene>
-        <!--My ProfileVC-->
+        <!--PROFILE-->
         <scene sceneID="2Iw-Wm-Nbg">
             <objects>
                 <viewController id="MHk-eg-9TC" customClass="MyProfileVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
@@ -2043,8 +2048,10 @@
                         <color key="backgroundColor" red="0.66092631270000002" green="0.331260744" blue="0.89342084389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Ka0-mU-rLO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QLD-eJ-plI">
-                        <barButtonItem key="leftBarButtonItem" image="menu-16*16" id="89E-Yj-SAs"/>
+                    <navigationItem key="navigationItem" title="PROFILE" largeTitleDisplayMode="never" id="QLD-eJ-plI">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu-16*16" id="89E-Yj-SAs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menu" destination="89E-Yj-SAs" id="Wi1-WJ-Vel"/>
@@ -2054,7 +2061,7 @@
             </objects>
             <point key="canvasLocation" x="-383" y="2642"/>
         </scene>
-        <!--My CarsVC-->
+        <!--MY CARS-->
         <scene sceneID="hQz-xv-dL5">
             <objects>
                 <viewController id="365-8q-IOm" customClass="MyCarsVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
@@ -2064,7 +2071,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parking(2)" translatesAutoresizingMaskIntoConstraints="NO" id="Ues-lm-mky">
                                 <rect key="frame" x="0.0" y="88" width="375" height="156"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="0.74866224315068497" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="19h-7t-JGz"/>
                                 </constraints>
@@ -2077,6 +2084,9 @@
                                     <constraint firstAttribute="height" constant="35" id="WKO-Fy-fBc"/>
                                 </constraints>
                                 <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="addVehicleTapped:" destination="365-8q-IOm" eventType="touchUpInside" id="nWd-YI-5tf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehilce information helps the spot owner identify what kind of vehicle they should be aspecting" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbz-UY-C5h">
                                 <rect key="frame" x="16" y="281.66666666666669" width="343" height="61"/>
@@ -2151,11 +2161,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PHT-hC-6L1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MFJ-N7-QOw">
-                        <barButtonItem key="leftBarButtonItem" image="menu-16*16" id="yNA-MF-9ie"/>
+                    <navigationItem key="navigationItem" title="MY CARS" largeTitleDisplayMode="never" id="MFJ-N7-QOw">
+                        <barButtonItem key="leftBarButtonItem" image="menu-16*16" id="yNA-MF-9ie">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menu" destination="yNA-MF-9ie" id="nbk-8s-6nG"/>
+                        <outlet property="vehicleTable" destination="aMi-31-d56" id="UiC-8L-Sfd"/>
                         <segue destination="JTC-5U-Il5" kind="show" identifier="addVehicleVC" id="vlT-vd-bPu"/>
                     </connections>
                 </viewController>
@@ -2163,17 +2176,17 @@
             </objects>
             <point key="canvasLocation" x="1392.8" y="2641.6256157635471"/>
         </scene>
-        <!--Add VehicleVC-->
+        <!--Add Car-->
         <scene sceneID="r4H-oo-62T">
             <objects>
-                <viewController id="JTC-5U-Il5" customClass="AddVehicleVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Car" id="JTC-5U-Il5" customClass="AddCarVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zpt-yw-5XW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parking(2)" translatesAutoresizingMaskIntoConstraints="NO" id="Os9-af-2Z1">
                                 <rect key="frame" x="0.0" y="88" width="375" height="156"/>
-                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="f51-ab-bZO"/>
                                 </constraints>
@@ -2195,8 +2208,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="8oH-B7-rEQ"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -2215,8 +2228,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="tsK-7u-bTI"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -2235,8 +2248,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="Xgi-m9-rcY"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -2255,8 +2268,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="wH2-DV-bw4"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -2286,6 +2299,9 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelPressed:" destination="JTC-5U-Il5" eventType="touchUpInside" id="4bf-QR-aar"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2316,6 +2332,9 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="addVehicleTapped:" destination="JTC-5U-Il5" eventType="touchUpInside" id="h2n-ae-Jqy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2346,6 +2365,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jG0-Xw-23c"/>
                     </view>
+                    <connections>
+                        <outlet property="vehicleColorTextField" destination="3Vy-I4-509" id="phg-db-gBy"/>
+                        <outlet property="vehicleLicenceNoTextField" destination="DQV-Kc-m5B" id="CyN-UQ-KpK"/>
+                        <outlet property="vehicleModelTextField" destination="DvJ-Sh-f45" id="Ikw-tn-GlW"/>
+                        <outlet property="vehicleYearTextField" destination="aaj-QO-PNL" id="yaa-uL-e5X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="427-Hg-Dvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2371,9 +2396,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tdx-mW-ZA2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i9W-1W-5pY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="i9W-1W-5pY">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2389,9 +2419,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nP2-L0-z36" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m24-XO-ABQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="m24-XO-ABQ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2407,9 +2442,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3ez-Xg-nNJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fu2-mL-M4P">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="fu2-mL-M4P">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2428,6 +2468,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="26q-nK-RRN">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

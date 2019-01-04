@@ -25,6 +25,8 @@ class DataService {
     
     var myPins = [String : LocationPin]()
     
+    var myCars = [String : Car]()
+    
     public private(set) var REF_BASE = DB_BASE
     public private(set) var REF_USER = DB_USER
     public private(set) var REF_GLOBAL_PINS = DB_BASE.child("GlobalPins")
@@ -33,6 +35,8 @@ class DataService {
     public private(set) var REF_USER_PINS = DB_CURRENT_USER.child("ArrayPins")
     public private(set) var REF_USER_BALANCE = DB_CURRENT_USER.child("Wallet").child("Balance")
     public private(set) var REF_USER_EARNING = DB_CURRENT_USER.child("Wallet").child("Earning")
+    public private(set) var REF_USER_CAR = DB_CURRENT_USER.child("MyCars")
+    public private(set) var REF_CARS = DB_BASE.child("Cars")
     
     var Name : String!
     var Email : String!
@@ -190,21 +194,45 @@ class DataService {
                 
                 print(pinloc)
                 
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2DMake(lat, long)
-                marker.snippet = "₹\(price_hourly)"
-//                marker.icon = UIImage(named: "location_pin")
-                marker.title = ""
-                self.markers.append(marker)
-                
                 let pinKey = globalPin.key
                 
                 let locationPin = LocationPin(by: by, description: description, instructions: instructions, price_hourly: price_hourly, price_daily: price_daily, price_weekly: price_weekly, price_monthly: price_monthly, type: type, availability: availability, visibility: visibility, numberofspot: numberofspot, features: nil, pinloc: pinloc, photos: nil, pinKey: pinKey)
+                
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2DMake(lat, long)
+                marker.userData = locationPin
+//                marker.snippet = "₹\(price_hourly)"
+//                marker.icon = UIImage(named: "location_pin")
+//                marker.title = ""
+                self.markers.append(marker)
                 
                 self.globalPins[pinKey] = locationPin
             }
             completionHandler(true)
         }
+    }
+    
+    func addCar(car : Car, handler : @escaping (_ complete : Bool) -> ()) {
+        let car = [
+            "color" : car.color,
+            "licence_plate" : car.licence_plate,
+            "of" : car.of,
+            "year" : car.year,
+            "model" : car.model
+        ] as [String : Any]
+        
+        REF_CARS.childByAutoId().updateChildValues(car) { (error, ref) in
+            if error == nil {
+                self.REF_USER_CAR.child(ref.key!).setValue(ref.key!)
+                handler(true)
+            } else {
+                handler(false)
+            }
+        }
+    }
+    
+    func getMyCar(handler : @escaping (_ complete : Bool) -> ()) {
+        
     }
     
 }

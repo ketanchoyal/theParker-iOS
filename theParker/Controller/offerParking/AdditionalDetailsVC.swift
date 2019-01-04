@@ -30,12 +30,6 @@ class AdditionalDetailsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        navigationController?.navigationBar.barTintColor = HextoUIColor.instance.hexString(hex: "#4C177D")
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 50)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationItem.title = "Additional Details"
     }
 
     @IBAction func addPhotoButton(_ sender: Any) {
