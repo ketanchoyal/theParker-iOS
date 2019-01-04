@@ -43,14 +43,16 @@ class DataService {
     var photoURL : String!
     var PhoneNumber : String!
     
-    func getUserData(completionHandler : @escaping (_ completion : Bool,_ user : User) -> ()) {
+    func getUserData(completionHandler : @escaping (_ completion : Bool,_ user : User?) -> ()) {
         var Name : String!
         var Email : String!
         var photoURL : String!
         var PhoneNumber : String!
         
         REF_CURRENT_USER.child("Profile").observeSingleEvent(of: .value) { (userData) in
-            guard let userData = userData.value as? [String : AnyObject] else { return }
+            guard let userData = userData.value as? [String : AnyObject] else {
+                completionHandler(false, nil)
+                return }
             
             Name = userData["Name"] as? String
             Email = userData["Email"] as? String
@@ -231,7 +233,41 @@ class DataService {
         }
     }
     
-    func getMyCar(handler : @escaping (_ complete : Bool) -> ()) {
+    func getMyCars(handler : @escaping (_ complete : Bool) -> ()) {
+        REF_USER_CAR.observe(.value) { (carsSnapshot) in
+            guard let carsSnapshot = carsSnapshot.value as? [String : Any] else {
+                handler(false)
+                return }
+            
+            for (key, _) in carsSnapshot {
+                self.REF_CARS.child(key).observe(.value, with: { (carSnapshot) in
+                    guard let carData = carSnapshot.value as? [String : AnyObject] else {
+                        handler(false)
+                        return }
+                    
+                    let car = Car.init(model: carData["model"] as! String, licence_plate: carData["licence_plate"] as! String, color: carData["color"] as! String, of: carData["of"] as! String, year: carData["year"] as! String)
+                    
+                    self.myCars[key] = car
+                })
+            }
+            handler(true)
+        }
+    }
+    
+    func deleteCar(ofId id : String, handler : @escaping (_ complete : Bool) -> ()) {
+        REF_USER_CAR.child(id).removeValue { (error, ref) in
+            if error == nil {
+                self.REF_CARS.child(id).removeValue(completionBlock: { (error, ref) in
+                    if error == nil {
+                        handler(true)
+                    } else {
+                        handler(false)
+                    }
+                })
+            } else {
+                handler(false)
+            }
+        }
         
     }
     

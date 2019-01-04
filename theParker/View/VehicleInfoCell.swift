@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class VehicleInfoCell: UITableViewCell {
+class CarInfoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

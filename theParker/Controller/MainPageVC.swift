@@ -45,6 +45,10 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
+        DataService.instance.getMyCars { (success) in
+            
+        }
+        
     }
     
     override func viewDidLoad() {

@@ -21,7 +21,7 @@
 		971E6B8F21D97A1E00E0D9F4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E6B8E21D97A1E00E0D9F4 /* StringExtension.swift */; };
 		9726E3BB21DFBFDA004281AE /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726E3BA21DFBFDA004281AE /* Car.swift */; };
 		9726E3BD21DFE432004281AE /* AddCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726E3BC21DFE431004281AE /* AddCarVC.swift */; };
-		97405CEA21D7FC7500CD87D1 /* VehicleInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CE921D7FC7500CD87D1 /* VehicleInfoCell.swift */; };
+		97405CEA21D7FC7500CD87D1 /* CarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */; };
 		97405CEF21D80A8600CD87D1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CEE21D80A8600CD87D1 /* DataService.swift */; };
 		97D1DA3421D6870800AE76CA /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1DA3321D6870800AE76CA /* RoundedLabel.swift */; };
 		97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5121D19161009D124F /* LaunchScreen.storyboard */; };
@@ -122,7 +122,7 @@
 		971E6B8E21D97A1E00E0D9F4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9726E3BA21DFBFDA004281AE /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		9726E3BC21DFE431004281AE /* AddCarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarVC.swift; sourceTree = "<group>"; };
-		97405CE921D7FC7500CD87D1 /* VehicleInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoCell.swift; sourceTree = "<group>"; };
+		97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoCell.swift; sourceTree = "<group>"; };
 		97405CEE21D80A8600CD87D1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		97D1DA3321D6870800AE76CA /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 		97E9EC4521D19160009D124F /* theParker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theParker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,7 +236,7 @@
 				97F01C8821D430A20015917F /* UnderlineTextField.swift */,
 				97D1DA3321D6870800AE76CA /* RoundedLabel.swift */,
 				970F907421D7A34B00DF84A9 /* RoundedButton.swift */,
-				97405CE921D7FC7500CD87D1 /* VehicleInfoCell.swift */,
+				97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -694,7 +694,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97F01C8721D42BEC0015917F /* ParkingDetailsVC.swift in Sources */,
-				97405CEA21D7FC7500CD87D1 /* VehicleInfoCell.swift in Sources */,
+				97405CEA21D7FC7500CD87D1 /* CarInfoCell.swift in Sources */,
 				9715153021DCB1EA00221013 /* Extra.swift in Sources */,
 				97E9ECE421D19AFF009D124F /* LoginVC.swift in Sources */,
 				97E9ECE521D19AFF009D124F /* MainPageVC.swift in Sources */,
