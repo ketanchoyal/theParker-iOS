@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        GMSServices.provideAPIKey("AIzaSyBLGhDJUco802MJiog3tf9zd73-NLY0yEI")
-        GMSPlacesClient.provideAPIKey("AIzaSyD5iAIQAVNnommi_SbU-z4Eu-8lzbdil7U")
+//        GMSServices.provideAPIKey("AIzaSyBLGhDJUco802MJiog3tf9zd73-NLY0yEI")
+        GMSServices.provideAPIKey("AIzaSyAnHtwW9CASe6pD7zS_vVRJCiYoA2omOcg")
+        GMSPlacesClient.provideAPIKey("AIzaSyAnHtwW9CASe6pD7zS_vVRJCiYoA2omOcg")
+//        GMSPlacesClient.provideAPIKey("AIzaSyD5iAIQAVNnommi_SbU-z4Eu-8lzbdil7U")
         
         IQKeyboardManager.shared.enable = true
         UIApplication.shared.statusBarStyle = .lightContent

@@ -8,4 +8,4 @@
 
 import Foundation
 
-
+let DirectionKey = "AIzaSyAnHtwW9CASe6pD7zS_vVRJCiYoA2omOcg"

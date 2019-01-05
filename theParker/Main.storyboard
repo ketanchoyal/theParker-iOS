@@ -839,6 +839,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="wCT-Tu-Pyl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="cEN-q5-Vgw"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzD-Be-EqK">
                                 <rect key="frame" x="16" y="44" width="30" height="30"/>
                                 <constraints>
@@ -847,12 +853,6 @@
                                 </constraints>
                                 <state key="normal" image="close"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wCT-Tu-Pyl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="cEN-q5-Vgw"/>
-                                </constraints>
-                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TMM-qa-eDw">
                                 <rect key="frame" x="0.0" y="230" width="375" height="46"/>
                                 <constraints>
@@ -2515,6 +2515,7 @@
         <image name="magnifier" width="12.800000190734863" height="12.800000190734863"/>
         <image name="man-avatar" width="204.80000305175781" height="204.80000305175781"/>
         <image name="menu-16*16" width="12.800000190734863" height="12.800000190734863"/>
+        <image name="noImage" width="750" height="500"/>
         <image name="onsiteStaff" width="33.333332061767578" height="33.333332061767578"/>
         <image name="parking(1)" width="409.60000610351562" height="409.60000610351562"/>
         <image name="parking(2)" width="204.80000305175781" height="204.80000305175781"/>

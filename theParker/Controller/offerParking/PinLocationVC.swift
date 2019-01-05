@@ -57,7 +57,7 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
         MapView.isMyLocationEnabled = true
         MapView.settings.compassButton = true
         
-//        self.scheduledTimerWithTimeInterval()
+        self.scheduledTimerWithTimeInterval()
     }
     
     @IBAction func NextButtonClicked(_ sender: Any) {
@@ -83,32 +83,32 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
 }
 
 extension PinLocationVC{
-//    func scheduledTimerWithTimeInterval(){
-//        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-//        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload), userInfo: nil, repeats: true)
-//    }
-//
-//    @objc func chartload(){
-//
-//        if self.CurLocationNow?.coordinate.latitude != nil && self.CurLocationNow?.coordinate.longitude != nil {
-//
-//            let camera2 = GMSCameraPosition.camera(withLatitude: (self.CurLocationNow?.coordinate.latitude)!, longitude: (self.CurLocationNow?.coordinate.longitude)!, zoom: 18.0)
-//
-//            self.MapView.camera = camera2
-//            self.MapView.delegate = self
-//            self.MapView.isMyLocationEnabled = true
-//            self.MapView.settings.myLocationButton = true
-//            self.MapView.settings.compassButton = true
-//            self.MapView.settings.zoomGestures = true
-//            self.stopTimer()
-//
-//        }
-//    }
-//
-//    func stopTimer(){
-//        timer.invalidate()
-//
-//    }
+    func scheduledTimerWithTimeInterval(){
+        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload), userInfo: nil, repeats: true)
+    }
+
+    @objc func chartload(){
+
+        if self.CurLocationNow?.coordinate.latitude != nil && self.CurLocationNow?.coordinate.longitude != nil {
+
+            let camera2 = GMSCameraPosition.camera(withLatitude: (self.CurLocationNow?.coordinate.latitude)!, longitude: (self.CurLocationNow?.coordinate.longitude)!, zoom: 18.0)
+
+            self.MapView.camera = camera2
+            self.MapView.delegate = self
+            self.MapView.isMyLocationEnabled = true
+            self.MapView.settings.myLocationButton = true
+            self.MapView.settings.compassButton = true
+            self.MapView.settings.zoomGestures = true
+            self.stopTimer()
+
+        }
+    }
+
+    func stopTimer(){
+        timer.invalidate()
+
+    }
     
     func alert(message:String )
     {

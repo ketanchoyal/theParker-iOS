@@ -51,13 +51,10 @@ class AvailabilityAndPriceVC: UIViewController {
             finishButton.isEnabled = false
             addDetails { (success) in
                 if success {
-                    DataService.pinToUpload.pinKey = "abc"
-                    
-                    print(DataService.pinToUpload as? Any)
-                    
                     DataService.instance.createPinLocation(completionhandeler: { (success) in
                         if success {
                             self.finishButton.isEnabled = true
+                            self.navigationController?.popToRootViewController(animated: true)
                         } else {
                             self.alert(message: "Please try again")
                             self.finishButton.isEnabled = true

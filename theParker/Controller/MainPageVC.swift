@@ -134,6 +134,10 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         
         let markerData = marker.userData as? LocationPin
         
+        let endLoc = CLLocation(latitude: (markerData?.pinloc[0])!, longitude: (markerData?.pinloc[1])!)
+        
+        self.drawPath(startLocation: CurLocationNow!, endLocation: endLoc)
+        
         print(markerData!.numberofspot)
         
         return false
@@ -159,7 +163,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
         
         
-        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving"
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(DirectionKey)"
         
         Alamofire.request(url).responseJSON { response in
             
