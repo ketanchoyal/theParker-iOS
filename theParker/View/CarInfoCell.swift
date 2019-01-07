@@ -31,7 +31,7 @@ class CarInfoCell: UITableViewCell {
     
     func configureCell(car : Car) {
         model.text = car.model
-        year.text = car.year
+        year.text = car.year + " Model"
         color.text = car.color
         licence_plate_Number.text = car.licence_plate
         carId = car.of

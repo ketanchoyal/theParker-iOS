@@ -155,7 +155,8 @@ class LoginVC: UIViewController , UITextFieldDelegate{
             } else {
                 self.pass.text = ""
                 print("Error logging in: \(error!.localizedDescription)")
-                self.alert(message: "Error!, Either email or password is Incorrect")
+//                print("Login error : \(error as? Any)")
+                self.alert(message: "Error! Either email or password is Incorrect")
                 self.FirebaseLOGINbtn.isHidden = false
                 self.actInd.isHidden = true
                // self.resetForm()
@@ -224,7 +225,7 @@ class LoginVC: UIViewController , UITextFieldDelegate{
                                 }
                                 
                             } else {
-                                print("Error: \(error!.localizedDescription)")
+                                print("Error1: \(error!.localizedDescription)")
                                 self.firebasesignupBTN.isHidden = false
                                 self.actInd.isHidden = true
                                 self.resetForm()
@@ -243,7 +244,7 @@ class LoginVC: UIViewController , UITextFieldDelegate{
             } else {
                 self.firebasesignupBTN.isHidden = false
                 self.actInd.isHidden = true
-                print("Error: \(error!.localizedDescription)")
+                print("Error2: \(error!.localizedDescription)")
                 self.resetForm()
             }
         }
@@ -300,7 +301,7 @@ class LoginVC: UIViewController , UITextFieldDelegate{
         
         let userObject = [
             "Profile" : Profile,
-            "ArrayPins": [String("1"):"Blah blah"]
+//            "ArrayPins": [String("1"):"Blah blah"]
             ] as [String : Any]
         
         databaseRef.setValue(userObject) { error, ref in

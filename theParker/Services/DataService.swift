@@ -21,7 +21,7 @@ class DataService {
     static var pinToUpload = LocationPin()
     
     var globalPins = [String : LocationPin]()
-    var markers = [GMSMarker]()
+    var markers = [String : GMSMarker]()
     
     var myPins = [String : LocationPin]()
     
@@ -198,7 +198,7 @@ class DataService {
                 
                 let pinKey = globalPin.key
                 
-                let locationPin = LocationPin(by: by, description: description, instructions: instructions, price_hourly: price_hourly, price_daily: price_daily, price_weekly: price_weekly, price_monthly: price_monthly, type: type, availability: availability, visibility: visibility, numberofspot: numberofspot, features: nil, pinloc: pinloc, photos: nil, pinKey: pinKey)
+                let locationPin = LocationPin(by: by, description: description, instructions: instructions, price_hourly: price_hourly, price_daily: price_daily, price_weekly: price_weekly, price_monthly: price_monthly, type: type, availability: availability, visibility: visibility, numberofspot: numberofspot, features: Features, pinloc: pinloc, photos: nil, pinKey: pinKey)
                 
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2DMake(lat, long)
@@ -206,7 +206,7 @@ class DataService {
 //                marker.snippet = "₹\(price_hourly)"
 //                marker.icon = UIImage(named: "location_pin")
 //                marker.title = ""
-                self.markers.append(marker)
+                self.markers[pinKey] = marker
                 
                 self.globalPins[pinKey] = locationPin
             }

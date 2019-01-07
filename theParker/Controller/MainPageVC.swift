@@ -134,11 +134,14 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         
         let markerData = marker.userData as? LocationPin
         
-        let endLoc = CLLocation(latitude: (markerData?.pinloc[0])!, longitude: (markerData?.pinloc[1])!)
+//        let endLoc = CLLocation(latitude: (markerData?.pinloc[0])!, longitude: (markerData?.pinloc[1])!)
+//        self.drawPath(startLocation: CurLocationNow!, endLocation: endLoc)
+//        print(markerData!.numberofspot)
         
-        self.drawPath(startLocation: CurLocationNow!, endLocation: endLoc)
-        
-        print(markerData!.numberofspot)
+        let bookThisSpotVC = self.storyboard?.instantiateViewController(withIdentifier: "bookThisSpotVC") as? BookThisSpotVC
+        bookThisSpotVC?.initData(forMarker: markerData!)
+        present(bookThisSpotVC!, animated: true, completion: nil)
+//        presentDetail(bookThisSpotVC!)
         
         return false
     }
@@ -201,8 +204,6 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         
         
     }
-    
-    
     
     func touchSearchBar()     {
         let autoCompleteController = GMSAutocompleteViewController()
@@ -341,7 +342,7 @@ extension MainPageVC {
     }
     
     func showmarkers(){
-        for marker in DataService.instance.markers {
+        for (_, marker) in DataService.instance.markers {
             marker.map = googleMaps
         }
     }
