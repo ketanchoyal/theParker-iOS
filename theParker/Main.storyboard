@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="724"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3F2-Pv-9ZN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="605"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="615.33333333333337"/>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WiF-TL-ijX">
-                                        <rect key="frame" x="0.0" y="605" width="375" height="119"/>
+                                        <rect key="frame" x="0.0" y="615.33333333333337" width="375" height="108.66666666666663"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-xF-diF">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
@@ -33,7 +33,7 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.66092631270000002" green="0.331260744" blue="0.89342084389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyQ-bh-BtG">
-                                                <rect key="frame" x="0.0" y="47" width="375" height="72"/>
+                                                <rect key="frame" x="0.0" y="47" width="375" height="61.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -920,38 +920,38 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="453"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hosted by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEw-vA-GVY">
-                                                        <rect key="frame" x="22.999999999999993" y="28" width="82.333333333333314" height="20.333333333333329"/>
+                                                        <rect key="frame" x="22.999999999999993" y="33" width="82.333333333333314" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Ruh-N6-DWE" customClass="CircleImage" customModule="theParker" customModuleProvider="target">
-                                                        <rect key="frame" x="23" y="63.333333333333314" width="50" height="50"/>
+                                                        <rect key="frame" x="23" y="68.333333333333314" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="2j2-sW-MkQ"/>
                                                             <constraint firstAttribute="width" constant="50" id="N3U-Pm-vxn"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2B-aJ-Own">
-                                                        <rect key="frame" x="103" y="78.333333333333314" width="85" height="20.333333333333329"/>
+                                                        <rect key="frame" x="103" y="83.333333333333314" width="85" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAw-Q1-SlJ">
-                                                        <rect key="frame" x="22.999999999999996" y="131.33333333333331" width="37.666666666666657" height="20.333333333333343"/>
+                                                        <rect key="frame" x="22.999999999999996" y="136.33333333333331" width="37.666666666666657" height="20.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driveway" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-vW-EA7">
-                                                        <rect key="frame" x="23" y="161.66666666666669" width="80.666666666666671" height="22.666666666666657"/>
+                                                        <rect key="frame" x="23" y="166.66666666666669" width="80.666666666666671" height="22.666666666666657"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹2/hr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnj-QL-ZSG" customClass="RoundedLabel" customModule="theParker" customModuleProvider="target">
-                                                        <rect key="frame" x="284" y="153" width="75" height="40"/>
+                                                        <rect key="frame" x="284" y="158" width="75" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="75" id="5Wc-Tx-OTV"/>
                                                             <constraint firstAttribute="height" constant="40" id="oob-oc-z3d"/>
@@ -973,27 +973,33 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Reo-5O-7nO">
-                                                        <rect key="frame" x="23.000000000000007" y="202.33333333333331" width="93.666666666666686" height="20.333333333333343"/>
+                                                        <rect key="frame" x="23.000000000000007" y="207.33333333333331" width="93.666666666666686" height="20.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driveway Space, 5 min walking distance from nearest Bus Stop" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zk-W2-V96">
-                                                        <rect key="frame" x="23" y="232.66666666666669" width="329" height="43"/>
+                                                        <rect key="frame" x="23" y="237.66666666666663" width="329" height="43"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpN-VB-uhN">
-                                                        <rect key="frame" x="23" y="293.66666666666663" width="157.66666666666666" height="20.333333333333314"/>
+                                                        <rect key="frame" x="23" y="298.66666666666663" width="157.66666666666666" height="20.333333333333314"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not block the sideway" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuA-SZ-lTF">
-                                                        <rect key="frame" x="23" y="324" width="329" height="21.666666666666686"/>
+                                                        <rect key="frame" x="23" y="329" width="329" height="21.666666666666686"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking Booked Until ??" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmp-fC-3W2">
+                                                        <rect key="frame" x="84" y="10.000000000000002" width="207" height="21.666666666666671"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <color key="textColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1001,6 +1007,7 @@
                                                 <constraints>
                                                     <constraint firstItem="jpN-VB-uhN" firstAttribute="leading" secondItem="Gq0-p3-BBZ" secondAttribute="leadingMargin" constant="15" id="0nh-Ms-3S8"/>
                                                     <constraint firstItem="e2B-aJ-Own" firstAttribute="centerY" secondItem="Ruh-N6-DWE" secondAttribute="centerY" id="FuV-AM-iY6"/>
+                                                    <constraint firstItem="dmp-fC-3W2" firstAttribute="top" secondItem="Gq0-p3-BBZ" secondAttribute="top" constant="10" id="HVt-Wr-8gt"/>
                                                     <constraint firstItem="NuA-SZ-lTF" firstAttribute="leading" secondItem="Gq0-p3-BBZ" secondAttribute="leadingMargin" constant="15" id="L9L-iR-E9i"/>
                                                     <constraint firstItem="Reo-5O-7nO" firstAttribute="leading" secondItem="Gq0-p3-BBZ" secondAttribute="leadingMargin" constant="15" id="OKD-9U-F43"/>
                                                     <constraint firstItem="UAw-Q1-SlJ" firstAttribute="top" secondItem="Ruh-N6-DWE" secondAttribute="bottom" constant="18" id="R1p-Og-Py6"/>
@@ -1013,7 +1020,8 @@
                                                     <constraint firstItem="1zk-W2-V96" firstAttribute="top" secondItem="Reo-5O-7nO" secondAttribute="bottom" constant="10" id="cYz-ph-A18"/>
                                                     <constraint firstItem="Hnj-QL-ZSG" firstAttribute="centerY" secondItem="HKn-vW-EA7" secondAttribute="centerY" id="fTu-tJ-LHA"/>
                                                     <constraint firstItem="HKn-vW-EA7" firstAttribute="top" secondItem="UAw-Q1-SlJ" secondAttribute="bottom" constant="10" id="fiA-a1-rsb"/>
-                                                    <constraint firstItem="GEw-vA-GVY" firstAttribute="top" secondItem="Gq0-p3-BBZ" secondAttribute="topMargin" constant="20" id="h9f-Wh-Gqh"/>
+                                                    <constraint firstItem="GEw-vA-GVY" firstAttribute="top" secondItem="dmp-fC-3W2" secondAttribute="topMargin" constant="15" id="h9f-Wh-Gqh"/>
+                                                    <constraint firstItem="dmp-fC-3W2" firstAttribute="centerX" secondItem="Gq0-p3-BBZ" secondAttribute="centerX" id="lNf-fQ-yIN"/>
                                                     <constraint firstAttribute="trailing" secondItem="Hnj-QL-ZSG" secondAttribute="trailing" constant="16" id="lqg-QL-wM7"/>
                                                     <constraint firstAttribute="trailingMargin" secondItem="1zk-W2-V96" secondAttribute="trailing" constant="15" id="mD8-3l-SRo"/>
                                                     <constraint firstItem="UAw-Q1-SlJ" firstAttribute="leading" secondItem="Gq0-p3-BBZ" secondAttribute="leadingMargin" constant="15" id="n3L-uG-Ej4"/>
@@ -1156,6 +1164,10 @@
                                     <constraint firstItem="AJM-hS-C25" firstAttribute="leading" secondItem="NH9-mD-sGh" secondAttribute="leading" id="jNq-DZ-NXZ"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="sU8-5y-HBv">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.29803921570000003" green="0.090196078430000007" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1163,6 +1175,7 @@
                             <constraint firstItem="gxN-Q0-sXU" firstAttribute="trailing" secondItem="pOH-Yh-5Go" secondAttribute="trailing" id="5c4-dn-ILY"/>
                             <constraint firstItem="f4X-TN-wot" firstAttribute="leading" secondItem="pOH-Yh-5Go" secondAttribute="leading" id="68L-LS-380"/>
                             <constraint firstItem="YcY-GO-EWg" firstAttribute="leading" secondItem="pOH-Yh-5Go" secondAttribute="leading" id="Cxc-xC-f5P"/>
+                            <constraint firstItem="sU8-5y-HBv" firstAttribute="centerX" secondItem="72o-fJ-Wa7" secondAttribute="centerX" id="Dg8-r6-hWr"/>
                             <constraint firstItem="wCT-Tu-Pyl" firstAttribute="trailing" secondItem="pOH-Yh-5Go" secondAttribute="trailing" id="JUm-vE-baV"/>
                             <constraint firstAttribute="trailing" secondItem="NH9-mD-sGh" secondAttribute="trailing" id="Kue-df-asy"/>
                             <constraint firstItem="Ic7-06-J5j" firstAttribute="trailing" secondItem="pOH-Yh-5Go" secondAttribute="trailing" id="LPR-cd-Rjr"/>
@@ -1182,10 +1195,13 @@
                             <constraint firstItem="NH9-mD-sGh" firstAttribute="top" secondItem="wCT-Tu-Pyl" secondAttribute="bottom" id="mV8-4I-FjM"/>
                             <constraint firstItem="Ic7-06-J5j" firstAttribute="leading" secondItem="pOH-Yh-5Go" secondAttribute="leading" id="pqv-6b-MpB"/>
                             <constraint firstItem="YcY-GO-EWg" firstAttribute="trailing" secondItem="pOH-Yh-5Go" secondAttribute="trailing" id="qXK-LC-gXw"/>
+                            <constraint firstItem="sU8-5y-HBv" firstAttribute="centerY" secondItem="72o-fJ-Wa7" secondAttribute="centerY" id="rt3-WO-BjP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pOH-Yh-5Go"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="sU8-5y-HBv" id="lhy-CN-MkW"/>
+                        <outlet property="bookedUntilLabel" destination="dmp-fC-3W2" id="JRv-YF-03H"/>
                         <outlet property="detailBtnLabel" destination="HRz-h4-Owm" id="3Aa-7c-PmA"/>
                         <outlet property="detailButtonView" destination="Tyx-IR-tIH" id="kq8-IJ-Xic"/>
                         <outlet property="detailsView" destination="f4X-TN-wot" id="twJ-fy-FOL"/>

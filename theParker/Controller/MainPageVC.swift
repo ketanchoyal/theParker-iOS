@@ -133,13 +133,13 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         print("TAPPED TAPPED")
         
         let markerData = marker.userData as? LocationPin
-        
+        DataService.instance.selectedPin = markerData!
 //        let endLoc = CLLocation(latitude: (markerData?.pinloc[0])!, longitude: (markerData?.pinloc[1])!)
 //        self.drawPath(startLocation: CurLocationNow!, endLocation: endLoc)
 //        print(markerData!.numberofspot)
         
         let bookThisSpotVC = self.storyboard?.instantiateViewController(withIdentifier: "bookThisSpotVC") as? BookThisSpotVC
-        bookThisSpotVC?.initData(forMarker: markerData!)
+        bookThisSpotVC?.initData()
         present(bookThisSpotVC!, animated: true, completion: nil)
 //        presentDetail(bookThisSpotVC!)
         
@@ -201,8 +201,6 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         } else {
             self.alert(message: "Install Google Maps first!")
         }
-        
-        
     }
     
     func touchSearchBar()     {
@@ -221,9 +219,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     
     @IBAction func searchGoogleMaps(_ sender: Any) {
         
-        
         self.touchSearchBar()
-        
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

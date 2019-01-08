@@ -22,10 +22,12 @@ class DataService {
     
     var globalPins = [String : LocationPin]()
     var markers = [String : GMSMarker]()
-    
     var myPins = [String : LocationPin]()
-    
     var myCars = [String : Car]()
+    var selectedPin = LocationPin()
+    
+    let date = Date()
+    let formatter = DateFormatter()
     
     public private(set) var REF_BASE = DB_BASE
     public private(set) var REF_USER = DB_USER
@@ -198,7 +200,7 @@ class DataService {
                 
                 let pinKey = globalPin.key
                 
-                let locationPin = LocationPin(by: by, description: description, instructions: instructions, price_hourly: price_hourly, price_daily: price_daily, price_weekly: price_weekly, price_monthly: price_monthly, type: type, availability: availability, visibility: visibility, numberofspot: numberofspot, features: Features, pinloc: pinloc, photos: nil, pinKey: pinKey)
+                let locationPin = LocationPin(by: by, description: description, instructions: instructions, price_hourly: price_hourly, price_daily: price_daily, price_weekly: price_weekly, price_monthly: price_monthly, type: type, availability: availability, visibility: visibility, numberofspot: numberofspot, features: Features, pinloc: pinloc, photos: nil, pinKey: pinKey, booked_until : nil)
                 
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2DMake(lat, long)
@@ -269,6 +271,82 @@ class DataService {
             }
         }
         
+    }
+    
+    func getPindataById(for id : String, handler : @escaping (_ complete : Bool) -> ()) {
+        REF_GLOBAL_PINS.child(id).observe(.value) { (pinSnapshot) in
+            guard let pinSnapshot = pinSnapshot.value as? [String : AnyObject] else {
+                handler(false)
+                return }
+            
+            let availability = pinSnapshot["availability"] as! String
+            let by = pinSnapshot["by"] as! String
+            let description = pinSnapshot["description"] as! String
+            let instructions = pinSnapshot["instructions"] as! String
+            let numberofspot = pinSnapshot["numberofspot"] as! String
+            let price_daily = pinSnapshot["price_daily"] as! String
+            let price_hourly = pinSnapshot["price_hourly"] as! String
+            let price_monthly = pinSnapshot["price_monthly"] as! String
+            let price_weekly = pinSnapshot["price_weekly"] as! String
+            let type = pinSnapshot["type"] as! String
+            let visibility = pinSnapshot["visibility"] as! String
+            
+            var Features = [String]()
+            let features = pinSnapshot["Features"] as! [String : String]
+            
+            for (_, feature) in features {
+                Features.append(feature)
+            }
+            
+            let pinloc_Snapshot = pinSnapshot["pinloc"] as! [String : Double]
+            var pinloc = [Double]()
+            
+            var lat : Double = 0.0
+            var long : Double = 0.0
+        
+            for (key, value) in pinloc_Snapshot {
+                if key == "lat" {
+                    lat = value
+                }
+                if key == "long" {
+                    long = value
+                }
+            }
+            pinloc.append(lat)
+            pinloc.append(long)
+            
+            var booked_until : String!
+            
+            self.formatter.dateFormat = "dd-MM-yyyy"
+            let date = self.formatter.string(from: self.date)
+            
+            print(date)
+            
+            self.REF_GLOBAL_PINS.child(id).observeSingleEvent(of: .value, with: { (bookingSnapshot) in
+                if bookingSnapshot.hasChild("Bookings") {
+                    if bookingSnapshot.childSnapshot(forPath: "Bookings").hasChild(date) {
+//                 if there is current date node then obviously there will be "booked_until" node
+//                        if bookingSnapshot.childSnapshot(forPath: "Bookings").childSnapshot(forPath: date).hasChild("booked_until") {
+                            booked_until = bookingSnapshot.childSnapshot(forPath: "Bookings").childSnapshot(forPath: date).childSnapshot(forPath: "booked_until").value as? String
+                            print(booked_until!)
+                            
+                            let locationPin = LocationPin(by: by, description: description, instructions: instructions, price_hourly: price_hourly, price_daily: price_daily, price_weekly: price_weekly, price_monthly: price_monthly, type: type, availability: availability, visibility: visibility, numberofspot: numberofspot, features: Features, pinloc: pinloc, photos: nil, pinKey: id, booked_until : booked_until)
+                            
+                            DataService.instance.selectedPin = locationPin
+                            
+                            handler(true)
+                            
+//                        } else {
+//                            handler(true)
+//                            booked_until = nil }
+                    } else {
+                        handler(true)
+                        booked_until = nil }
+                } else {
+                    handler(true)
+                    booked_until = nil }
+            })
+        }
     }
     
 }

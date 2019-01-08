@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class BookThisSpotVC: UIViewController {
     
     public private(set) var markerData : LocationPin?
+    private var LocationId : String?
     
+    @IBOutlet weak var bookedUntilLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var hostImage: CircleImage!
     @IBOutlet weak var hostName: UILabel!
     @IBOutlet weak var parkingType: UILabel!
@@ -35,17 +39,27 @@ class BookThisSpotVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(markerData?.features)
+        
+        activityIndicator.startAnimating()
+        DataService.instance.getPindataById(for: LocationId!) { (success) in
+            if success {
+                self.markerData = DataService.instance.selectedPin
+                self.setUpData()
+                self.activityIndicator.stopAnimating()
+            } else {
+                self.activityIndicator.stopAnimating()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setUpData()
+        //setUpData()
     }
     
-    func initData(forMarker markerData : LocationPin) {
-        self.markerData = markerData
+    func initData() {
+        LocationId = DataService.instance.selectedPin.pinKey
+        
     }
     
     @IBAction func closeBtnTapped(_ sender: Any) {
@@ -101,6 +115,13 @@ extension BookThisSpotVC {
         parkingPricePerHour.text = "₹" + price! + "/hr"
         parkingDescription.text = markerData?.description
         parkingInstruction.text = markerData?.instructions
+        
+        print(markerData?.booked_until)
+        
+        if markerData?.booked_until != nil {
+            bookedUntilLabel.isHidden = false
+            bookedUntilLabel.text = "Parking Booked until " + (markerData?.booked_until)!
+        }
         
         setFeatures()
     }

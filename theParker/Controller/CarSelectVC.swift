@@ -63,5 +63,11 @@ extension CarSelectVC : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cars = DataService.instance.myCars
+        let key = Array(cars.keys)[indexPath.row]
+                
+        
+    }
 }

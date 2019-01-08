@@ -102,7 +102,6 @@ class ParkingDetailsVC: UIViewController {
         pin.type = parkingType
         
         let numberOfSpot = noOfSpot.text
-        let spots = Int(numberOfSpot!)
         
         pin.numberofspot = numberOfSpot!
         
