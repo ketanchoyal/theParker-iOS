@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05F238F5650E2A8D97AD6418 /* Pods_theParker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4071BD13F20B6292D4B20F5 /* Pods_theParker.framework */; };
+		9709C45821E6059B00E9B8AD /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709C45721E6059B00E9B8AD /* Booking.swift */; };
 		970F907321D79A2500DF84A9 /* BookThisSpotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F907221D79A2500DF84A9 /* BookThisSpotVC.swift */; };
 		970F907521D7A34B00DF84A9 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970F907421D7A34B00DF84A9 /* RoundedButton.swift */; };
 		971393F021D297DC00BCB212 /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971393EF21D297DC00BCB212 /* InsetTextField.swift */; };
@@ -112,6 +113,7 @@
 
 /* Begin PBXFileReference section */
 		1DB9C679F4A9E3AC3E9AE601 /* Pods-theParker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theParker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-theParker/Pods-theParker.debug.xcconfig"; sourceTree = "<group>"; };
+		9709C45721E6059B00E9B8AD /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		970F907221D79A2500DF84A9 /* BookThisSpotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookThisSpotVC.swift; sourceTree = "<group>"; };
 		970F907421D7A34B00DF84A9 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		971393EF21D297DC00BCB212 /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				971E6B8921D948AE00E0D9F4 /* User.swift */,
 				971E6B8B21D94D8900E0D9F4 /* LocationPin.swift */,
 				9726E3BA21DFBFDA004281AE /* Car.swift */,
+				9709C45721E6059B00E9B8AD /* Booking.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				973E86D621E3C42200BB893D /* CarSelectVC.swift in Sources */,
 				97E9ECEE21D19B13009D124F /* OfferParkingViewController.swift in Sources */,
 				971393F521D2A18C00BCB212 /* CircleImage.swift in Sources */,
+				9709C45821E6059B00E9B8AD /* Booking.swift in Sources */,
 				97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */,
 				973E86D821E3C46500BB893D /* CarSelectCell.swift in Sources */,
 				97E9ECEF21D19B13009D124F /* PinLocationVC.swift in Sources */,
