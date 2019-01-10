@@ -71,7 +71,9 @@ class BookThisSpotVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let carSelectVC = segue.destination as? CarSelectVC
+        let navVC = segue.destination as? UINavigationController
+        
+        let carSelectVC = navVC?.viewControllers.first as? CarSelectVC
         carSelectVC?.initData(forMarker: (sender as? LocationPin)!)
     }
     

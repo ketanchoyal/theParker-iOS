@@ -29,6 +29,8 @@ class DataService {
     let date = Date()
     let formatter = DateFormatter()
     
+    static var currentBooking : Booking?
+    
     public private(set) var REF_BASE = DB_BASE
     public private(set) var REF_USER = DB_USER
     public private(set) var REF_GLOBAL_PINS = DB_BASE.child("GlobalPins")

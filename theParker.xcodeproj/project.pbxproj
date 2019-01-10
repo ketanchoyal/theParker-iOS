@@ -28,6 +28,7 @@
 		97405CEA21D7FC7500CD87D1 /* CarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */; };
 		97405CEF21D80A8600CD87D1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CEE21D80A8600CD87D1 /* DataService.swift */; };
 		97D1DA3421D6870800AE76CA /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1DA3321D6870800AE76CA /* RoundedLabel.swift */; };
+		97DADE8F21E7D26400E46556 /* BookingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */; };
 		97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5121D19161009D124F /* LaunchScreen.storyboard */; };
 		97E9EC5B21D1946F009D124F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */; };
 		97E9EC6121D1988E009D124F /* post.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5D21D1988E009D124F /* post.xib */; };
@@ -133,6 +134,8 @@
 		97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoCell.swift; sourceTree = "<group>"; };
 		97405CEE21D80A8600CD87D1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		97D1DA3321D6870800AE76CA /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
+		97DADE8B21E7BE9500E46556 /* LogicPrcatice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LogicPrcatice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingReviewVC.swift; sourceTree = "<group>"; };
 		97E9EC4521D19160009D124F /* theParker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theParker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E9EC5221D19161009D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E9EC5421D19161009D124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -261,6 +264,7 @@
 		9715152E21DCB1D400221013 /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				97DADE8B21E7BE9500E46556 /* LogicPrcatice.playground */,
 				9715152F21DCB1EA00221013 /* Extra.swift */,
 			);
 			path = Extra;
@@ -431,12 +435,13 @@
 				97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */,
 				97E9ECE121D19AFE009D124F /* MainPageVC.swift */,
 				97E9ECEB21D19B12009D124F /* MyCarsVC.swift */,
+				9726E3BC21DFE431004281AE /* AddCarVC.swift */,
 				97E9ECED21D19B13009D124F /* MyProfileVC.swift */,
 				97E9ECE221D19AFF009D124F /* SideBarVC.swift */,
 				97F01C8421D2D76E0015917F /* E-WalletVC.swift */,
 				970F907221D79A2500DF84A9 /* BookThisSpotVC.swift */,
-				9726E3BC21DFE431004281AE /* AddCarVC.swift */,
 				973E86D521E3C42200BB893D /* CarSelectVC.swift */,
+				97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -738,6 +743,7 @@
 				971393F521D2A18C00BCB212 /* CircleImage.swift in Sources */,
 				9709C45821E6059B00E9B8AD /* Booking.swift in Sources */,
 				97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */,
+				97DADE8F21E7D26400E46556 /* BookingReviewVC.swift in Sources */,
 				973E86D821E3C46500BB893D /* CarSelectCell.swift in Sources */,
 				97E9ECEF21D19B13009D124F /* PinLocationVC.swift in Sources */,
 				97E9ECF121D19B13009D124F /* MyCarsVC.swift in Sources */,

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct Booking {
+    public private(set) var by : String
+    public private(set) var car : String
+    public private(set) var for_hours : String
+    public private(set) var from : String
+}
