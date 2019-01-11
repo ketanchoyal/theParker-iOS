@@ -1376,6 +1376,9 @@
                                 <state key="normal" title="Book">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="bookParkingTapped:" destination="jIp-F0-nh6" eventType="touchUpInside" id="5f3-yh-EaI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please review your booking details below. Click 'Book' once you're done to book this spot" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVd-6q-wOa">
                                 <rect key="frame" x="16" y="128" width="343" height="100"/>

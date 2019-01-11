@@ -17,25 +17,39 @@ class BookingService {
     
     static var currentBooking : Booking?
     
-    func bookParking(booked_until : String, handler : @escaping (_ completeHandler : Bool) -> ()) {
+    func bookParking(booked_until_database_str : String, handler : @escaping (_ completeHandler : Bool) -> ()) {
         
-        formatter.dateFormat = "dd-MM-yyyy"
+        let locationPin = DataService.instance.selectedPin
+        let locationId = locationPin.pinKey
+        
+        self.formatter.dateFormat = "dd-MM-yyyy"
+        
+        //Child ID
+        let dateNow_string = self.formatter.string(from: self.date)
+        
+        //Generate Random Key without setting actuall Data
+        let key = REF_GLOBAL_PINS.child(locationId).childByAutoId().key
+        
         let data = BookingService.currentBooking
-        let dateNow_string = formatter.string(from: date)
-        let locationId = DataService.instance.selectedPin.pinKey
-        
-        let ref = REF_GLOBAL_PINS.child(locationId).child("Bookings").child(dateNow_string)
-        
-        let bookingData : Dictionary<String ,Any> = [
+        let bookingData = [
             "by" : data?.by,
             "car" : data?.car,
             "for_hours" : data?.for_hours,
             "from" : data?.from
         ]
         
-//        let booking : Dictionary<String, Any> = [
-//            "booked_until" : booked_until,
-//            ref.childByAutoId() : bookingData
-//        ]
+        let booking : Dictionary<String, Any> = [
+            "booked_until" : booked_until_database_str,
+            key! : bookingData
+        ]
+        
+        REF_GLOBAL_PINS.child(locationId).child("Bookings").child(dateNow_string).updateChildValues(booking) { (error, ref) in
+            if error == nil {
+                handler(true)
+            } else {
+                handler(false)
+            }
+        }
+        
     }
 }

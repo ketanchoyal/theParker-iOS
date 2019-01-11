@@ -122,7 +122,7 @@ extension BookThisSpotVC {
         
         if markerData?.booked_until != nil {
             bookedUntilLabel.isHidden = false
-            bookedUntilLabel.text = "Parking Booked until " + (markerData?.booked_until)!
+            bookedUntilLabel.text = "Booked until " + (markerData?.booked_until)!
         }
         
         setFeatures()

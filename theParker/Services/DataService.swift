@@ -120,16 +120,20 @@ class DataService {
             "type" : type
             ] as [String : Any]
         
-        REF_GLOBAL_PINS.childByAutoId().updateChildValues(pinDetails) { (error, ref) in
-            if error == nil {
-                let key = ref.key
-                REF_USER_PINS.child(key!).setValue(key!)
-                completionhandeler(true)
-            } else {
-                completionhandeler(false)
-            }
-        }
+        let key = REF_GLOBAL_PINS.childByAutoId().key
         
+//        REF_GLOBAL_PINS.childByAutoId().updateChildValues(pinDetails) { (error, ref) in
+//            if error == nil {
+//                let key = ref.key
+//                REF_USER_PINS.child(key!).setValue(key!)
+//                completionhandeler(true)
+//            } else {
+//                completionhandeler(false)
+//            }
+//        }
+        
+        REF_GLOBAL_PINS.child(key!).updateChildValues(pinDetails)
+        REF_USER_PINS.child(key!).setValue(key!)
     }
     
     func getGlobalLocationPins(completionHandler : @escaping (_ complete : Bool) -> ()) {
