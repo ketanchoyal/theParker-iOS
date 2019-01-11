@@ -7,5 +7,22 @@
 //
 
 import Foundation
+import Firebase
 
 let DirectionKey = "AIzaSyAnHtwW9CASe6pD7zS_vVRJCiYoA2omOcg"
+
+let DB_BASE = Database.database().reference()
+let DB_USER = DB_BASE.child("user")
+let userID = Auth.auth().currentUser?.uid
+let DB_CURRENT_USER = DB_BASE.child("user").child(userID!)
+
+public private(set) var REF_BASE = DB_BASE
+public private(set) var REF_USER = DB_USER
+public private(set) var REF_GLOBAL_PINS = DB_BASE.child("GlobalPins")
+public private(set) var REF_GLOBAL_COUNT = DB_BASE.child("count")
+public private(set) var REF_CURRENT_USER = DB_CURRENT_USER
+public private(set) var REF_USER_PINS = DB_CURRENT_USER.child("ArrayPins")
+public private(set) var REF_USER_BALANCE = DB_CURRENT_USER.child("Wallet").child("Balance")
+public private(set) var REF_USER_EARNING = DB_CURRENT_USER.child("Wallet").child("Earning")
+public private(set) var REF_USER_CAR = DB_CURRENT_USER.child("MyCars")
+public private(set) var REF_CARS = DB_BASE.child("Cars")

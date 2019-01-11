@@ -5,10 +5,10 @@ let formatter = DateFormatter()
 
 formatter.dateFormat = "dd-MM-yyyy h:mm a"
 
-let dateNow = formatter.string(from: date)
-let dateNow_string = formatter.date(from: dateNow)
+let dateNow_string = formatter.string(from: date)
+let dateNow = formatter.date(from: dateNow_string)
 
-let date2 = dateNow_string!.addingTimeInterval(60.0 * 60.0)
+let date2 = dateNow!.addingTimeInterval(60.0 * 60.0)
 let date2_string = formatter.string(from: date2)
 
 
@@ -40,7 +40,7 @@ extension Date {
 }
 
 do {
-    let diff = dateNow_string!.timeOfDayInterval(toDate: date2)
+    let diff = dateNow!.timeOfDayInterval(toDate: date2)
 
     // as text
     if diff > 0 {

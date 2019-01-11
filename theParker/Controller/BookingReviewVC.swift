@@ -27,7 +27,7 @@ class BookingReviewVC: UIViewController {
         setUpData()
         
         print(booked_until)
-        print(DataService.currentBooking?.from)
+        print(BookingService.currentBooking?.from)
     }
     
     func initData(booked_until : String) {
@@ -38,7 +38,7 @@ class BookingReviewVC: UIViewController {
 
 extension BookingReviewVC {
     func setUpData() {
-        let bookingData = DataService.currentBooking
+        let bookingData = BookingService.currentBooking
         let marker = DataService.instance.selectedPin
         let car = DataService.instance.myCars[(bookingData?.car)!]
         

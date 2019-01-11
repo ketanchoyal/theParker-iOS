@@ -99,7 +99,7 @@ extension CarSelectVC : UITableViewDelegate, UITableViewDataSource {
         let booked_from = formatter.date(from: from)
         
         let currentBooking = Booking.init(by: by!, car: carId, for_hours: for_hours, from: from)
-        DataService.currentBooking = currentBooking
+        BookingService.currentBooking = currentBooking
         
         let booked_time = Double(for_hours_int) * 60.0 //time in minute the parking is booked for
         let booked_until_date = booked_from?.addingTimeInterval(booked_time * 60.0)

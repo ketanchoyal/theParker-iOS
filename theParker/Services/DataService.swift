@@ -10,11 +10,6 @@ import Foundation
 import Firebase
 import GoogleMaps
 
-let DB_BASE = Database.database().reference()
-let DB_USER = DB_BASE.child("user")
-let userID = Auth.auth().currentUser?.uid
-let DB_CURRENT_USER = DB_BASE.child("user").child(userID!)
-
 class DataService {
     static let instance = DataService()
     
@@ -24,23 +19,11 @@ class DataService {
     var markers = [String : GMSMarker]()
     var myPins = [String : LocationPin]()
     var myCars = [String : Car]()
+    
     var selectedPin = LocationPin()
     
     let date = Date()
     let formatter = DateFormatter()
-    
-    static var currentBooking : Booking?
-    
-    public private(set) var REF_BASE = DB_BASE
-    public private(set) var REF_USER = DB_USER
-    public private(set) var REF_GLOBAL_PINS = DB_BASE.child("GlobalPins")
-    public private(set) var REF_GLOBAL_COUNT = DB_BASE.child("count")
-    public private(set) var REF_CURRENT_USER = DB_CURRENT_USER
-    public private(set) var REF_USER_PINS = DB_CURRENT_USER.child("ArrayPins")
-    public private(set) var REF_USER_BALANCE = DB_CURRENT_USER.child("Wallet").child("Balance")
-    public private(set) var REF_USER_EARNING = DB_CURRENT_USER.child("Wallet").child("Earning")
-    public private(set) var REF_USER_CAR = DB_CURRENT_USER.child("MyCars")
-    public private(set) var REF_CARS = DB_BASE.child("Cars")
     
     var Name : String!
     var Email : String!
@@ -140,7 +123,7 @@ class DataService {
         REF_GLOBAL_PINS.childByAutoId().updateChildValues(pinDetails) { (error, ref) in
             if error == nil {
                 let key = ref.key
-                self.REF_USER_PINS.child(key!).setValue(key!)
+                REF_USER_PINS.child(key!).setValue(key!)
                 completionhandeler(true)
             } else {
                 completionhandeler(false)
@@ -229,7 +212,7 @@ class DataService {
         
         REF_CARS.childByAutoId().updateChildValues(car) { (error, ref) in
             if error == nil {
-                self.REF_USER_CAR.child(ref.key!).setValue(ref.key!)
+                REF_USER_CAR.child(ref.key!).setValue(ref.key!)
                 handler(true)
             } else {
                 handler(false)
@@ -244,7 +227,7 @@ class DataService {
                 return }
             
             for (key, _) in carsSnapshot {
-                self.REF_CARS.child(key).observe(.value, with: { (carSnapshot) in
+                REF_CARS.child(key).observe(.value, with: { (carSnapshot) in
                     guard let carData = carSnapshot.value as? [String : AnyObject] else {
                         handler(false)
                         return }
@@ -261,7 +244,7 @@ class DataService {
     func deleteCar(ofId id : String, handler : @escaping (_ complete : Bool) -> ()) {
         REF_USER_CAR.child(id).removeValue { (error, ref) in
             if error == nil {
-                self.REF_CARS.child(id).removeValue(completionBlock: { (error, ref) in
+                REF_CARS.child(id).removeValue(completionBlock: { (error, ref) in
                     if error == nil {
                         handler(true)
                     } else {
@@ -324,7 +307,7 @@ class DataService {
             
             print(date)
             
-            self.REF_GLOBAL_PINS.child(id).observeSingleEvent(of: .value, with: { (bookingSnapshot) in
+            REF_GLOBAL_PINS.child(id).observeSingleEvent(of: .value, with: { (bookingSnapshot) in
                 if bookingSnapshot.hasChild("Bookings") {
                     if bookingSnapshot.childSnapshot(forPath: "Bookings").hasChild(date) {
 //                 if there is current date node then obviously there will be "booked_until" node

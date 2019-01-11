@@ -22,6 +22,7 @@
 		971E6B8F21D97A1E00E0D9F4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E6B8E21D97A1E00E0D9F4 /* StringExtension.swift */; };
 		9726E3BB21DFBFDA004281AE /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726E3BA21DFBFDA004281AE /* Car.swift */; };
 		9726E3BD21DFE432004281AE /* AddCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726E3BC21DFE431004281AE /* AddCarVC.swift */; };
+		972ABD8121E91900002CB296 /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972ABD8021E91900002CB296 /* BookingService.swift */; };
 		973E86D621E3C42200BB893D /* CarSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D521E3C42200BB893D /* CarSelectVC.swift */; };
 		973E86D821E3C46500BB893D /* CarSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D721E3C46500BB893D /* CarSelectCell.swift */; };
 		973E86DA21E3C94E00BB893D /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */; };
@@ -128,6 +129,7 @@
 		971E6B8E21D97A1E00E0D9F4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9726E3BA21DFBFDA004281AE /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		9726E3BC21DFE431004281AE /* AddCarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarVC.swift; sourceTree = "<group>"; };
+		972ABD8021E91900002CB296 /* BookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
 		973E86D521E3C42200BB893D /* CarSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectVC.swift; sourceTree = "<group>"; };
 		973E86D721E3C46500BB893D /* CarSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectCell.swift; sourceTree = "<group>"; };
 		973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				97405CEE21D80A8600CD87D1 /* DataService.swift */,
+				972ABD8021E91900002CB296 /* BookingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				97E9ECEE21D19B13009D124F /* OfferParkingViewController.swift in Sources */,
 				971393F521D2A18C00BCB212 /* CircleImage.swift in Sources */,
 				9709C45821E6059B00E9B8AD /* Booking.swift in Sources */,
+				972ABD8121E91900002CB296 /* BookingService.swift in Sources */,
 				97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */,
 				97DADE8F21E7D26400E46556 /* BookingReviewVC.swift in Sources */,
 				973E86D821E3C46500BB893D /* CarSelectCell.swift in Sources */,
