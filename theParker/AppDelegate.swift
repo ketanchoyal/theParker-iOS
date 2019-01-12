@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
                 self.window?.makeKeyAndVisible()
             } else {
                 //menu screen
-                let controller = storyboard.instantiateViewController(withIdentifier: "des") as! DescriptionViewController         //updates the view controller ( note: put self to explicitly state the
+                let controller = storyboard.instantiateViewController(withIdentifier: "des") as! DescriptionVC         //updates the view controller ( note: put self to explicitly state the
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
             }

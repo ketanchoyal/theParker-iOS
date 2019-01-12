@@ -104,7 +104,7 @@
 		97E9ECEF21D19B13009D124F /* PinLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECE921D19B11009D124F /* PinLocationVC.swift */; };
 		97E9ECF021D19B13009D124F /* ScrollPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECEA21D19B11009D124F /* ScrollPostViewController.swift */; };
 		97E9ECF121D19B13009D124F /* MyCarsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECEB21D19B12009D124F /* MyCarsVC.swift */; };
-		97E9ECF221D19B13009D124F /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */; };
+		97E9ECF221D19B13009D124F /* DescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECEC21D19B12009D124F /* DescriptionVC.swift */; };
 		97E9ECF321D19B13009D124F /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECED21D19B13009D124F /* MyProfileVC.swift */; };
 		97E9ECF521D19D4C009D124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9ECF421D19D4C009D124F /* AppDelegate.swift */; };
 		97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8421D2D76E0015917F /* E-WalletVC.swift */; };
@@ -112,6 +112,7 @@
 		97F01C8921D430A20015917F /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8821D430A20015917F /* UnderlineTextField.swift */; };
 		97F01C8D21D456290015917F /* AdditionalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8C21D456290015917F /* AdditionalDetailsVC.swift */; };
 		97F01C8F21D456760015917F /* AvailabilityAndPriceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01C8E21D456760015917F /* AvailabilityAndPriceVC.swift */; };
+		97FE31BA21EA87A4000DAC04 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FE31B921EA87A4000DAC04 /* WalletService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -217,7 +218,7 @@
 		97E9ECE921D19B11009D124F /* PinLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinLocationVC.swift; sourceTree = "<group>"; };
 		97E9ECEA21D19B11009D124F /* ScrollPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPostViewController.swift; sourceTree = "<group>"; };
 		97E9ECEB21D19B12009D124F /* MyCarsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCarsVC.swift; sourceTree = "<group>"; };
-		97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		97E9ECEC21D19B12009D124F /* DescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionVC.swift; sourceTree = "<group>"; };
 		97E9ECED21D19B13009D124F /* MyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		97E9ECF421D19D4C009D124F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97F01C8421D2D76E0015917F /* E-WalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-WalletVC.swift"; sourceTree = "<group>"; };
@@ -225,6 +226,7 @@
 		97F01C8821D430A20015917F /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		97F01C8C21D456290015917F /* AdditionalDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalDetailsVC.swift; sourceTree = "<group>"; };
 		97F01C8E21D456760015917F /* AvailabilityAndPriceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityAndPriceVC.swift; sourceTree = "<group>"; };
+		97FE31B921EA87A4000DAC04 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 		C29E5AA57B12B47A0BA6E563 /* Pods-theParker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theParker.release.xcconfig"; path = "Pods/Target Support Files/Pods-theParker/Pods-theParker.release.xcconfig"; sourceTree = "<group>"; };
 		F4071BD13F20B6292D4B20F5 /* Pods_theParker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_theParker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 			children = (
 				97405CEE21D80A8600CD87D1 /* DataService.swift */,
 				972ABD8021E91900002CB296 /* BookingService.swift */,
+				97FE31B921EA87A4000DAC04 /* WalletService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -419,7 +422,7 @@
 			path = LottieAnimationsJSON;
 			sourceTree = "<group>";
 		};
-		97E9ECE721D19B11009D124F /* offerParking */ = {
+		97E9ECE721D19B11009D124F /* OfferParking */ = {
 			isa = PBXGroup;
 			children = (
 				97E9ECE821D19B11009D124F /* OfferParkingViewController.swift */,
@@ -429,25 +432,22 @@
 				97F01C8C21D456290015917F /* AdditionalDetailsVC.swift */,
 				97F01C8E21D456760015917F /* AvailabilityAndPriceVC.swift */,
 			);
-			path = offerParking;
+			path = OfferParking;
 			sourceTree = "<group>";
 		};
 		97F01C8221D2D5B70015917F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				97E9ECE721D19B11009D124F /* offerParking */,
-				97E9ECEC21D19B12009D124F /* DescriptionViewController.swift */,
+				97FE31B821EA691E000DAC04 /* BookParking */,
+				97E9ECE721D19B11009D124F /* OfferParking */,
+				97E9ECEC21D19B12009D124F /* DescriptionVC.swift */,
 				97E9ECE021D19AFE009D124F /* LoginVC.swift */,
 				97E9ECDF21D19AFE009D124F /* ForanimationsViewController.swift */,
-				97E9ECE121D19AFE009D124F /* MainPageVC.swift */,
 				97E9ECEB21D19B12009D124F /* MyCarsVC.swift */,
 				9726E3BC21DFE431004281AE /* AddCarVC.swift */,
 				97E9ECED21D19B13009D124F /* MyProfileVC.swift */,
 				97E9ECE221D19AFF009D124F /* SideBarVC.swift */,
 				97F01C8421D2D76E0015917F /* E-WalletVC.swift */,
-				970F907221D79A2500DF84A9 /* BookThisSpotVC.swift */,
-				973E86D521E3C42200BB893D /* CarSelectVC.swift */,
-				97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -460,6 +460,17 @@
 				9717C5DE21DAB793009AB03A /* Constants.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		97FE31B821EA691E000DAC04 /* BookParking */ = {
+			isa = PBXGroup;
+			children = (
+				97E9ECE121D19AFE009D124F /* MainPageVC.swift */,
+				970F907221D79A2500DF84A9 /* BookThisSpotVC.swift */,
+				973E86D521E3C42200BB893D /* CarSelectVC.swift */,
+				97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */,
+			);
+			path = BookParking;
 			sourceTree = "<group>";
 		};
 		AAF16646215E94E0E4E43BB5 /* Frameworks */ = {
@@ -723,7 +734,7 @@
 				97E9ECE521D19AFF009D124F /* MainPageVC.swift in Sources */,
 				971E6B8F21D97A1E00E0D9F4 /* StringExtension.swift in Sources */,
 				971393F321D298C100BCB212 /* HextoUIColor.swift in Sources */,
-				97E9ECF221D19B13009D124F /* DescriptionViewController.swift in Sources */,
+				97E9ECF221D19B13009D124F /* DescriptionVC.swift in Sources */,
 				970F907321D79A2500DF84A9 /* BookThisSpotVC.swift in Sources */,
 				97E9ECF521D19D4C009D124F /* AppDelegate.swift in Sources */,
 				971E6B8A21D948AE00E0D9F4 /* User.swift in Sources */,
@@ -744,6 +755,7 @@
 				97E9ECE321D19AFF009D124F /* ForanimationsViewController.swift in Sources */,
 				9717C5DF21DAB793009AB03A /* Constants.swift in Sources */,
 				971E6B8C21D94D8900E0D9F4 /* LocationPin.swift in Sources */,
+				97FE31BA21EA87A4000DAC04 /* WalletService.swift in Sources */,
 				971393F021D297DC00BCB212 /* InsetTextField.swift in Sources */,
 				973E86D621E3C42200BB893D /* CarSelectVC.swift in Sources */,
 				97E9ECEE21D19B13009D124F /* OfferParkingViewController.swift in Sources */,

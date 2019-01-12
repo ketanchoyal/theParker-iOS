@@ -1,7 +1,7 @@
 import UIKit
 import EZYGradientView
 
-class DescriptionViewController: UIViewController, UIScrollViewDelegate {
+class DescriptionVC: UIViewController, UIScrollViewDelegate {
     
     
     let page1 = ["MainHeading":"Find Car parking near you","CenterImage":"way.png","explain":"Just search in the maps where you want your car parking."]
@@ -34,7 +34,7 @@ class DescriptionViewController: UIViewController, UIScrollViewDelegate {
     }
 }
 
-extension DescriptionViewController{
+extension DescriptionVC{
     func scrolling(){
         
         pageArray = [page1,page2,page3,page4]
@@ -94,7 +94,7 @@ extension DescriptionViewController{
     }
 }
 
-extension DescriptionViewController{
+extension DescriptionVC{
     func addgrad(){
         let gradientView = EZYGradientView()
         gradientView.frame = self.view.bounds
@@ -112,7 +112,7 @@ extension DescriptionViewController{
     
 }
 
-extension DescriptionViewController{
+extension DescriptionVC{
     struct ScreenSize
     {
         static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
