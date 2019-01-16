@@ -77,7 +77,8 @@ class SideBarVC: UIViewController {
     }
 
     @IBAction func logout(_ sender: Any) {
-         try! Auth.auth().signOut()
+        try! Auth.auth().signOut()
+//        userID = nil
     }
     
     func ImportingProfileImage(){

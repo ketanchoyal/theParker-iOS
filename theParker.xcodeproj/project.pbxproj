@@ -329,13 +329,13 @@
 			isa = PBXGroup;
 			children = (
 				9715152E21DCB1D400221013 /* Extra */,
+				971393F121D2988800BCB212 /* Utilities */,
 				971E6B8D21D97A0500E0D9F4 /* Extension */,
 				97405CED21D80A6C00CD87D1 /* Services */,
 				97D1DA3221D62EA400AE76CA /* Model */,
 				97F01C8321D2D5FC0015917F /* Supporting Files */,
 				971393EE21D2979B00BCB212 /* View */,
 				97F01C8221D2D5B70015917F /* Controller */,
-				971393F121D2988800BCB212 /* Utilities */,
 				97E9EC6521D1989E009D124F /* LottieAnimationsJSON */,
 				97E9ECF421D19D4C009D124F /* AppDelegate.swift */,
 				97E9ECDB21D19A8E009D124F /* theParker-Bridging-Header.h */,

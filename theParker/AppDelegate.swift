@@ -36,13 +36,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         GIDSignIn.sharedInstance().delegate = self
         //listener for changes to user state
         //validation throw for login sign up
-        _ = Auth.auth().addStateDidChangeListener { auth, user in
+        Auth.auth().addStateDidChangeListener { auth, user in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
             if user != nil {
+                setUID()
+                
+                print("Userid : \(user?.uid)")
                 let controller = storyboard.instantiateViewController(withIdentifier: "slide") as! SWRevealViewController
                 //updates the view controller
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
+                self.onStartup()
             } else {
                 //menu screen
                 let controller = storyboard.instantiateViewController(withIdentifier: "des") as! DescriptionVC         //updates the view controller ( note: put self to explicitly state the
@@ -67,6 +72,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         return true
     }
     
+    func onStartup() {
+        DataService.instance.getUserData { (succes, user) in
+            if succes {
+                DataService.instance.Name = user!.Name
+                DataService.instance.Email = user!.Email
+                DataService.instance.photoURL = user!.photoURL
+                print("Userid :\(user?.Name)")
+            }
+        }
+        WalletService.instance.load_Balance_Earning()
+    }
+    
     func ConnectToFCM(_ choice:Bool) {
         Messaging.messaging().shouldEstablishDirectChannel = choice
     }
@@ -89,15 +106,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        if Auth.auth().currentUser != nil {
-            DataService.instance.getUserData { (succes, user) in
-                if succes {
-                    DataService.instance.Name = user!.Name
-                    DataService.instance.Email = user!.Email
-                    DataService.instance.photoURL = user!.photoURL
-                }
-            }
-        }
         
         ConnectToFCM(true)
     }

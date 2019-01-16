@@ -293,6 +293,19 @@ class LoginVC: UIViewController , UITextFieldDelegate{
         
         let databaseRef = Database.database().reference().child("user/\(uid)")
         
+        let Balance = [
+            "balance" : "0.0"
+        ] as [String : Any]
+        
+        let Earning = [
+            "earning" : "0.0"
+            ] as [String : Any]
+        
+        let Wallet = [
+            "Balance" : Balance,
+            "Earning" : Earning
+        ] as [String : Any]
+        
         let Profile = [
             "Name": username,
             "Email" : Email,
@@ -301,6 +314,7 @@ class LoginVC: UIViewController , UITextFieldDelegate{
         
         let userObject = [
             "Profile" : Profile,
+            "Wallet" : Wallet
 //            "ArrayPins": [String("1"):"Blah blah"]
             ] as [String : Any]
         
