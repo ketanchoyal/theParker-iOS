@@ -29,7 +29,7 @@ public private(set) var REF_USER_EARNING : DatabaseReference!
 public private(set) var REF_USER_EARNING_TRANSACTION : DatabaseReference!
 
 func setUID() {
-    let ref = DB_BASE.child("user").child((Auth.auth().currentUser?.uid)!)
+    let ref = DB_USER.child((Auth.auth().currentUser?.uid)!)
     
     REF_CURRENT_USER = ref
     

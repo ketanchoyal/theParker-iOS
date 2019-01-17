@@ -29,6 +29,7 @@
 		973E86DA21E3C94E00BB893D /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */; };
 		97405CEA21D7FC7500CD87D1 /* CarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */; };
 		97405CEF21D80A8600CD87D1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CEE21D80A8600CD87D1 /* DataService.swift */; };
+		97898EE321F0FA4E007FE419 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97898EE221F0FA4E007FE419 /* Transaction.swift */; };
 		97D1DA3421D6870800AE76CA /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1DA3321D6870800AE76CA /* RoundedLabel.swift */; };
 		97DADE8F21E7D26400E46556 /* BookingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */; };
 		97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5121D19161009D124F /* LaunchScreen.storyboard */; };
@@ -138,6 +139,7 @@
 		973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoCell.swift; sourceTree = "<group>"; };
 		97405CEE21D80A8600CD87D1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		97898EE221F0FA4E007FE419 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		97D1DA3321D6870800AE76CA /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 		97DADE8B21E7BE9500E46556 /* LogicPrcatice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LogicPrcatice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingReviewVC.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				971E6B8B21D94D8900E0D9F4 /* LocationPin.swift */,
 				9726E3BA21DFBFDA004281AE /* Car.swift */,
 				9709C45721E6059B00E9B8AD /* Booking.swift */,
+				97898EE221F0FA4E007FE419 /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				97E9ECE621D19AFF009D124F /* SideBarVC.swift in Sources */,
 				97E9EC6421D1988E009D124F /* post.swift in Sources */,
 				971393F721D2A1DC00BCB212 /* RoundedUIView.swift in Sources */,
+				97898EE321F0FA4E007FE419 /* Transaction.swift in Sources */,
 				97F01C8D21D456290015917F /* AdditionalDetailsVC.swift in Sources */,
 				97F01C8F21D456760015917F /* AvailabilityAndPriceVC.swift in Sources */,
 				97E9ECF321D19B13009D124F /* MyProfileVC.swift in Sources */,

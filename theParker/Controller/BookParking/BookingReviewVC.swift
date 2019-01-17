@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class BookingReviewVC: UIViewController {
     
@@ -20,6 +21,8 @@ class BookingReviewVC: UIViewController {
     
     var booked_until_database : String!
     var booked_until_display : String!
+    
+    var transaction : Transaction!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +45,13 @@ class BookingReviewVC: UIViewController {
         
         BookingService.instance.bookParking(booked_until_database_str: booked_until_database) { (success) in
             if success {
-                self.alert(message: "Successfully Booked")
+                WalletService.instance.parking_purchase_transaction(transaction: self.transaction, handler: { (success) in
+                    if success {
+                        self.alert(message: "Successfully Booked")
+                    } else {
+                        self.alert(message: "Something went wrong, Try again")
+                    }
+                })
             } else {
                 self.alert(message: "Something went wrong, Try again")
             }
@@ -58,6 +67,10 @@ extension BookingReviewVC {
         let marker = DataService.instance.selectedPin
         let car = DataService.instance.myCars[(bookingData?.car)!]
         
+        var transaction = Transaction.init(amount: marker.price_hourly, for_parking_id: marker.pinKey, from: (Auth.auth().currentUser?.uid)!, to: marker.by)
+        
+        self.transaction = transaction
+        
         spotTypeLabel.text = marker.type
         startLabel.text = bookingData?.from
         endLabel.text = booked_until_display
@@ -65,7 +78,6 @@ extension BookingReviewVC {
         spotPrice.text = "₹ \(marker.price_hourly)"
         servicePrice.text = "₹ ??"
         carInfoLabel.text = "\((car?.color)!) \((car?.model)!) (\((car?.year)!)) \((car?.licence_plate)!)"
-        
     }
     
     func alert(message:String )
