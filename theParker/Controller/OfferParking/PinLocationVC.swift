@@ -197,13 +197,6 @@ extension PinLocationVC{
         let pushedLoc = String(describing: self.selectedLocation!)
         let lat = (self.selectedLocation?.latitude)!
         let lon = (self.selectedLocation?.longitude)!
-//        let latlongarray : [Double] = [lat,lon]
-        
-//        pinToUpload?.pinloc.append(lat)
-//        pinToUpload?.pinloc.append(lon)
-        
-//        pinToUpload?.pinloc.append(lat!)
-//        pinToUpload?.pinloc.append(lon!)
         
         DataService.pinToUpload.pinloc.removeAll()
         DataService.pinToUpload.pinloc.append(lat)

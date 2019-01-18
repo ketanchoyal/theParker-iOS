@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class BookThisSpotVC: UIViewController {
+class BookThisSpotVC: UIViewController, UIGestureRecognizerDelegate {
     
     public private(set) var markerData : LocationPin?
     private var LocationId : String?
@@ -40,6 +40,8 @@ class BookThisSpotVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addSwipe()
+        
         activityIndicator.startAnimating()
         DataService.instance.getPindataById(for: LocationId!) { (success) in
             if success {
@@ -59,7 +61,6 @@ class BookThisSpotVC: UIViewController {
     
     func initData() {
         LocationId = DataService.instance.selectedPin.pinKey
-        
     }
     
     @IBAction func closeBtnTapped(_ sender: Any) {
@@ -183,5 +184,17 @@ extension BookThisSpotVC {
         feature2Label.isHidden = true
         feature3Label.isHidden = true
         feature4Label.isHidden = true
+    }
+}
+
+extension BookThisSpotVC {
+    func addSwipe() {
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(animateViewDown))
+        swipe.direction = .down
+        view.addGestureRecognizer(swipe)
+    }
+    
+    @objc func animateViewDown() {
+        dismiss(animated: true, completion: nil)
     }
 }

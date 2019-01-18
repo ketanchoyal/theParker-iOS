@@ -5,8 +5,12 @@ class MyCarsVC: UIViewController {
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var carTable: UITableView!
     
+    var floatingButton : ActionButton!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        setUpFloatingButton()
         
         DataService.instance.getMyCars { (success) in
             if success {
@@ -31,7 +35,21 @@ class MyCarsVC: UIViewController {
     }
 
     @IBAction func addVehicleTapped(_ sender: Any) {
+        goToAddCarVC()
+    }
+    
+    func goToAddCarVC() {
         performSegue(withIdentifier: "addVehicleVC", sender: nil)
+    }
+    
+    func setUpFloatingButton() {
+        
+        floatingButton = ActionButton(attachedToView: self.view, items: nil)
+        floatingButton.setTitle("+", forState: UIControl.State())
+        floatingButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        floatingButton.action = {editButtonItem in self.goToAddCarVC()}
+        //floatingButton.buttonTappedForSegue("addVehicleVC", self)
     }
     
 }
