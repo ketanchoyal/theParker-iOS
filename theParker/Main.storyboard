@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="724"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3F2-Pv-9ZN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="599.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="614.33333333333337"/>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WiF-TL-ijX">
-                                        <rect key="frame" x="0.0" y="599.66666666666663" width="375" height="124.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="614.33333333333337" width="375" height="109.66666666666663"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-xF-diF">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
@@ -33,7 +33,7 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.66092631270000002" green="0.331260744" blue="0.89342084389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyQ-bh-BtG">
-                                                <rect key="frame" x="0.0" y="46.999999999999993" width="375" height="77.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="47" width="375" height="62.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1072,12 +1072,6 @@
                     <navigationItem key="navigationItem" title="THE PARKER" largeTitleDisplayMode="never" id="aew-MD-n3I">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu-16*16" id="hZS-gi-2ye">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="magnifier" id="AFI-0S-XXE" userLabel="search">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="searchGoogleMaps:" destination="7Tg-em-FUt" id="Qcm-xa-GLQ"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -3315,7 +3309,6 @@
         <image name="features" width="100" height="100"/>
         <image name="findParking" width="120" height="120"/>
         <image name="logout" width="120" height="120"/>
-        <image name="magnifier" width="12.800000190734863" height="12.800000190734863"/>
         <image name="man-avatar" width="204.80000305175781" height="204.80000305175781"/>
         <image name="menu-16*16" width="12.800000190734863" height="12.800000190734863"/>
         <image name="myCars" width="120" height="120"/>
@@ -3328,7 +3321,7 @@
         <image name="parking(2)" width="204.80000305175781" height="204.80000305175781"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vlT-vd-bPu"/>
+        <segue reference="ITQ-dk-4qe"/>
         <segue reference="7B3-g7-3f4"/>
     </inferredMetricsTieBreakers>
 </document>

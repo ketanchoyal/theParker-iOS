@@ -1,26 +1,10 @@
 // ActionButton.swift
 //
-// The MIT License (MIT)
+//  theParker
 //
-// Copyright (c) 2015 ActionButton
+//  Created by Ketan Choyal on 19/01/19.
+//  Copyright © 2019 Ketan Choyal. All rights reserved.
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
 import UIKit
 
@@ -74,18 +58,21 @@ open class ActionButton: NSObject {
     fileprivate let itemOffset = -55
     
     /// the float button's radius
-    fileprivate let floatButtonRadius = 50
+    fileprivate var floatButtonHeight = 50
     
-    public init(attachedToView view: UIView, items: [ActionButtonItem]?) {
+    public init(attachedToView view: UIView, items: [ActionButtonItem]?, buttonHeight : Int?) {
         super.init()
+        
+        if buttonHeight != nil {
+            self.floatButtonHeight = buttonHeight!
+        }
         
         self.parentView = view
         self.items = items
         let bounds = self.parentView.bounds
-//        bounds.offsetBy(dx: 10.0, dy: 10.0)
         
         self.floatButton = UIButton(type: .custom)
-        self.floatButton.layer.cornerRadius = CGFloat(floatButtonRadius / 2)
+        self.floatButton.layer.cornerRadius = CGFloat(5)
         self.floatButton.layer.shadowOpacity = 1
         self.floatButton.layer.shadowRadius = 2
         
@@ -95,8 +82,9 @@ open class ActionButton: NSObject {
         self.floatButton.setTitleColor(#colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1), for: UIControl.State())
         self.floatButton.setImage(nil, for: UIControl.State())
         self.floatButton.backgroundColor = self.backgroundColor
+        floatButton.contentHorizontalAlignment = .center
         self.floatButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 35)
-        self.floatButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
+        //self.floatButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.floatButton.isUserInteractionEnabled = true
         self.floatButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -119,18 +107,29 @@ open class ActionButton: NSObject {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func fontColor(color : UIColor,forState state: UIControl.State) {
+        floatButton.setTitleColor(color, for: state)
+    }
+    
+    func cornerRadius(radius : CGFloat) {
+        self.floatButton.layer.cornerRadius = CGFloat(radius)
+    }
+    
     //MARK: - Set Methods
-    open func setTitle(_ title: String?, forState state: UIControl.State) {
+    open func setTitle(_ title: String?, fontsize : CGFloat, forState state: UIControl.State) {
         floatButton.setImage(nil, for: state)
         floatButton.setTitle(title, for: state)
-        floatButton.setTitleColor(#colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1), for: state)
-        floatButton.layer.borderColor = #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1)
-        floatButton.layer.borderWidth = 2
+        floatButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: fontsize)
         floatButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
     }
     
+    func border(color : UIColor, width : CGFloat) {
+        floatButton.layer.borderColor = color.cgColor
+        floatButton.layer.borderWidth = width
+    }
+    
     open func setImage(_ image: UIImage?, forState state: UIControl.State) {
-        setTitle(nil, forState: state)
+        setTitle(nil, fontsize: 5 ,forState: state)
         floatButton.setImage(image, for: state)
         floatButton.adjustsImageWhenHighlighted = false
         floatButton.contentEdgeInsets = UIEdgeInsets.zero
@@ -142,20 +141,23 @@ open class ActionButton: NSObject {
     */
     fileprivate func installConstraints() {
         let views: [String: UIView] = ["floatButton":self.floatButton, "parentView":self.parentView]
-        let width = NSLayoutConstraint.constraints(withVisualFormat: "H:[floatButton(\(floatButtonRadius))]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
-        let height = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton(\(floatButtonRadius))]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+        let width_ = self.parentView.frame.width - 30
+        let width = NSLayoutConstraint.constraints(withVisualFormat: "H:[floatButton(\(width_))]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+        let height = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton(\(floatButtonHeight))]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
         self.floatButton.addConstraints(width)
         self.floatButton.addConstraints(height)
         
-        let trailingSpacing = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton]-35-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
-        let bottomSpacing = NSLayoutConstraint.constraints(withVisualFormat: "H:[floatButton]-15-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+        let bottomSpacing = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton]-35-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+        let trailingSpacing = NSLayoutConstraint.constraints(withVisualFormat: "H:[floatButton]-15-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+        let leadingSpacing = NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[floatButton]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
         self.parentView.addConstraints(trailingSpacing)
         self.parentView.addConstraints(bottomSpacing)
+        self.parentView.addConstraints(leadingSpacing)
     }
     
     //MARK: - Button Actions Methods
     @objc func buttonTapped(_ sender: UIControl) {
-        animatePressingWithScale(1.0)
+        animatePressingWithScale(1)
         
         if let unwrappedAction = self.action {
             unwrappedAction(self)

@@ -37,7 +37,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     var countG:Int?
     var showpins:[[Int:[String:Any]]] = []
     
-    
+    var floatingSearchButton : ActionButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,6 +53,8 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpFloatingSearchButton()
         
         print("I AM A CODER")
         // Do any additional setup after loading the view.
@@ -86,7 +88,17 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationItem.title = ""
+    }
+    
+    func setUpFloatingSearchButton() {
+        
+        floatingSearchButton = ActionButton(attachedToView: self.view, items: nil, buttonHeight: 50)
+        floatingSearchButton.setTitle("Search 🔍 ", fontsize: 20, forState: UIControl.State())
+        floatingSearchButton.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1)
+        floatingSearchButton.fontColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forState: UIControl.State())
+        
+        floatingSearchButton.action = {editButtonItem in self.touchSearchBar()}
+        //floatingButton.buttonTappedForSegue("addVehicleVC", self)
     }
     
     func createMarker(titleMarker: String, iconMarker: UIImage, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
@@ -215,11 +227,6 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         
         self.present(autoCompleteController, animated: true, completion: nil)
         
-    }
-    
-    @IBAction func searchGoogleMaps(_ sender: Any) {
-        
-        self.touchSearchBar()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
