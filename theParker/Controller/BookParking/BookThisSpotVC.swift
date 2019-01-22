@@ -13,6 +13,7 @@ class BookThisSpotVC: UIViewController, UIGestureRecognizerDelegate {
     
     public private(set) var markerData : LocationPin?
     private var LocationId : String?
+    private var hostedByUser : User?
     
     @IBOutlet weak var bookedUntilLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -46,17 +47,19 @@ class BookThisSpotVC: UIViewController, UIGestureRecognizerDelegate {
         DataService.instance.getPindataById(for: LocationId!) { (success) in
             if success {
                 self.markerData = DataService.instance.selectedPin
-                self.setUpData()
-                self.activityIndicator.stopAnimating()
+                DataService.instance.getUserDataById(forUser: (self.markerData?.by)!, completionHandler: { (success, user) in
+                    if success {
+                        self.hostedByUser = user
+                        self.setUpData()
+                        self.activityIndicator.stopAnimating()
+                    } else {
+                        self.activityIndicator.stopAnimating()
+                    }
+                })
             } else {
                 self.activityIndicator.stopAnimating()
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        //setUpData()
     }
     
     func initData() {
@@ -112,7 +115,7 @@ extension BookThisSpotVC {
     }
     
     func setUpData() {
-        hostName.text = markerData?.by
+        hostName.text = hostedByUser?.Name
         parkingType.text = markerData?.type
         let price = markerData?.price_hourly
         parkingPricePerHour.text = "₹" + price! + "/hr"

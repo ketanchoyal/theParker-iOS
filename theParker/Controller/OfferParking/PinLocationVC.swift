@@ -4,12 +4,11 @@ import GoogleMaps
 import GooglePlaces
 import Firebase
 
-class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDelegate{
+class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDelegate {
     
     var timer = Timer()
     var HandleLocation:DatabaseHandle?
     var ref:DatabaseReference?
-    var count = 0
     var FetchedArray:Int? = 0
     
     @IBOutlet weak var TopLabel: UILabel!
@@ -62,7 +61,7 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
     
     @IBAction func NextButtonClicked(_ sender: Any) {
     
-        if count > 0 {
+        if pinLocationVC_Count > 0 {
             print(" BUTTO PREESSSESS HERE")
 //            self.LoadIt()
             self.nextBTn.isEnabled = false
@@ -176,12 +175,15 @@ extension PinLocationVC{
 extension PinLocationVC : UIGestureRecognizerDelegate
 {
     @objc func longPress(_ sender: UILongPressGestureRecognizer) {
+        pinLocationVC_Count = 0
         let newMarker = GMSMarker(position: MapView.projection.coordinate(for: sender.location(in: MapView)))
         self.MapView.clear()
         self.selectedLocation = newMarker.position
         newMarker.map = MapView
-        self.count += 1
         print(self.selectedLocation!)
+        let addressAndMobileNo = AddressAndMobileNoVC()
+        addressAndMobileNo.modalPresentationStyle = .custom
+        self.present(addressAndMobileNo, animated: true, completion: nil)
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

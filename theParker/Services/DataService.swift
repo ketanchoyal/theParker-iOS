@@ -262,6 +262,7 @@ class DataService {
         
     }
     
+    //Get parking details from location id
     func getPindataById(for id : String, handler : @escaping (_ complete : Bool) -> ()) {
         REF_GLOBAL_PINS.child(id).observe(.value) { (pinSnapshot) in
             guard let pinSnapshot = pinSnapshot.value as? [String : AnyObject] else {
@@ -335,6 +336,27 @@ class DataService {
                     handler(true)
                     booked_until = nil }
             })
+        }
+    }
+    
+    //Get user profile from id
+    func getUserDataById(forUser id : String, completionHandler : @escaping (_ completion : Bool,_ user : User?) -> ()) {
+        var Name : String!
+        var Email : String!
+        var photoURL : String!
+        var PhoneNumber : String!
+        
+        REF_USER.child(id).child("Profile").observeSingleEvent(of: .value) { (userData) in
+            guard let userData = userData.value as? [String : AnyObject] else {
+                completionHandler(false, nil)
+                return }
+            
+            Name = userData["Name"] as? String
+            Email = userData["Email"] as? String
+            photoURL = userData["photoURL"] as? String
+            //PhoneNumber = userData["number"] as? String
+            let user = User.init(Name: Name, Email: Email, photoURL: photoURL, Number: nil)
+            completionHandler(true, user)
         }
     }
     

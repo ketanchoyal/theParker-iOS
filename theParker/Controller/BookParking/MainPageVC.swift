@@ -38,12 +38,18 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     var showpins:[[Int:[String:Any]]] = []
     
     var floatingSearchButton : ActionButton!
+    var floatingLocationButton : ActionButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1), NSAttributedString.Key.strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), NSAttributedString.Key.backgroundColor: #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 0.2959118151)]
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         
         DataService.instance.getMyCars { (success) in
             
@@ -55,6 +61,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         super.viewDidLoad()
         
         setUpFloatingSearchButton()
+        setUpFloatingLocationButton()
         
         print("I AM A CODER")
         // Do any additional setup after loading the view.
@@ -71,14 +78,15 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        let camera = GMSCameraPosition.camera(withLatitude: -7.9293122, longitude: 112.5879156, zoom: 15.0)
-        
-        self.googleMaps.camera = camera
+//        let camera = GMSCameraPosition.camera(withLatitude: -7.9293122, longitude: 112.5879156, zoom: 15.0)
+//
+//        self.googleMaps.camera = camera
         self.googleMaps.delegate = self
         self.googleMaps?.isMyLocationEnabled = true
-        self.googleMaps.settings.myLocationButton = true
         self.googleMaps.settings.compassButton = true
         self.googleMaps.settings.zoomGestures = true
+        
+        gotoMyLocation()
         
         showGlobalPins()
         
@@ -86,19 +94,31 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    func gotoMyLocation()
+    {
+        guard let lat = self.googleMaps.myLocation?.coordinate.latitude,
+            let lng = self.googleMaps.myLocation?.coordinate.longitude else { return }
+        
+        let camera = GMSCameraPosition.camera(withLatitude: lat ,longitude: lng , zoom: 15.0)
+        self.googleMaps.animate(to: camera)
     }
     
     func setUpFloatingSearchButton() {
-        
-        floatingSearchButton = ActionButton(attachedToView: self.view, items: nil, buttonHeight: 50)
-        floatingSearchButton.setTitle("Search 🔍 ", fontsize: 20, forState: UIControl.State())
+        floatingSearchButton = ActionButton(attachedToView: self.view, items: nil, buttonHeight: 50, buttonWidth: 100, buttonType: .Rectangle, position: .BottomLeft)
+        floatingSearchButton.setTitle(" Search ", fontsize: 18, forState: UIControl.State())
         floatingSearchButton.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1)
         floatingSearchButton.fontColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forState: UIControl.State())
         
         floatingSearchButton.action = {editButtonItem in self.touchSearchBar()}
-        //floatingButton.buttonTappedForSegue("addVehicleVC", self)
+    }
+    
+    func setUpFloatingLocationButton() {
+        floatingLocationButton = ActionButton(attachedToView: self.view, items: nil, buttonHeight: 50, buttonWidth: 50, buttonType: .Circle, position: .BottomRight)
+        floatingLocationButton.setImage(UIImage(named: "myLocation"), forState: UIControl.State())
+        floatingLocationButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        floatingLocationButton.border(color: #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1), width: 2)
+        floatingLocationButton.cornerRadius(radius: 50/2)
+        floatingLocationButton.action = {editButtonItem in self.gotoMyLocation()}
     }
     
     func createMarker(titleMarker: String, iconMarker: UIImage, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
@@ -130,6 +150,8 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         googleMaps.isMyLocationEnabled = true
+        googleMaps.settings.myLocationButton = false
+        
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {

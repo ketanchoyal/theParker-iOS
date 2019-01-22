@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="724"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3F2-Pv-9ZN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="614.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WiF-TL-ijX">
-                                        <rect key="frame" x="0.0" y="614.33333333333337" width="375" height="109.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="617" width="375" height="107"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-xF-diF">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
@@ -33,7 +33,7 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.66092631270000002" green="0.331260744" blue="0.89342084389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyQ-bh-BtG">
-                                                <rect key="frame" x="0.0" y="47" width="375" height="62.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="47" width="375" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTf-AA-3df" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="276"/>
+            <point key="canvasLocation" x="6183" y="1091"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
@@ -546,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="276"/>
+            <point key="canvasLocation" x="7071" y="1091"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="DGs-PS-cFi">
@@ -779,7 +779,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swt-6P-v63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1276" y="2638.6699507389162"/>
+            <point key="canvasLocation" x="-812" y="2642"/>
         </scene>
         <!--Side BarVC-->
         <scene sceneID="scn-mU-4Ph">
@@ -1033,10 +1033,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZHA-Zl-SeJ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -1056,13 +1057,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lA-6o-gNx" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7lA-6o-gNx" firstAttribute="top" secondItem="Sqd-yr-mVl" secondAttribute="top" id="CHX-gt-ikq"/>
+                            <constraint firstItem="7lA-6o-gNx" firstAttribute="top" secondItem="8Qq-Pf-UVa" secondAttribute="top" id="CHX-gt-ikq"/>
                             <constraint firstAttribute="bottom" secondItem="7lA-6o-gNx" secondAttribute="bottom" id="SCo-4D-FVB"/>
                             <constraint firstItem="7lA-6o-gNx" firstAttribute="leading" secondItem="Sqd-yr-mVl" secondAttribute="leading" id="yuT-QH-kpt"/>
                             <constraint firstItem="Sqd-yr-mVl" firstAttribute="trailing" secondItem="7lA-6o-gNx" secondAttribute="trailing" id="zni-7K-WYz"/>
@@ -1071,7 +1072,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="THE PARKER" largeTitleDisplayMode="never" id="aew-MD-n3I">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu-16*16" id="hZS-gi-2ye">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1970,7 +1971,6 @@
                         <outlet property="MapView" destination="g4q-4U-ZP1" id="7co-fE-f3L"/>
                         <outlet property="TopLabel" destination="25G-uQ-AUq" id="wrA-Oe-jRl"/>
                         <outlet property="nextBTn" destination="10T-50-1yP" id="XRT-cl-uaQ"/>
-                        <segue destination="cQC-qb-x4U" kind="show" identifier="sspin" id="9FQ-MW-N6b"/>
                         <segue destination="kmy-mC-d8m" kind="show" identifier="parkingDetails" id="3Ro-yS-wGy"/>
                     </connections>
                 </viewController>
@@ -2240,7 +2240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Tm-kN-OJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3119" y="2641"/>
+            <point key="canvasLocation" x="3831" y="1817"/>
         </scene>
         <!--Additional Details-->
         <scene sceneID="nMv-pA-qq6">
@@ -2414,7 +2414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMY-Mz-Da3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3954" y="2642"/>
+            <point key="canvasLocation" x="4666" y="1818"/>
         </scene>
         <!--Price and Availability-->
         <scene sceneID="tvf-7x-HGt">
@@ -2760,36 +2760,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2u-A3-NdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4775" y="2639"/>
-        </scene>
-        <!--Scroll Post View Controller-->
-        <scene sceneID="FgW-jX-68p">
-            <objects>
-                <viewController id="cQC-qb-x4U" customClass="ScrollPostViewController" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7JN-Rc-fxP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcN-ea-bZs">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="FcN-ea-bZs" firstAttribute="leading" secondItem="gwU-71-kw3" secondAttribute="leading" id="QdX-pW-bSt"/>
-                            <constraint firstItem="FcN-ea-bZs" firstAttribute="top" secondItem="gwU-71-kw3" secondAttribute="top" id="Y4M-xi-6S0"/>
-                            <constraint firstItem="FcN-ea-bZs" firstAttribute="trailing" secondItem="gwU-71-kw3" secondAttribute="trailing" id="epg-lY-a8r"/>
-                            <constraint firstAttribute="bottom" secondItem="FcN-ea-bZs" secondAttribute="bottom" id="fcG-Kh-rqF"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="gwU-71-kw3"/>
-                    </view>
-                    <connections>
-                        <outlet property="ScrollView" destination="FcN-ea-bZs" id="k0U-td-52N"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4mc-Yh-ZLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3862" y="1816"/>
+            <point key="canvasLocation" x="5487" y="1816"/>
         </scene>
         <!--PROFILE-->
         <scene sceneID="2Iw-Wm-Nbg">
@@ -3165,21 +3136,6 @@
             </objects>
             <point key="canvasLocation" x="2180.625" y="2640.8450704225352"/>
         </scene>
-        <!--Foranimations View Controller-->
-        <scene sceneID="ec7-yw-XSA">
-            <objects>
-                <viewController storyboardIdentifier="anime" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FB2-SL-m0P" customClass="ForanimationsViewController" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QwY-Yq-fXn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="L6P-O0-86L"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gby-j1-Kxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2134" y="275"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="yhB-ZQ-5y4">
             <objects>
@@ -3270,7 +3226,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSN-Ty-Fby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2010" y="2639"/>
+            <point key="canvasLocation" x="-1546" y="2642"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TAw-Ap-fts">

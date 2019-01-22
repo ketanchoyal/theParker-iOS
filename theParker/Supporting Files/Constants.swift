@@ -11,6 +11,8 @@ import Firebase
 
 let DirectionKey = "AIzaSyAnHtwW9CASe6pD7zS_vVRJCiYoA2omOcg"
 
+var pinLocationVC_Count = 0
+
 let DB_BASE = Database.database().reference()
 let DB_USER = DB_BASE.child("user")
 //var userID = Auth.auth().currentUser?.uid
@@ -19,9 +21,11 @@ var DB_CURRENT_USER = DB_BASE.child("user").child((Auth.auth().currentUser?.uid)
 public private(set) var REF_BASE = DB_BASE
 public private(set) var REF_USER = DB_USER
 public private(set) var REF_GLOBAL_PINS = DB_BASE.child("GlobalPins")
+public private(set) var REF_GLOBAL_BOOKINGS = DB_BASE.child("GlobalBookings")
 public private(set) var REF_CARS = DB_BASE.child("Cars")
 public private(set) var REF_USER_PINS : DatabaseReference!
 public private(set) var REF_USER_CAR : DatabaseReference!
+public private(set) var REF_USER_BOOKINGS : DatabaseReference!
 public private(set) var REF_CURRENT_USER : DatabaseReference!
 public private(set) var REF_USER_BALANCE : DatabaseReference!
 public private(set) var REF_USER_BALANCE_TRANSACTION : DatabaseReference!
@@ -36,6 +40,8 @@ func setUID() {
     REF_USER_PINS = ref.child("ArrayPins")
     
     REF_USER_CAR = ref.child("MyCars")
+    
+    REF_USER_BOOKINGS = ref.child("MyBookings")
     
     REF_USER_BALANCE = ref.child("Wallet/Balance")
     

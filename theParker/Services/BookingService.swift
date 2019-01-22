@@ -35,21 +35,31 @@ class BookingService {
             "by" : data?.by,
             "car" : data?.car,
             "for_hours" : data?.for_hours,
-            "from" : data?.from
+            "from" : data?.from,
+            "parking_placeId" : data?.parking_placeId
         ]
         
         let booking : Dictionary<String, Any> = [
             "booked_until" : booked_until_database_str,
-            key! : bookingData
+            key! : key!
         ]
-        
-        REF_GLOBAL_PINS.child(locationId).child("Bookings").child(dateNow_string).updateChildValues(booking) { (error, ref) in
+        //TODO : Cloud Function can be made to add data at multiple places as soon as it is added at only one place
+        REF_GLOBAL_BOOKINGS.child(key!).updateChildValues(bookingData) { (error, ref) in
             if error == nil {
-                handler(true)
+                REF_GLOBAL_PINS.child(locationId).child("Bookings").child(dateNow_string).updateChildValues(booking) { (error, ref) in
+                    if error == nil {
+                        REF_USER_BOOKINGS.child(key!).setValue(key!)
+                        handler(true)
+                    } else {
+                        handler(false)
+                    }
+                }
             } else {
                 handler(false)
             }
         }
+        
+        
         
     }
 }

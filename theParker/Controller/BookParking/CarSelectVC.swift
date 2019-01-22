@@ -142,7 +142,7 @@ extension CarSelectVC : UITableViewDelegate, UITableViewDataSource {
         //Time for displaying
         booked_until_new_display_str = formatter.string(from: booked_until_new_display_date!)
         
-        let currentBooking = Booking.init(by: by!, car: carId, for_hours: for_hours_database, from: from)
+        let currentBooking = Booking.init(by: by!, car: carId, for_hours: for_hours_database, from: from, parking_placeId: (markerData?.pinKey)!)
         
         BookingService.currentBooking = currentBooking
         

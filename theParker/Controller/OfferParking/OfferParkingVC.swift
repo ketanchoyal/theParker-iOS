@@ -27,8 +27,8 @@ extension OfferParkingVC{
     
     func setUpFloatingButton() {
         
-        floatingButton = ActionButton(attachedToView: self.view, items: nil, buttonHeight: 50)
-        floatingButton.setTitle("Offer Parking", fontsize: 20, forState: UIControl.State())
+        floatingButton = ActionButton(attachedToView: self.view, items: nil, buttonHeight: 50, buttonWidth: 150, buttonType: .Rectangle, position: .BottomRight)
+        floatingButton.setTitle(" Offer Parking ", fontsize: 18, forState: UIControl.State())
         floatingButton.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1)
         floatingButton.fontColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forState: UIControl.State())
         

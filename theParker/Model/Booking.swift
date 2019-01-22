@@ -13,4 +13,5 @@ struct Booking {
     public private(set) var car : String
     public private(set) var for_hours : String
     public private(set) var from : String
+    public private(set) var parking_placeId : String
 }
