@@ -36,10 +36,15 @@ class SideBarVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.fixIphone5()
-//        self.fixiphone6()
+
+        UIApplication.shared.statusBarStyle = .default
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
     
     override func viewDidLoad() {
         self.addgrad()
@@ -60,11 +65,6 @@ class SideBarVC: UIViewController {
         
         self.ProfileImage.layer.borderColor = UIColor.black.cgColor
         self.ProfileImage.layer.borderWidth = 2
-        
-//        if !DeviceType.IS_IPHONE_5 || !DeviceType.IS_IPHONE_6{
-//        self.ProfileImage.layer.cornerRadius = self.ProfileImage.frame.width/2
-//            self.ProfileImage.clipsToBounds = true}
-        
         
         self.ProfileName.text = self.preName
         self.ProfileEmail.text = self.preEmail
@@ -111,22 +111,6 @@ class SideBarVC: UIViewController {
 }
 
 extension SideBarVC{
-    
-//    struct ScreenSize
-//    {
-//        static let SCREEN_WIDTH = UIScreen.main.bounds.size.width
-//        static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
-//        static let SCREEN_MAX_LENGTH = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
-//        static let SCREEN_MIN_LENGTH = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
-//    }
-//
-//    struct DeviceType
-//    {
-//        static let IS_IPHONE_5 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
-//        static let IS_IPHONE_6 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
-//        static let IS_IPHONE_6P = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-//        static let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
-//    }
     
     func alert(message:String )
     {
@@ -221,31 +205,4 @@ extension SideBarVC {
         }
         
     }
-}
-
-extension SideBarVC{
-//    func fixIphone5(){
-//        if DeviceType.IS_IPHONE_5 {
-//            if count == 0{
-//            self.MainStackTop.constant -= 20
-//            self.profileIMGWIDTH.constant -= 25
-//            self.ProfileIMGHEIGHT.constant -= 25
-//            self.ProfileImage.layer.cornerRadius = self.profileIMGWIDTH.constant/2
-//            self.ProfileImage.clipsToBounds = true
-//                count += 1
-//            }
-//        }
-//    }
-//    func fixiphone6(){
-//        if DeviceType.IS_IPHONE_6{
-//            if count == 0{
-//            self.MainStackTop.constant -= 10
-//            self.profileIMGWIDTH.constant -= 20
-//            self.ProfileIMGHEIGHT.constant -= 20
-//            self.ProfileImage.layer.cornerRadius = self.profileIMGWIDTH.constant/2
-//            self.ProfileImage.clipsToBounds = true
-//                count += 1
-//        }
-//        }
-//    }
 }

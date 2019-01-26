@@ -69,9 +69,6 @@ class AvailabilityAndPriceVC: UIViewController {
         
     }
     
-//    let editor = self.storyboard?.instantiateViewController(withIdentifier: "slide") as! SWRevealViewController
-//    self.present(editor, animated: true, completion: nil)
-    
     func addDetails(completionhandler : @escaping (_ complete : Bool) -> ()) {
         segmentChanged()
         let pin = DataService.pinToUpload
@@ -109,7 +106,7 @@ class AvailabilityAndPriceVC: UIViewController {
                 completionhandler(false)
                 return
             } else {
-                pin.price_hourly = dailyPrice.text!
+                pin.price_daily = dailyPrice.text!
             }
         }
         
@@ -119,7 +116,7 @@ class AvailabilityAndPriceVC: UIViewController {
                 completionhandler(false)
                 return
             } else {
-                pin.price_hourly = monthlyPrice.text!
+                pin.price_monthly = monthlyPrice.text!
             }
         }
         completionhandler(true)

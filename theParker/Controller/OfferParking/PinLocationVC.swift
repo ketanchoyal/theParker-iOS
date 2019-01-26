@@ -23,6 +23,8 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
     var selectedLocation : CLLocationCoordinate2D?
     var longPressRecognizer = UILongPressGestureRecognizer()
     
+    var markerCount = 0
+    
 //    var pinToUpload : LocationPin?
 //    var lat : Double?
 //    var lon : Double?
@@ -39,7 +41,7 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
         super.viewDidLoad()
 //        self.handling()
         self.nextBTn.clipsToBounds = true
-        
+        markerCount = 0
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -60,23 +62,28 @@ class PinLocationVC: UIViewController, GMSMapViewDelegate , CLLocationManagerDel
     }
     
     @IBAction func NextButtonClicked(_ sender: Any) {
-    
-        if pinLocationVC_Count > 0 {
-            print(" BUTTO PREESSSESS HERE")
-//            self.LoadIt()
-            self.nextBTn.isEnabled = false
-            appendArray { (success) in
-                if success {
-                    self.performSegue(withIdentifier: "parkingDetails", sender: nil)
-                    self.nextBTn.isEnabled = true
-                } else {
-                    self.nextBTn.isEnabled = true
-                    self.alert(message: "Please try again!")
-                    return
+        
+        if markerCount > 0 {
+            if pinLocationVC_Count > 0 {
+                print(" BUTTO PREESSSESS HERE")
+                //            self.LoadIt()
+                self.nextBTn.isEnabled = false
+                appendArray { (success) in
+                    if success {
+                        self.performSegue(withIdentifier: "parkingDetails", sender: nil)
+                        self.nextBTn.isEnabled = true
+                    } else {
+                        self.nextBTn.isEnabled = true
+                        self.alert(message: "Please try again!")
+                        return
+                    }
                 }
             }
+            else {
+                self.presentAddressAndMobileVC()
+            }
         }
-        
+    
     }
  
 }
@@ -176,19 +183,25 @@ extension PinLocationVC : UIGestureRecognizerDelegate
 {
     @objc func longPress(_ sender: UILongPressGestureRecognizer) {
         pinLocationVC_Count = 0
+        markerCount = markerCount + 1
         let newMarker = GMSMarker(position: MapView.projection.coordinate(for: sender.location(in: MapView)))
         self.MapView.clear()
         self.selectedLocation = newMarker.position
         newMarker.map = MapView
         print(self.selectedLocation!)
-        let addressAndMobileNo = AddressAndMobileNoVC()
-        addressAndMobileNo.modalPresentationStyle = .custom
-        self.present(addressAndMobileNo, animated: true, completion: nil)
+        presentAddressAndMobileVC()
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+    
+    func presentAddressAndMobileVC() {
+        let addressAndMobileNo = AddressAndMobileNoVC()
+        addressAndMobileNo.modalPresentationStyle = .custom
+        self.present(addressAndMobileNo, animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -211,71 +224,4 @@ extension PinLocationVC{
         print(pushedLoc)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-//        let parkingDetails = segue.destination as! ParkingDetailsVC
-//        parkingDetails.pinToUpload?.pinloc.append(lat!)
-//        parkingDetails.pinToUpload?.pinloc.append(lon!)
-        
-//        let sg = segue.destination as! ScrollPostViewController
-//        sg.latlongstring = sender as! [Double]
-    }
 }
-
-extension PinLocationVC{
-    
-//    func handling(){
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        self.ref = Database.database().reference()
-//        //Going deep into firebase hierarchy
-//        self.HandleLocation = self.ref?.child("user").child(uid).child("ArrayPins").observe(.value, with: { (snapshot) in
-//
-//            guard let value = snapshot.childrenCount as? UInt else { return }
-//
-//                print("VALUE VALUE")
-//                print(value)
-//                let vvalue = Int(value)
-//                self.FetchedArray = vvalue
-//
-//        })
-//    }
-}
-
-extension PinLocationVC{
-    
-    
-//    func LoadIt(){
-//        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-//        timer1 = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload1), userInfo: nil, repeats: true)
-//    }
-//
-//    @objc func chartload1(){
-//
-//        if self.FetchedArray == 0 {
-//            alert(message: "Sonething went wrong")
-//        }
-//        else{
-//            self.stopTimer1()
-//            self.appendArray(completion: { success in
-//                if success {
-//                    print("Yahoo Yahoo Yahooo")
-//                    //self.performSegue(withIdentifier: "sspin", sender: nil)
-//                }
-//                else{
-//                    print("NO NO NO")
-//                }
-//            })
-//        }
-//
-//        }
-//
-//
-//    func stopTimer1(){
-//        timer1.invalidate()
-//
-//    }
-}
-
-    
-
-

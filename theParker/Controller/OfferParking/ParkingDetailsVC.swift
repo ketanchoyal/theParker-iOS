@@ -31,11 +31,6 @@ class ParkingDetailsVC: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-    }
-    
     @IBAction func nextBtn(_ sender: Any) {
         
         if parkingTypeSegment.selectedSegmentIndex == UISegmentedControl.noSegment {

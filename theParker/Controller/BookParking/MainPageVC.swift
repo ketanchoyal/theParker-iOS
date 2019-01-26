@@ -43,7 +43,11 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1), NSAttributedString.Key.strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), NSAttributedString.Key.backgroundColor: #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 0.2959118151)]
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            UIApplication.shared.statusBarStyle = .default
+        })
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1), NSAttributedString.Key.strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), NSAttributedString.Key.backgroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1992722603)]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -51,10 +55,14 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
-        DataService.instance.getMyCars { (success) in
-            
-        }
+        DataService.instance.getMyCars { (_) in }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     override func viewDidLoad() {

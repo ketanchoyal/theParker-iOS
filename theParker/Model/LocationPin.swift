@@ -26,10 +26,12 @@ class LocationPin {
     public var photos : [UIImage]!
     public var pinKey : String = ""
     public var booked_until : String!
+    public var address : String = ""
+    public var mobile : String = ""
     
     init() {}
     
-    init(by : String, description : String, instructions : String, price_hourly : String, price_daily : String, price_weekly : String, price_monthly : String, type : String, availability : String, visibility : String, numberofspot : String, features : [String]!, pinloc : [Double], photos : [UIImage]!, pinKey : String, booked_until : String!) {
+    init(by : String, description : String, instructions : String, price_hourly : String, price_daily : String, price_weekly : String, price_monthly : String, type : String, availability : String, visibility : String, numberofspot : String, features : [String]!, pinloc : [Double], photos : [UIImage]!, pinKey : String, booked_until : String!, address : String, mobile : String) {
         self.by = by
         self.description = description
         self.instructions = instructions
@@ -46,6 +48,8 @@ class LocationPin {
         self.photos = photos
         self.pinKey = pinKey
         self.booked_until = booked_until
+        self.address = address
+        self.mobile = mobile
     }
     
 }
