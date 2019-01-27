@@ -18,6 +18,7 @@ class BookingReviewVC: UIViewController {
     @IBOutlet weak var spotPrice: UILabel!
     @IBOutlet weak var servicePrice: UILabel!
     @IBOutlet weak var carInfoLabel: UILabel!
+    @IBOutlet weak var activityIndicatior: UIActivityIndicatorView!
     
     var booked_until_database : String!
     var booked_until_display : String!
@@ -27,7 +28,8 @@ class BookingReviewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Booking Review"
-
+        activityIndicatior.stopAnimating()
+        activityIndicatior.isHidden = true
         setUpData()
         
         print(booked_until_database)
@@ -40,23 +42,32 @@ class BookingReviewVC: UIViewController {
         self.booked_until_display = booked_until_display
     }
     
-    
     @IBAction func bookParkingTapped(_ sender: Any) {
-        
+        activityIndicatior.isHidden = false
+        activityIndicatior.startAnimating()
         BookingService.instance.bookParking(booked_until_database_str: booked_until_database) { (success) in
             if success {
                 WalletService.instance.parking_purchase_transaction(transaction: self.transaction, handler: { (success) in
                     if success {
-                        self.alert(message: "Successfully Booked")
+                        self.activityIndicatior.stopAnimating()
+                        self.gotoParkingBookedVC()
                     } else {
+                        self.activityIndicatior.stopAnimating()
                         self.alert(message: "Something went wrong, Try again")
                     }
                 })
             } else {
+                self.activityIndicatior.startAnimating()
                 self.alert(message: "Something went wrong, Try again")
             }
         }
         
+    }
+    
+    func gotoParkingBookedVC() {
+        let parkingBookedVC = self.storyboard?.instantiateViewController(withIdentifier: "parkingBookedVC") as? ParkingBookedVC
+        parkingBookedVC?.initData(amountPaid: totalPrice.text!)
+        present(parkingBookedVC!, animated: true, completion: nil)
     }
     
 }

@@ -2,7 +2,6 @@ import UIKit
 import Firebase
 import SwiftyJSON
 import Alamofire
-import EZYGradientView
 
 class SideBarVC: UIViewController {
     
@@ -47,7 +46,6 @@ class SideBarVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        self.addgrad()
     
         self.ImageBG.layer.cornerRadius = 20
         self.ImageBG.clipsToBounds = true
@@ -98,16 +96,11 @@ class SideBarVC: UIViewController {
                         self.ProfileImage.image = UIImage(data: imageData)
                          self.indi.isHidden = true
                     }
-                    
                 }
             }
-           
         }
         task.resume()
-        
     }
-    
-
 }
 
 extension SideBarVC{
@@ -124,21 +117,6 @@ extension SideBarVC{
         }))
         self.present(alertview, animated: true, completion: nil)
         
-    }
-    
-    func addgrad(){
-        let gradientView = EZYGradientView()
-        gradientView.frame = self.StackBG.bounds
-        gradientView.firstColor = HextoUIColor.instance.hexString(hex: "#111111")
-        gradientView.secondColor = HextoUIColor.instance.hexString(hex: "#4B0082")
-        gradientView.angleº = 180.0
-        gradientView.colorRatio = 0.4
-        gradientView.fadeIntensity = 1.0
-        gradientView.isBlur = true
-        gradientView.blurOpacity = 0.5
-        //self.GradientView.roundCorners(corners: [.bottomLeft], radius: 50)
-        
-        self.StackBG.insertSubview(gradientView, at: 0)
     }
 }
 

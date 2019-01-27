@@ -32,6 +32,8 @@
 		973E86DA21E3C94E00BB893D /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */; };
 		97405CEA21D7FC7500CD87D1 /* CarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */; };
 		97405CEF21D80A8600CD87D1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CEE21D80A8600CD87D1 /* DataService.swift */; };
+		9777C1E921FDB4F3005829CB /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 9777C1E821FDB4F3005829CB /* success.json */; };
+		9777C1EB21FDB647005829CB /* ParkingBookedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9777C1EA21FDB647005829CB /* ParkingBookedVC.swift */; };
 		97898EE321F0FA4E007FE419 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97898EE221F0FA4E007FE419 /* Transaction.swift */; };
 		97CD6D1421F2291700CA13EB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD6D1221F2291700CA13EB /* ActionButton.swift */; };
 		97CD6D1521F2291700CA13EB /* ActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD6D1321F2291700CA13EB /* ActionButtonItem.swift */; };
@@ -141,6 +143,8 @@
 		973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoCell.swift; sourceTree = "<group>"; };
 		97405CEE21D80A8600CD87D1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		9777C1E821FDB4F3005829CB /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		9777C1EA21FDB647005829CB /* ParkingBookedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingBookedVC.swift; sourceTree = "<group>"; };
 		97898EE221F0FA4E007FE419 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		97CD6D1221F2291700CA13EB /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		97CD6D1321F2291700CA13EB /* ActionButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonItem.swift; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 		97E9EC6521D1989E009D124F /* LottieAnimationsJSON */ = {
 			isa = PBXGroup;
 			children = (
+				9777C1E821FDB4F3005829CB /* success.json */,
 				97E9EC6621D1989E009D124F /* T.json */,
 				97E9EC6721D1989E009D124F /* Switch.json */,
 				97E9EC6921D1989E009D124F /* TwitterHeart.json */,
@@ -459,6 +464,7 @@
 				970F907221D79A2500DF84A9 /* BookThisSpotVC.swift */,
 				973E86D521E3C42200BB893D /* CarSelectVC.swift */,
 				97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */,
+				9777C1EA21FDB647005829CB /* ParkingBookedVC.swift */,
 			);
 			path = BookParking;
 			sourceTree = "<group>";
@@ -554,6 +560,7 @@
 				97E9ECD521D1989F009D124F /* B.json in Resources */,
 				97E9ECB021D1989F009D124F /* G.json in Resources */,
 				97E9ECAA21D1989F009D124F /* Y.json in Resources */,
+				9777C1E921FDB4F3005829CB /* success.json in Resources */,
 				97E9ECA621D1989F009D124F /* M.json in Resources */,
 				97E9ECC721D1989F009D124F /* Colon.json in Resources */,
 				97E9ECB821D1989F009D124F /* GeometryTransformTest.json in Resources */,
@@ -742,6 +749,7 @@
 				97F01C8D21D456290015917F /* AdditionalDetailsVC.swift in Sources */,
 				97F01C8F21D456760015917F /* AvailabilityAndPriceVC.swift in Sources */,
 				97E9ECF321D19B13009D124F /* MyProfileVC.swift in Sources */,
+				9777C1EB21FDB647005829CB /* ParkingBookedVC.swift in Sources */,
 				9717C5DF21DAB793009AB03A /* Constants.swift in Sources */,
 				971E6B8C21D94D8900E0D9F4 /* LocationPin.swift in Sources */,
 				97FE31BA21EA87A4000DAC04 /* WalletService.swift in Sources */,

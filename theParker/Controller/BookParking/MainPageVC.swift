@@ -1,6 +1,5 @@
 import UIKit
 import Firebase
-import EZYGradientView
 import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
@@ -18,7 +17,6 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     var timershow = Timer()
     var markers:[GMSMarker] = []
     var pintimer = Timer()
-    
     
     @IBOutlet var MainView: UIView!
     @IBOutlet weak var googleMaps: GMSMapView!
@@ -94,21 +92,12 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         self.googleMaps.settings.compassButton = true
         self.googleMaps.settings.zoomGestures = true
         
-        gotoMyLocation()
+        //gotoMyLocation()
         
         showGlobalPins()
         
-        self.scheduledTimerWithTimeInterval()
+        scheduledTimerForCurrentLoc()
         
-    }
-    
-    func gotoMyLocation()
-    {
-        guard let lat = self.googleMaps.myLocation?.coordinate.latitude,
-            let lng = self.googleMaps.myLocation?.coordinate.longitude else { return }
-        
-        let camera = GMSCameraPosition.camera(withLatitude: lat ,longitude: lng , zoom: 15.0)
-        self.googleMaps.animate(to: camera)
     }
     
     func setUpFloatingSearchButton() {
@@ -198,53 +187,6 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         return false
     }
     
-    
-    
-    //MARK: - this is function for create direction path, from start location to desination location
-    
-    func drawPath(startLocation: CLLocation, endLocation: CLLocation)
-    {
-        let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
-        let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
-        
-        
-        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(DirectionKey)"
-        
-        Alamofire.request(url).responseJSON { response in
-            
-            do {
-                let json = try JSON(data: response.data!)
-                let routes = json["routes"].arrayValue
-                
-                for route in routes
-                {
-                    let routeOverviewPolyline = route["overview_polyline"].dictionary
-                    let points = routeOverviewPolyline?["points"]?.stringValue
-                    let path = GMSPath.init(fromEncodedPath: points!)
-                    let polyline = GMSPolyline.init(path: path)
-                    polyline.strokeWidth = 4
-                    polyline.strokeColor = UIColor.blue
-                    polyline.map = self.googleMaps
-                }
-            } catch {
-                print(error)
-            }
-        }
-    }
-    
-    func Direction(startLocation: CLLocation, endLocation: CLLocation) {
-        let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
-        let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
-        
-        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-            UIApplication.shared.openURL(URL(string:
-                "comgooglemaps://?saddr=\(origin)&daddr=\(destination)&center=37.423725,-122.0877&directionsmode=driving&zoom=17")!)
-            
-        } else {
-            self.alert(message: "Install Google Maps first!")
-        }
-    }
-    
     func touchSearchBar()     {
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
@@ -262,12 +204,6 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
     func textFieldDidBeginEditing(_ textField: UITextField) {
         touchSearchBar()
     }
-    
-    // MARK: SHOW DIRECTION WITH BUTTON
-    @IBAction func SetView(_ sender: Any) {
-        self.Direction(startLocation: self.CurLocationNow!, endLocation: locationStart)
-    }
-    
 }
 
 // MARK: - GMS Auto Complete Delegate, for autocomplete search location
@@ -326,13 +262,13 @@ extension MainPageVC {
         self.present(alertview, animated: true, completion: nil)
         
     }
-    
-    func scheduledTimerWithTimeInterval(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.chartload), userInfo: nil, repeats: true)
+    // Scheduling timer to show current Location
+    func scheduledTimerForCurrentLoc(){
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.gotoMyLocation), userInfo: nil, repeats: true)
     }
     
-    @objc func chartload(){
+    @objc func gotoMyLocation(){
         
         if self.CurLocationNow?.coordinate.latitude != nil && self.CurLocationNow?.coordinate.longitude != nil {
             
@@ -341,7 +277,7 @@ extension MainPageVC {
             self.googleMaps.camera = camera2
             self.googleMaps.delegate = self
             self.googleMaps?.isMyLocationEnabled = true
-            self.googleMaps.settings.myLocationButton = true
+            self.googleMaps.settings.myLocationButton = false
             self.googleMaps.settings.compassButton = true
             self.googleMaps.settings.zoomGestures = true
             self.stopTimer()
