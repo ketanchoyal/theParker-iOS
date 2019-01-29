@@ -518,7 +518,6 @@ extension LoginVC{
         animations.contentMode = .scaleAspectFit
         vview.addSubview(animations)
         animations.play()
-        
     }
     
     func addgrad(){

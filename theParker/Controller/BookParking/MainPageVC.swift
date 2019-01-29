@@ -63,6 +63,8 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         UIApplication.shared.statusBarStyle = .lightContent
     }
     
+    @IBAction func unwindToMainVC(segue:UIStoryboardSegue) { }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

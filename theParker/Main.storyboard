@@ -1628,7 +1628,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daQ-DV-3I9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3740" y="1089.9014778325125"/>
+            <point key="canvasLocation" x="3628" y="1090"/>
         </scene>
         <!--Booking ReviewVC-->
         <scene sceneID="wFF-Ns-8Dh">
@@ -1910,7 +1910,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E42-at-yGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4599.1999999999998" y="1089.9014778325125"/>
+            <point key="canvasLocation" x="4487" y="1090"/>
         </scene>
         <!--Parking BookedVC-->
         <scene sceneID="aBd-4v-ZNA">
@@ -1952,13 +1952,14 @@
                                         <color key="textColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success" translatesAutoresizingMaskIntoConstraints="NO" id="D4e-SH-sOT">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU2-KV-N3m">
                                         <rect key="frame" x="303" y="1" width="40" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="EAL-Pb-79y"/>
-                                            <constraint firstAttribute="height" constant="40" id="KMG-0M-tss"/>
+                                            <constraint firstAttribute="width" constant="40" id="HZK-7S-650"/>
+                                            <constraint firstAttribute="height" constant="40" id="js7-9r-IYx"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH3-g5-ihE">
@@ -2071,11 +2072,14 @@
                         <outlet property="addressLabel" destination="T0t-bi-yGz" id="o3i-Lw-NqV"/>
                         <outlet property="amountPaidLabel" destination="F2G-Pz-02X" id="4Ru-UC-B5u"/>
                         <outlet property="directionMapView" destination="UA5-xO-BU8" id="RgA-8K-X3c"/>
+                        <outlet property="lottie_Tick_Animation" destination="WU2-KV-N3m" id="q2x-w2-rc8"/>
                         <outlet property="mobileNoLabel" destination="UJ5-ix-dgA" id="ao7-iX-faJ"/>
                         <outlet property="searchDisplayController" destination="K9l-sA-Kgh" id="D8a-4X-z40"/>
+                        <segue destination="k2w-94-wEb" kind="unwind" identifier="unwindToMainVC" unwindAction="unwindToMainVCWithSegue:" id="y8t-gX-RpN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfM-0a-cv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="k2w-94-wEb" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="K9l-sA-Kgh">
                     <connections>
                         <outlet property="delegate" destination="Qis-6e-2ZP" id="03P-p5-oPe"/>
@@ -2085,7 +2089,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="5645.6000000000004" y="1089.9014778325125"/>
+            <point key="canvasLocation" x="5374" y="1090"/>
         </scene>
         <!--OFFER-->
         <scene sceneID="JcD-4j-yyN">
@@ -3480,10 +3484,9 @@
         <image name="onsiteStaff" width="33.333332061767578" height="33.333332061767578"/>
         <image name="parking(1)" width="409.60000610351562" height="409.60000610351562"/>
         <image name="parking(2)" width="204.80000305175781" height="204.80000305175781"/>
-        <image name="success" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ITQ-dk-4qe"/>
-        <segue reference="7B3-g7-3f4"/>
+        <segue reference="nxI-eh-Esk"/>
     </inferredMetricsTieBreakers>
 </document>

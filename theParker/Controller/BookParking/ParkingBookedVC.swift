@@ -11,12 +11,14 @@ import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
 import Alamofire
+import Lottie
 
 class ParkingBookedVC: UIViewController {
 
     @IBOutlet weak var amountPaidLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var mobileNoLabel: UILabel!
+    @IBOutlet weak var lottie_Tick_Animation: UIView!
     
     @IBOutlet weak var directionMapView: GMSMapView!
     
@@ -30,6 +32,7 @@ class ParkingBookedVC: UIViewController {
     
     var timer = Timer()
     var timershow = Timer()
+    var timerAnimation = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +54,18 @@ class ParkingBookedVC: UIViewController {
         directionMapView.settings.zoomGestures = true
         scheduledTimerForCurrentLoc()
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            self.animationTimer()
+        })
+        
         IamshowingPins()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+//        self.viewDidDisappear(animated)
+        timerAnimation.invalidate()
+        timer.invalidate()
+        timershow.invalidate()
     }
     
     func initData(amountPaid : String){
@@ -117,7 +131,7 @@ class ParkingBookedVC: UIViewController {
     }
     
     func gotoHomeVC() {
-        self.navigationController?.popToRootViewController(animated: true)
+        performSegue(withIdentifier: "unwindToMainVC", sender: self)
     }
     
     func alert(message:String )
@@ -230,4 +244,24 @@ extension ParkingBookedVC {
         drawPath(startLocation: CurLocationNow!, endLocation: endLoc, directionMapView: directionMapView)
     }
     
+}
+
+extension ParkingBookedVC {
+    
+    func animationTimer() {
+        timerAnimation = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.animationLOT), userInfo: nil, repeats: true)
+    }
+    
+    @objc func animationLOT() {
+        let successAmination = LOTAnimationView(name: "success")
+        
+        self.lotanime(successAmination, lottie_Tick_Animation)
+    }
+    
+    func lotanime(_ animations:LOTAnimationView,_ vview:UIView){
+        animations.frame = CGRect(x: 0, y: -30, width: vview.frame.width, height: vview.frame.height * 2.5)
+        animations.contentMode = .scaleAspectFit
+        vview.addSubview(animations)
+        animations.play()
+    }
 }
