@@ -78,7 +78,7 @@ extension BookingReviewVC {
         let marker = DataService.instance.selectedPin
         let car = DataService.instance.myCars[(bookingData?.car)!]
         
-        var transaction = Transaction.init(amount: marker.price_hourly, for_parking_id: marker.pinKey, from: (Auth.auth().currentUser?.uid)!, to: marker.by)
+        var transaction = Transaction.init(amount: marker.price_hourly, for_parking_id: marker.pinKey, from: (Auth.auth().currentUser?.uid)!, to: marker.by, transId: nil)
         
         self.transaction = transaction
         

@@ -13,4 +13,5 @@ struct Transaction {
     var for_parking_id : String
     var from : String
     var to : String
+    var transId : String?
 }

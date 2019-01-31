@@ -15,6 +15,9 @@ class WalletService {
     var balance : String!
     var earning : String!
     
+    var earningTransactions = [String : Transaction]()
+    var balanceTransactions = [String : Transaction]()
+    
     func load_Balance_Earning() {
                 
         REF_USER_EARNING.observe(.value) { (earningSnapshot) in
@@ -49,7 +52,7 @@ class WalletService {
             "to" : transaction.to
         ]
         
-        //TODO : Transaction Logic
+        //MARK : Transaction Logic
         
         let transactionKey = REF_USER_BALANCE_TRANSACTION.childByAutoId().key
         
@@ -123,6 +126,66 @@ class WalletService {
                 handler(false)
             }
         })
+    }
+    
+    func getEarningTransactions(completionHandler : @escaping (_ complete : Bool) -> ()) {
+        
+        REF_USER_EARNING_TRANSACTION.observe(.value) { (earningTranSnapshot) in
+            guard let earningTranSnapshot = earningTranSnapshot.children.allObjects as? [DataSnapshot] else {
+                completionHandler(false)
+                return
+            }
+            
+            for earnigTransaction in earningTranSnapshot {
+                let amount = earnigTransaction.childSnapshot(forPath: "amount").value as! String
+                let for_parking_id = earnigTransaction.childSnapshot(forPath: "for_parking_id").value as! String
+                let from = earnigTransaction.childSnapshot(forPath: "from").value as! String
+                let to = earnigTransaction.childSnapshot(forPath: "to").value as! String
+                
+                let transId = earnigTransaction.key
+                
+                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId)
+                
+                self.earningTransactions[transId] = transaction
+                
+                print(amount)
+                print(for_parking_id)
+                print(from)
+                print(to)
+            }
+            
+        }
+        completionHandler(true)
+    }
+    
+    func getBalanceTransactions(completionHandler : @escaping (_ complete : Bool) -> ()) {
+        
+        REF_USER_BALANCE_TRANSACTION.observe(.value) { (earningTranSnapshot) in
+            guard let earningTranSnapshot = earningTranSnapshot.children.allObjects as? [DataSnapshot] else {
+                completionHandler(false)
+                return
+            }
+            
+            for earnigTransaction in earningTranSnapshot {
+                let amount = earnigTransaction.childSnapshot(forPath: "amount").value as! String
+                let for_parking_id = earnigTransaction.childSnapshot(forPath: "for_parking_id").value as! String
+                let from = earnigTransaction.childSnapshot(forPath: "from").value as! String
+                let to = earnigTransaction.childSnapshot(forPath: "to").value as! String
+                
+                let transId = earnigTransaction.key
+                
+                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId)
+                
+                self.earningTransactions[transId] = transaction
+                
+                print(amount)
+                print(for_parking_id)
+                print(from)
+                print(to)
+            }
+            
+        }
+        completionHandler(true)
     }
     
 }
