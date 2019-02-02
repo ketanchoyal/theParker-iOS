@@ -42,15 +42,17 @@ class WalletService {
             "amount" : String(NSString(string: transaction.amount).doubleValue * -1),
             "for_parking_id" : transaction.for_parking_id,
             "from" : transaction.from,
-            "to" : transaction.to
-        ]
+            "to" : transaction.to,
+            "timestamp": [".sv": "timestamp"]
+            ] as [String : Any]
         
         let userTransaction = [
             "amount" : String(NSString(string: transaction.amount).doubleValue),
             "for_parking_id" : transaction.for_parking_id,
             "from" : transaction.from,
-            "to" : transaction.to
-        ]
+            "to" : transaction.to,
+            "timestamp": [".sv": "timestamp"]
+            ] as [String : Any]
         
         //MARK : Transaction Logic
         
@@ -141,10 +143,14 @@ class WalletService {
                 let for_parking_id = earnigTransaction.childSnapshot(forPath: "for_parking_id").value as! String
                 let from = earnigTransaction.childSnapshot(forPath: "from").value as! String
                 let to = earnigTransaction.childSnapshot(forPath: "to").value as! String
+                let timestamp = earnigTransaction.childSnapshot(forPath: "timestamp").value as! Double
+                
+                let timestamp_str = self.convertTimestamp(serverTimestamp: timestamp)
+                print(timestamp_str)
                 
                 let transId = earnigTransaction.key
                 
-                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId)
+                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
                 
                 self.earningTransactions[transId] = transaction
                 
@@ -156,6 +162,16 @@ class WalletService {
             
         }
         completionHandler(true)
+    }
+    
+    private func convertTimestamp(serverTimestamp: Double) -> String {
+        let x = serverTimestamp / 1000
+        let date = NSDate(timeIntervalSince1970: x)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: date as Date)
     }
     
     func getBalanceTransactions(completionHandler : @escaping (_ complete : Bool) -> ()) {
@@ -171,10 +187,14 @@ class WalletService {
                 let for_parking_id = earnigTransaction.childSnapshot(forPath: "for_parking_id").value as! String
                 let from = earnigTransaction.childSnapshot(forPath: "from").value as! String
                 let to = earnigTransaction.childSnapshot(forPath: "to").value as! String
+                let timestamp = earnigTransaction.childSnapshot(forPath: "timestamp").value as! Double
+                
+                let timestamp_str = self.convertTimestamp(serverTimestamp: timestamp)
+                print(timestamp_str)
                 
                 let transId = earnigTransaction.key
                 
-                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId)
+                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
                 
                 self.earningTransactions[transId] = transaction
                 

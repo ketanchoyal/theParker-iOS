@@ -14,4 +14,5 @@ struct Transaction {
     var from : String
     var to : String
     var transId : String?
+    var timestamp : String?
 }
