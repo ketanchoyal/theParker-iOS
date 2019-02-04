@@ -34,6 +34,9 @@
 		97405CEF21D80A8600CD87D1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97405CEE21D80A8600CD87D1 /* DataService.swift */; };
 		9777C1E921FDB4F3005829CB /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 9777C1E821FDB4F3005829CB /* success.json */; };
 		9777C1EB21FDB647005829CB /* ParkingBookedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9777C1EA21FDB647005829CB /* ParkingBookedVC.swift */; };
+		978101222208AE640052454F /* BookParking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978101212208AE640052454F /* BookParking.storyboard */; };
+		978101242208AE7E0052454F /* OfferParking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978101232208AE7E0052454F /* OfferParking.storyboard */; };
+		978101262208AFF70052454F /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978101252208AFF70052454F /* Wallet.storyboard */; };
 		97898EE321F0FA4E007FE419 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97898EE221F0FA4E007FE419 /* Transaction.swift */; };
 		97CD6D1421F2291700CA13EB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD6D1221F2291700CA13EB /* ActionButton.swift */; };
 		97CD6D1521F2291700CA13EB /* ActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD6D1321F2291700CA13EB /* ActionButtonItem.swift */; };
@@ -145,6 +148,9 @@
 		97405CEE21D80A8600CD87D1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9777C1E821FDB4F3005829CB /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		9777C1EA21FDB647005829CB /* ParkingBookedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingBookedVC.swift; sourceTree = "<group>"; };
+		978101212208AE640052454F /* BookParking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookParking.storyboard; sourceTree = "<group>"; };
+		978101232208AE7E0052454F /* OfferParking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OfferParking.storyboard; sourceTree = "<group>"; };
+		978101252208AFF70052454F /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		97898EE221F0FA4E007FE419 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		97CD6D1221F2291700CA13EB /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		97CD6D1321F2291700CA13EB /* ActionButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonItem.swift; sourceTree = "<group>"; };
@@ -346,6 +352,9 @@
 				97E9ECF421D19D4C009D124F /* AppDelegate.swift */,
 				97E9ECDB21D19A8E009D124F /* theParker-Bridging-Header.h */,
 				97E9ECD721D19A6E009D124F /* Main.storyboard */,
+				978101232208AE7E0052454F /* OfferParking.storyboard */,
+				978101212208AE640052454F /* BookParking.storyboard */,
+				978101252208AFF70052454F /* Wallet.storyboard */,
 				97E9ECD821D19A6F009D124F /* Assets.xcassets */,
 				97E9EC5121D19161009D124F /* LaunchScreen.storyboard */,
 				97E9EC5421D19161009D124F /* Info.plist */,
@@ -559,6 +568,7 @@
 				97E9ECC321D1989F009D124F /* Q.json in Resources */,
 				97E9ECD521D1989F009D124F /* B.json in Resources */,
 				97E9ECB021D1989F009D124F /* G.json in Resources */,
+				978101262208AFF70052454F /* Wallet.storyboard in Resources */,
 				97E9ECAA21D1989F009D124F /* Y.json in Resources */,
 				9777C1E921FDB4F3005829CB /* success.json in Resources */,
 				97E9ECA621D1989F009D124F /* M.json in Resources */,
@@ -566,6 +576,7 @@
 				97E9ECB821D1989F009D124F /* GeometryTransformTest.json in Resources */,
 				97E9ECA921D1989F009D124F /* MotionCorpse-Jrcanest.json in Resources */,
 				97E9ECD321D1989F009D124F /* W.json in Resources */,
+				978101222208AE640052454F /* BookParking.storyboard in Resources */,
 				97E9ECA221D1989F009D124F /* A.json in Resources */,
 				97E9ECCE21D1989F009D124F /* Z.json in Resources */,
 				97E9ECD121D1989F009D124F /* bouncy_mapmaker.json in Resources */,
@@ -588,6 +599,7 @@
 				97E9ECB521D1989F009D124F /* S.json in Resources */,
 				97E9ECCD21D1989F009D124F /* O.json in Resources */,
 				97E9ECD421D1989F009D124F /* LottieLogo1_masked.json in Resources */,
+				978101242208AE7E0052454F /* OfferParking.storyboard in Resources */,
 				97E9ECB421D1989F009D124F /* lottie-ios.podspec.json in Resources */,
 				97E9ECC021D1989F009D124F /* package.json in Resources */,
 				97E9ECCF21D1989F009D124F /* keypathTest.json in Resources */,
