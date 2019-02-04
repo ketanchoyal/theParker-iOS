@@ -307,14 +307,20 @@ extension MainPageVC {
     }
     
     @objc func thanshow(){
-
-            timershow.invalidate()
-            showmarkers()
+        timershow.invalidate()
+        showmarkers()
     }
     
     func showmarkers(){
         for (_, marker) in DataService.instance.markers {
-            marker.map = googleMaps
+            if (marker.userData as? LocationPin)?.availability == "open"{
+                marker.map = googleMaps
+            }
+            if (marker.userData as? LocationPin)?.availability == "closed" {
+                marker.map = nil
+                let key = (marker.userData as? LocationPin)?.pinKey
+                DataService.instance.markers.removeValue(forKey: key!)
+            }
         }
     }
 }
