@@ -50,8 +50,10 @@ class E_WalletVC: UIViewController {
     }
 
     @IBAction func earningTransactionBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "transactionVC", sender: nil)
     }
     
     @IBAction func walletTransactionBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "transactionVC", sender: nil)
     }
 }

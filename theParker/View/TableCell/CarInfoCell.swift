@@ -22,12 +22,6 @@ class CarInfoCell: UITableViewCell {
         super.awakeFromNib()
         setupView()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configureCell(car : Car) {
         model.text = car.model

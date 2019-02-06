@@ -185,8 +185,8 @@ class WalletService {
             for earnigTransaction in earningTranSnapshot {
                 let amount = earnigTransaction.childSnapshot(forPath: "amount").value as! String
                 let for_parking_id = earnigTransaction.childSnapshot(forPath: "for_parking_id").value as! String
-                let from = earnigTransaction.childSnapshot(forPath: "from").value as! String
-                let to = earnigTransaction.childSnapshot(forPath: "to").value as! String
+                var from = earnigTransaction.childSnapshot(forPath: "from").value as! String
+                var to = earnigTransaction.childSnapshot(forPath: "to").value as! String
                 let timestamp = earnigTransaction.childSnapshot(forPath: "timestamp").value as! Double
                 
                 let timestamp_str = self.convertTimestamp(serverTimestamp: timestamp)
@@ -194,9 +194,21 @@ class WalletService {
                 
                 let transId = earnigTransaction.key
                 
-                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
-                
-                self.earningTransactions[transId] = transaction
+                DataService.instance.getUserDataById(forUser: from, completionHandler: { (success, user) in
+                    if success {
+                        from = (user?.Name)!
+                        
+                        DataService.instance.getUserDataById(forUser: to, completionHandler: { (success, user) in
+                            if success {
+                                to = (user?.Name)!
+                                
+                                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
+                                
+                                self.balanceTransactions[transId] = transaction
+                            }
+                        })
+                    }
+                })
                 
                 print(amount)
                 print(for_parking_id)

@@ -107,6 +107,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         floatingSearchButton.setTitle(" Search ", fontsize: 18, forState: UIControl.State())
         floatingSearchButton.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1)
         floatingSearchButton.fontColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forState: UIControl.State())
+        floatingSearchButton.show()
         
         floatingSearchButton.action = {editButtonItem in self.touchSearchBar()}
     }
@@ -116,7 +117,8 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         floatingLocationButton.setImage(UIImage(named: "myLocation"), forState: UIControl.State())
         floatingLocationButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         floatingLocationButton.border(color: #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1), width: 2)
-        floatingLocationButton.cornerRadius(radius: 50/2)
+        floatingLocationButton.show()
+        
         floatingLocationButton.action = {editButtonItem in self.gotoMyLocation()}
     }
     

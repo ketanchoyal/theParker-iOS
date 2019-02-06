@@ -72,6 +72,7 @@ open class ActionButton: NSObject {
     /// the float button's radius
     fileprivate var floatButtonHeight = 50
     private var width : CGFloat = 50
+    private var bottomSpacing = 35
     
     public init(attachedToView view: UIView, items: [ActionButtonItem]?, buttonHeight : Int?, buttonWidth : CGFloat?, buttonType : Type, position : Position) {
         super.init()
@@ -119,7 +120,10 @@ open class ActionButton: NSObject {
         let tap = UITapGestureRecognizer(target: self, action: #selector(ActionButton.backgroundTapped(_:)))
         self.contentView.addGestureRecognizer(tap)
         
-        self.installConstraints()
+        if type == .Circle {
+            self.cornerRadius(radius: CGFloat(floatButtonHeight/2))
+        }
+        
     }
     
     required public init(coder aDecoder: NSCoder) {
@@ -147,6 +151,10 @@ open class ActionButton: NSObject {
         floatButton.layer.borderWidth = width
     }
     
+    func bottomSpacing(space : Int) {
+        self.bottomSpacing = space
+    }
+    
     open func setImage(_ image: UIImage?, forState state: UIControl.State) {
         setTitle(nil, fontsize: 5 ,forState: state)
         floatButton.setImage(image, for: state)
@@ -158,7 +166,7 @@ open class ActionButton: NSObject {
     /**
         Install all the necessary constraints for the button. By the default the button will be placed at 15pts from the bottom and the 15pts from the right of its *parentView*
     */
-    fileprivate func installConstraints() {
+    func show() {
         let views: [String: UIView] = ["floatButton":self.floatButton, "parentView":self.parentView]
         
         var width_ : CGFloat = 0.0
@@ -175,12 +183,12 @@ open class ActionButton: NSObject {
         self.floatButton.addConstraints(height)
         
         if position == .BottomRight {
-            let bottomSpacing = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton]-35-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+            let bottomSpacing = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton]-\(self.bottomSpacing)-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
             let trailingSpacing = NSLayoutConstraint.constraints(withVisualFormat: "H:[floatButton]-15-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
             self.parentView.addConstraints(trailingSpacing)
             self.parentView.addConstraints(bottomSpacing)
         } else if position == .BottomLeft {
-            let bottomSpacing = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton]-35-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+            let bottomSpacing = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton]-\(self.bottomSpacing)-|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
             let leadingSpacing = NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[floatButton]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
             self.parentView.addConstraints(leadingSpacing)
             self.parentView.addConstraints(bottomSpacing)

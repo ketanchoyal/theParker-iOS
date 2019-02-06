@@ -120,6 +120,7 @@ class ParkingBookedVC: UIViewController {
         floatingGoogleMapOpenButton.setTitle("Show in Map", fontsize: 18, forState: UIControl.State())
         floatingGoogleMapOpenButton.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1)
         floatingGoogleMapOpenButton.fontColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forState: UIControl.State())
+        floatingGoogleMapOpenButton.show()
     }
     
     func setUpfloatingHomeButton() {
@@ -128,6 +129,7 @@ class ParkingBookedVC: UIViewController {
         floatingHomeButton.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.3294117647, blue: 0.8941176471, alpha: 1)
         floatingHomeButton.fontColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forState: UIControl.State())
         floatingHomeButton.action = { item in self.gotoHomeVC()}
+        floatingHomeButton.show()
     }
     
     func gotoHomeVC() {
