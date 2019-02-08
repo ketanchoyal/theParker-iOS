@@ -24,6 +24,10 @@ class TransactionVC: UIViewController {
     var floatingCloseBtn : ActionButton!
     let walletFunc = WalletService.instance
     
+    //override func viewDidLayoutSubviews() {
+      //  let path = UIBezierPath(roundedRect: <#T##CGRect#>, byRoundingCorners: [<#T##UIRectCorner#>], cornerRadii: <#T##CGSize#>)
+    //}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -168,8 +168,11 @@ class WalletService {
         let x = serverTimestamp / 1000
         let date = NSDate(timeIntervalSince1970: x)
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
+        
+        formatter.dateFormat = "dd EEEE, MMM yyyy, h:mm a"  //"EEEE, MMM d, yyyy, h:mm a" 
+        
+//        formatter.dateStyle = .full
+//        formatter.timeStyle = .short
         
         return formatter.string(from: date as Date)
     }

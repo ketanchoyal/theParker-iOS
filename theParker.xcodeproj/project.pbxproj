@@ -27,6 +27,7 @@
 		9726E3BD21DFE432004281AE /* AddCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726E3BC21DFE431004281AE /* AddCarVC.swift */; };
 		972ABD8121E91900002CB296 /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972ABD8021E91900002CB296 /* BookingService.swift */; };
 		972ABD8321E92EC3002CB296 /* DateCamparisionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972ABD8221E92EC3002CB296 /* DateCamparisionExt.swift */; };
+		973338B4220D753E00BBA630 /* UIViewRoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973338B3220D753E00BBA630 /* UIViewRoundedCorner.swift */; };
 		973E86D621E3C42200BB893D /* CarSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D521E3C42200BB893D /* CarSelectVC.swift */; };
 		973E86D821E3C46500BB893D /* CarSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D721E3C46500BB893D /* CarSelectCell.swift */; };
 		973E86DA21E3C94E00BB893D /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */; };
@@ -143,6 +144,7 @@
 		9726E3BC21DFE431004281AE /* AddCarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarVC.swift; sourceTree = "<group>"; };
 		972ABD8021E91900002CB296 /* BookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
 		972ABD8221E92EC3002CB296 /* DateCamparisionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCamparisionExt.swift; sourceTree = "<group>"; };
+		973338B3220D753E00BBA630 /* UIViewRoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundedCorner.swift; sourceTree = "<group>"; };
 		973E86D521E3C42200BB893D /* CarSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectVC.swift; sourceTree = "<group>"; };
 		973E86D721E3C46500BB893D /* CarSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectCell.swift; sourceTree = "<group>"; };
 		973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */,
 				971E6B8E21D97A1E00E0D9F4 /* StringExtension.swift */,
 				972ABD8221E92EC3002CB296 /* DateCamparisionExt.swift */,
+				973338B3220D753E00BBA630 /* UIViewRoundedCorner.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				973338B4220D753E00BBA630 /* UIViewRoundedCorner.swift in Sources */,
 				97F01C8721D42BEC0015917F /* ParkingDetailsVC.swift in Sources */,
 				97405CEA21D7FC7500CD87D1 /* CarInfoCell.swift in Sources */,
 				97E9ECE421D19AFF009D124F /* LoginVC.swift in Sources */,
