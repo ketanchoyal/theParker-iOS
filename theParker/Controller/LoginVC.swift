@@ -444,17 +444,6 @@ class LoginVC: UIViewController , UITextFieldDelegate{
     
     
 }
-    
-
-
-extension UIView {
-    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        self.layer.mask = mask
-    }
-}
 
 extension LoginVC{
     
@@ -530,10 +519,9 @@ extension LoginVC{
         gradientView.fadeIntensity = 1.0
         gradientView.isBlur = true
         gradientView.blurOpacity = 0.5
-        self.GradientView.roundCorners(corners: [.bottomLeft,.bottomRight], radius: 1500)
-        //self.GradientView.roundCorners(corners: [.bottomLeft], radius: 50)
+        self.GradientView.round(corners: [.bottomLeft, .bottomRight], radius: 1500)
         
-         self.GradientView.insertSubview(gradientView, at: 0)
+        self.GradientView.insertSubview(gradientView, at: 0)
     }
     
     func Logingrad(){

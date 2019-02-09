@@ -138,21 +138,35 @@ class WalletService {
                 return
             }
             
-            for earnigTransaction in earningTranSnapshot {
-                let amount = earnigTransaction.childSnapshot(forPath: "amount").value as! String
-                let for_parking_id = earnigTransaction.childSnapshot(forPath: "for_parking_id").value as! String
-                let from = earnigTransaction.childSnapshot(forPath: "from").value as! String
-                let to = earnigTransaction.childSnapshot(forPath: "to").value as! String
-                let timestamp = earnigTransaction.childSnapshot(forPath: "timestamp").value as! Double
+            for earningTransaction in earningTranSnapshot {
+                let amount = earningTransaction.childSnapshot(forPath: "amount").value as! String
+                let for_parking_id = earningTransaction.childSnapshot(forPath: "for_parking_id").value as! String
+                var from = earningTransaction.childSnapshot(forPath: "from").value as! String
+                var to = earningTransaction.childSnapshot(forPath: "to").value as! String
+                let timestamp = earningTransaction.childSnapshot(forPath: "timestamp").value as! Double
                 
                 let timestamp_str = self.convertTimestamp(serverTimestamp: timestamp)
                 print(timestamp_str)
                 
-                let transId = earnigTransaction.key
+                let transId = earningTransaction.key
                 
-                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
+                DataService.instance.getUserDataById(forUser: from, completionHandler: { (success, user) in
+                    if success {
+                        from = (user?.Name)!
+                        
+                        DataService.instance.getUserDataById(forUser: to, completionHandler: { (success, user) in
+                            if success {
+                                to = (user?.Name)!
+                                
+                                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
+                                
+                                self.earningTransactions[transId] = transaction
+                            }
+                        })
+                    }
+                })
                 
-                self.earningTransactions[transId] = transaction
+                
                 
                 print(amount)
                 print(for_parking_id)
@@ -169,7 +183,7 @@ class WalletService {
         let date = NSDate(timeIntervalSince1970: x)
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "dd EEEE, MMM yyyy, h:mm a"  //"EEEE, MMM d, yyyy, h:mm a" 
+        formatter.dateFormat = "dd EE, MMM yyyy, h:mm a"  //"EEEE, MMM d, yyyy, h:mm a" 
         
 //        formatter.dateStyle = .full
 //        formatter.timeStyle = .short
@@ -179,23 +193,23 @@ class WalletService {
     
     func getBalanceTransactions(completionHandler : @escaping (_ complete : Bool) -> ()) {
         
-        REF_USER_BALANCE_TRANSACTION.observe(.value) { (earningTranSnapshot) in
-            guard let earningTranSnapshot = earningTranSnapshot.children.allObjects as? [DataSnapshot] else {
+        REF_USER_BALANCE_TRANSACTION.observe(.value) { (balanceTranSnapshot) in
+            guard let balanceTranSnapshot = balanceTranSnapshot.children.allObjects as? [DataSnapshot] else {
                 completionHandler(false)
                 return
             }
             
-            for earnigTransaction in earningTranSnapshot {
-                let amount = earnigTransaction.childSnapshot(forPath: "amount").value as! String
-                let for_parking_id = earnigTransaction.childSnapshot(forPath: "for_parking_id").value as! String
-                var from = earnigTransaction.childSnapshot(forPath: "from").value as! String
-                var to = earnigTransaction.childSnapshot(forPath: "to").value as! String
-                let timestamp = earnigTransaction.childSnapshot(forPath: "timestamp").value as! Double
+            for balanceTransaction in balanceTranSnapshot {
+                let amount = balanceTransaction.childSnapshot(forPath: "amount").value as! String
+                let for_parking_id = balanceTransaction.childSnapshot(forPath: "for_parking_id").value as! String
+                var from = balanceTransaction.childSnapshot(forPath: "from").value as! String
+                var to = balanceTransaction.childSnapshot(forPath: "to").value as! String
+                let timestamp = balanceTransaction.childSnapshot(forPath: "timestamp").value as! Double
                 
                 let timestamp_str = self.convertTimestamp(serverTimestamp: timestamp)
                 print(timestamp_str)
                 
-                let transId = earnigTransaction.key
+                let transId = balanceTransaction.key
                 
                 DataService.instance.getUserDataById(forUser: from, completionHandler: { (success, user) in
                     if success {
