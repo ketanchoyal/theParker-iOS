@@ -145,19 +145,6 @@ extension TransactionVC : UITableViewDelegate, UITableViewDataSource {
         }
         
         return ret
-        
-//        if transactionType == .Balance && tableView == balanceTransactionTable {
-//            return walletFunc.balanceTransactions.count
-//        }
-//
-//        if transactionType == .Earning && tableView == earningTransactionTable {
-//            return walletFunc.earningTransactions.count
-//        }
-//
-//        else {
-//            return 0
-//        }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -193,41 +180,6 @@ extension TransactionVC : UITableViewDelegate, UITableViewDataSource {
         
         return cell
         
-//        if transactionType == .Balance && tableView == balanceTransactionTable {
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell") as? TransactionCell else {
-//                return UITableViewCell()
-//            }
-//
-//            let transactions = walletFunc.balanceTransactions
-//            print("ABC : \(transactions.count)")
-//            print("ABC : \(transactions.keys)")
-//            let key = Array(transactions.keys)[indexPath.row]
-//            let transaction = transactions[key]
-//
-//            cell.configureCell(transaction: transaction!)
-//
-//            return cell
-//        }
-//
-//        if transactionType == .Earning && tableView == earningTransactionTable {
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell") as? TransactionCell else {
-//                return UITableViewCell()
-//            }
-//
-//            let transactions = walletFunc.earningTransactions
-//            print("ABC : \(transactions.count)")
-//            print("ABC : \(transactions.keys)")
-//            let key = Array(transactions.keys)[indexPath.row]
-//            let transaction = transactions[key]
-//
-//            cell.configureCell(transaction: transaction!)
-//
-//            return cell
-//        }
-//
-//        else {
-//            return UITableViewCell()
-//        }
     }
     
 }

@@ -192,7 +192,6 @@ class WalletService {
     }
     
     func getBalanceTransactions(completionHandler : @escaping (_ complete : Bool) -> ()) {
-        
         REF_USER_BALANCE_TRANSACTION.observe(.value) { (balanceTranSnapshot) in
             guard let balanceTranSnapshot = balanceTranSnapshot.children.allObjects as? [DataSnapshot] else {
                 completionHandler(false)
@@ -211,21 +210,27 @@ class WalletService {
                 
                 let transId = balanceTransaction.key
                 
-                DataService.instance.getUserDataById(forUser: from, completionHandler: { (success, user) in
-                    if success {
-                        from = (user?.Name)!
-                        
-                        DataService.instance.getUserDataById(forUser: to, completionHandler: { (success, user) in
-                            if success {
-                                to = (user?.Name)!
-                                
-                                let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
-                                
-                                self.balanceTransactions[transId] = transaction
-                            }
-                        })
-                    }
-                })
+                if to == "wallet" {
+                    let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
+                    
+                    self.balanceTransactions[transId] = transaction
+                } else {
+                    DataService.instance.getUserDataById(forUser: from, completionHandler: { (success, user) in
+                        if success {
+                            from = (user?.Name)!
+                            
+                            DataService.instance.getUserDataById(forUser: to, completionHandler: { (success, user) in
+                                if success {
+                                    to = (user?.Name)!
+                                    
+                                    let transaction = Transaction.init(amount: amount, for_parking_id: for_parking_id, from: from, to: to, transId: transId, timestamp: timestamp_str)
+                                    
+                                    self.balanceTransactions[transId] = transaction
+                                }
+                            })
+                        }
+                    })
+                }
                 
                 print(amount)
                 print(for_parking_id)

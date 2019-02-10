@@ -258,6 +258,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		970315C9221038A600C7BC42 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				97239C5D21F7A82F00C5DEA8 /* XIBs */,
+				97E9ECD721D19A6E009D124F /* Main.storyboard */,
+				978101232208AE7E0052454F /* OfferParking.storyboard */,
+				978101212208AE640052454F /* BookParking.storyboard */,
+				978101252208AFF70052454F /* Wallet.storyboard */,
+				97E9EC5121D19161009D124F /* LaunchScreen.storyboard */,
+				97E9ECD821D19A6F009D124F /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		971393EE21D2979B00BCB212 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,7 +378,6 @@
 		97E9EC4721D19160009D124F /* theParker */ = {
 			isa = PBXGroup;
 			children = (
-				97239C5D21F7A82F00C5DEA8 /* XIBs */,
 				971393F121D2988800BCB212 /* Utilities */,
 				971E6B8D21D97A0500E0D9F4 /* Extension */,
 				97405CED21D80A6C00CD87D1 /* Services */,
@@ -373,16 +386,8 @@
 				971393EE21D2979B00BCB212 /* View */,
 				97F01C8221D2D5B70015917F /* Controller */,
 				97E9EC6521D1989E009D124F /* LottieAnimationsJSON */,
-				97E9ECF421D19D4C009D124F /* AppDelegate.swift */,
+				970315C9221038A600C7BC42 /* Assets */,
 				97E9ECDB21D19A8E009D124F /* theParker-Bridging-Header.h */,
-				97E9ECD721D19A6E009D124F /* Main.storyboard */,
-				978101232208AE7E0052454F /* OfferParking.storyboard */,
-				978101212208AE640052454F /* BookParking.storyboard */,
-				978101252208AFF70052454F /* Wallet.storyboard */,
-				97E9ECD821D19A6F009D124F /* Assets.xcassets */,
-				97E9EC5121D19161009D124F /* LaunchScreen.storyboard */,
-				97E9EC5421D19161009D124F /* Info.plist */,
-				97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */,
 			);
 			path = theParker;
 			sourceTree = "<group>";
@@ -484,9 +489,12 @@
 		97F01C8321D2D5FC0015917F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9717C5DE21DAB793009AB03A /* Constants.swift */,
+				97E9ECF421D19D4C009D124F /* AppDelegate.swift */,
+				97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */,
+				97E9EC5421D19161009D124F /* Info.plist */,
 				97E9ECDC21D19A90009D124F /* SWRevealViewController.h */,
 				97E9ECDD21D19A91009D124F /* SWRevealViewController.m */,
-				9717C5DE21DAB793009AB03A /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
