@@ -656,7 +656,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hsq-nn-HbY">
-                                        <rect key="frame" x="0.0" y="230" width="238" height="280"/>
+                                        <rect key="frame" x="0.0" y="230" width="238" height="340"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXc-Hn-4gl">
                                                 <rect key="frame" x="0.0" y="0.0" width="238" height="40"/>
@@ -746,8 +746,30 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ri-xL-kAQ">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qJ-BN-049">
                                                 <rect key="frame" x="0.0" y="240" width="238" height="40"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my-bookings" translatesAutoresizingMaskIntoConstraints="NO" id="o8O-6S-mZM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="BPi-mo-u9K"/>
+                                                            <constraint firstAttribute="width" constant="40" id="qiq-Yz-Bpi"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAh-96-DVh">
+                                                        <rect key="frame" x="40" y="0.0" width="198" height="40"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                        <state key="normal" title="  My Bookings">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="MTd-G2-rdk" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="7HU-SO-94z"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ri-xL-kAQ">
+                                                <rect key="frame" x="0.0" y="300" width="238" height="40"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myProfile" translatesAutoresizingMaskIntoConstraints="NO" id="6aN-mV-EzL">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -2259,6 +2281,14 @@
             </objects>
             <point key="canvasLocation" x="3583" y="1847"/>
         </scene>
+        <!--MyBookings-->
+        <scene sceneID="OEX-6R-fgZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyBookings" id="MTd-G2-rdk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C01-I1-o3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="1847"/>
+        </scene>
         <!--Wallet-->
         <scene sceneID="VEb-un-McF">
             <objects>
@@ -2350,6 +2380,7 @@
         <image name="logout" width="120" height="120"/>
         <image name="man-avatar" width="204.80000305175781" height="204.80000305175781"/>
         <image name="menu-16*16" width="12.800000190734863" height="12.800000190734863"/>
+        <image name="my-bookings" width="100" height="100"/>
         <image name="myCars" width="120" height="120"/>
         <image name="myProfile" width="120" height="120"/>
         <image name="myWallet" width="120" height="120"/>
@@ -2360,6 +2391,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ITQ-dk-4qe"/>
-        <segue reference="nxI-eh-Esk"/>
+        <segue reference="7B3-g7-3f4"/>
     </inferredMetricsTieBreakers>
 </document>

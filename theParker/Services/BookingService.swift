@@ -39,12 +39,12 @@ class BookingService {
             "parking_placeId" : data?.parking_placeId
         ]
         
-        let booking : Dictionary<String, Any> = [
+        let booking = [
             "booked_until" : booked_until_database_str,
             key! : key!
         ]
         //TODO : Cloud Function can be made to add data at multiple places as soon as it is added at only one place
-        REF_GLOBAL_BOOKINGS.child(key!).updateChildValues(bookingData) { (error, ref) in
+        REF_GLOBAL_BOOKINGS.child(key!).updateChildValues(bookingData as [AnyHashable : Any]) { (error, ref) in
             if error == nil {
                 REF_GLOBAL_PINS.child(locationId).child("Bookings").child(dateNow_string).updateChildValues(booking) { (error, ref) in
                     if error == nil {
