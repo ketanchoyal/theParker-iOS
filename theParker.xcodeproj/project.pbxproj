@@ -28,6 +28,7 @@
 		972ABD8121E91900002CB296 /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972ABD8021E91900002CB296 /* BookingService.swift */; };
 		972ABD8321E92EC3002CB296 /* DateCamparisionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972ABD8221E92EC3002CB296 /* DateCamparisionExt.swift */; };
 		973338B4220D753E00BBA630 /* UIViewRoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973338B3220D753E00BBA630 /* UIViewRoundedCorner.swift */; };
+		973CAD5C223ECC7600568E03 /* MyBookingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973CAD5B223ECC7600568E03 /* MyBookingsVC.swift */; };
 		973E86D621E3C42200BB893D /* CarSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D521E3C42200BB893D /* CarSelectVC.swift */; };
 		973E86D821E3C46500BB893D /* CarSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D721E3C46500BB893D /* CarSelectCell.swift */; };
 		973E86DA21E3C94E00BB893D /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */; };
@@ -147,6 +148,7 @@
 		972ABD8021E91900002CB296 /* BookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
 		972ABD8221E92EC3002CB296 /* DateCamparisionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCamparisionExt.swift; sourceTree = "<group>"; };
 		973338B3220D753E00BBA630 /* UIViewRoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundedCorner.swift; sourceTree = "<group>"; };
+		973CAD5B223ECC7600568E03 /* MyBookingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookingsVC.swift; sourceTree = "<group>"; };
 		973E86D521E3C42200BB893D /* CarSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectVC.swift; sourceTree = "<group>"; };
 		973E86D721E3C46500BB893D /* CarSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectCell.swift; sourceTree = "<group>"; };
 		973E86D921E3C94E00BB893D /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				97E9ECEB21D19B12009D124F /* MyCarsVC.swift */,
 				9726E3BC21DFE431004281AE /* AddCarVC.swift */,
 				97E9ECED21D19B13009D124F /* MyProfileVC.swift */,
+				973CAD5B223ECC7600568E03 /* MyBookingsVC.swift */,
 				97E9ECE221D19AFF009D124F /* SideBarVC.swift */,
 				97F01C8421D2D76E0015917F /* E-WalletVC.swift */,
 				97407379220B512500168CBF /* TransactionVC.swift */,
@@ -806,6 +809,7 @@
 				971393F721D2A1DC00BCB212 /* RoundedUIView.swift in Sources */,
 				97898EE321F0FA4E007FE419 /* Transaction.swift in Sources */,
 				97F01C8D21D456290015917F /* AdditionalDetailsVC.swift in Sources */,
+				973CAD5C223ECC7600568E03 /* MyBookingsVC.swift in Sources */,
 				97F01C8F21D456760015917F /* AvailabilityAndPriceVC.swift in Sources */,
 				97E9ECF321D19B13009D124F /* MyProfileVC.swift in Sources */,
 				9777C1EB21FDB647005829CB /* ParkingBookedVC.swift in Sources */,

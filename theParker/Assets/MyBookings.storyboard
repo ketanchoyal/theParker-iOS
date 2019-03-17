@@ -13,7 +13,7 @@
         <!--MY BOOKINGS-->
         <scene sceneID="pcB-Ko-Hox">
             <objects>
-                <viewController id="gdi-Oz-fpw" sceneMemberID="viewController">
+                <viewController id="gdi-Oz-fpw" customClass="MyBookingsVC" customModule="theParker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tDj-gg-awg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,6 +168,9 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="menu" destination="2YU-Nd-OMX" id="NGh-O8-e7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZf-Fx-SzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
