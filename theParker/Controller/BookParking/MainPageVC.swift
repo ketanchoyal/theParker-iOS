@@ -54,6 +54,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         self.navigationController?.view.backgroundColor = .clear
         
         DataService.instance.getMyCars { (_) in }
+        DataService.instance.getMyPins { (_) in }
         
     }
     

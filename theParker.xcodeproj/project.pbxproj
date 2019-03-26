@@ -48,6 +48,7 @@
 		97CD6D1521F2291700CA13EB /* ActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD6D1321F2291700CA13EB /* ActionButtonItem.swift */; };
 		97D1DA3421D6870800AE76CA /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1DA3321D6870800AE76CA /* RoundedLabel.swift */; };
 		97DADE8F21E7D26400E46556 /* BookingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */; };
+		97DC3F45224AA8EB00169C73 /* MySpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DC3F44224AA8EB00169C73 /* MySpotCell.swift */; };
 		97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5121D19161009D124F /* LaunchScreen.storyboard */; };
 		97E9EC5B21D1946F009D124F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */; };
 		97E9EC9F21D1989F009D124F /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6621D1989E009D124F /* T.json */; };
@@ -168,6 +169,7 @@
 		97CD6D1321F2291700CA13EB /* ActionButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonItem.swift; sourceTree = "<group>"; };
 		97D1DA3321D6870800AE76CA /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 		97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingReviewVC.swift; sourceTree = "<group>"; };
+		97DC3F44224AA8EB00169C73 /* MySpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpotCell.swift; sourceTree = "<group>"; };
 		97E9EC4521D19160009D124F /* theParker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theParker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E9EC5221D19161009D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E9EC5421D19161009D124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				97405CE921D7FC7500CD87D1 /* CarInfoCell.swift */,
 				973E86D721E3C46500BB893D /* CarSelectCell.swift */,
 				9740737E220B57CC00168CBF /* TransactionCell.swift */,
+				97DC3F44224AA8EB00169C73 /* MySpotCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -572,7 +575,7 @@
 				TargetAttributes = {
 					97E9EC4421D19160009D124F = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -807,6 +810,7 @@
 				972ABD8321E92EC3002CB296 /* DateCamparisionExt.swift in Sources */,
 				97E9ECE621D19AFF009D124F /* SideBarVC.swift in Sources */,
 				971393F721D2A1DC00BCB212 /* RoundedUIView.swift in Sources */,
+				97DC3F45224AA8EB00169C73 /* MySpotCell.swift in Sources */,
 				97898EE321F0FA4E007FE419 /* Transaction.swift in Sources */,
 				97F01C8D21D456290015917F /* AdditionalDetailsVC.swift in Sources */,
 				973CAD5C223ECC7600568E03 /* MyBookingsVC.swift in Sources */,

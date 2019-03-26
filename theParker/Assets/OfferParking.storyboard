@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AQU-XA-VBY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AQU-XA-VBY">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,80 @@
                     <view key="view" contentMode="scaleToFill" id="qBs-Ac-Grq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l0o-Vc-Kb0">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myspotCell" rowHeight="80" id="lHE-HC-OHs" customClass="MySpotCell" customModule="theParker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lHE-HC-OHs" id="uQG-YM-H1H">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Net-IP-kql" customClass="GMSMapView">
+                                                    <rect key="frame" x="-60" y="5" width="455" height="70"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yso-0l-dVe">
+                                                    <rect key="frame" x="-60" y="0.0" width="455" height="80"/>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="x0Z-8q-WtK">
+                                                    <rect key="frame" x="305.66666666666669" y="12" width="54.333333333333314" height="55"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-Kp-LDe">
+                                                            <rect key="frame" x="20.000000000000004" y="0.0" width="34.333333333333343" height="17.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                            <color key="textColor" red="0.29411764709999999" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visibility" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj9-eO-Eyb">
+                                                            <rect key="frame" x="0.0" y="18.666666666666664" width="54.333333333333336" height="17.666666666666664"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                            <color key="textColor" red="0.29411764709999999" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B29-sk-di8">
+                                                            <rect key="frame" x="22.666666666666629" y="37.333333333333336" width="31.666666666666671" height="17.666666666666664"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                            <color key="textColor" red="0.29411764709999999" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.39763484589999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Net-IP-kql" firstAttribute="leading" secondItem="uQG-YM-H1H" secondAttribute="leading" constant="-60" id="6NL-lQ-r6g"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="x0Z-8q-WtK" secondAttribute="trailing" id="VzD-T9-nWS"/>
+                                                <constraint firstItem="yso-0l-dVe" firstAttribute="trailing" secondItem="Net-IP-kql" secondAttribute="trailing" id="WN6-Jf-0b8"/>
+                                                <constraint firstAttribute="bottom" secondItem="yso-0l-dVe" secondAttribute="bottom" id="bQq-fY-I73"/>
+                                                <constraint firstItem="yso-0l-dVe" firstAttribute="leading" secondItem="Net-IP-kql" secondAttribute="leading" id="dOu-gc-CcS"/>
+                                                <constraint firstItem="Net-IP-kql" firstAttribute="top" secondItem="uQG-YM-H1H" secondAttribute="top" constant="5" id="f7c-KR-4V6"/>
+                                                <constraint firstAttribute="bottom" secondItem="Net-IP-kql" secondAttribute="bottom" constant="5" id="gDi-Cw-DzN"/>
+                                                <constraint firstAttribute="trailing" secondItem="Net-IP-kql" secondAttribute="trailing" constant="-20" id="kGs-DL-fKU"/>
+                                                <constraint firstItem="yso-0l-dVe" firstAttribute="top" secondItem="uQG-YM-H1H" secondAttribute="top" id="uR8-eN-eW6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="x0Z-8q-WtK" secondAttribute="bottom" constant="2" id="yTr-Fg-mUQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mapView" destination="Net-IP-kql" id="WPf-PN-uJx"/>
+                                            <outlet property="priceLabel" destination="Hig-Kp-LDe" id="coH-Q4-83k"/>
+                                            <outlet property="typeLabel" destination="B29-sk-di8" id="vaf-Tj-MR4"/>
+                                            <outlet property="visibilityLabel" destination="bj9-eO-Eyb" id="kiU-Ze-wmf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JoV-lE-q6I" firstAttribute="trailing" secondItem="l0o-Vc-Kb0" secondAttribute="trailing" id="C6I-ys-xLk"/>
+                            <constraint firstItem="JoV-lE-q6I" firstAttribute="bottom" secondItem="l0o-Vc-Kb0" secondAttribute="bottom" id="Mzp-3g-Jh7"/>
+                            <constraint firstItem="l0o-Vc-Kb0" firstAttribute="leading" secondItem="JoV-lE-q6I" secondAttribute="leading" id="hC0-aY-osI"/>
+                            <constraint firstItem="l0o-Vc-Kb0" firstAttribute="top" secondItem="JoV-lE-q6I" secondAttribute="top" id="j2s-Pq-sga"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JoV-lE-q6I"/>
                     </view>
                     <navigationItem key="navigationItem" title="OFFER" largeTitleDisplayMode="never" id="UR5-AB-CWc">
@@ -27,6 +100,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menu" destination="vxy-i5-bjQ" id="TMJ-ZH-gQU"/>
+                        <outlet property="mySpotsTableView" destination="l0o-Vc-Kb0" id="nYh-L5-69C"/>
                         <segue destination="KUz-a7-55m" kind="show" identifier="pinLocation" id="zYM-sf-nrg"/>
                     </connections>
                 </viewController>
@@ -102,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iaf-sb-4Mk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="1814"/>
+            <point key="canvasLocation" x="2774" y="1813"/>
         </scene>
         <!--Parking Details-->
         <scene sceneID="gYT-sp-W82">
@@ -366,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uvb-Yj-zdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3831" y="1817"/>
+            <point key="canvasLocation" x="3745" y="1813"/>
         </scene>
         <!--Additional Details-->
         <scene sceneID="Wl1-cO-WgH">
@@ -540,7 +614,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q65-Uk-PX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4666" y="1818"/>
+            <point key="canvasLocation" x="4609" y="1813"/>
         </scene>
         <!--Price and Availability-->
         <scene sceneID="r7d-Uh-GNO">
@@ -575,6 +649,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="HQr-J8-BfA"/>
                                                 </constraints>
                                                 <color key="onTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="hourlyPriceToggle:" destination="h6z-4R-QDZ" eventType="valueChanged" id="W4V-uz-eww"/>
+                                                </connections>
                                             </switch>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9X-Ag-LcF" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="10" width="70" height="30"/>
@@ -628,6 +705,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="Dok-i1-aNW"/>
                                                 </constraints>
                                                 <color key="onTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="dailyPriceToggle:" destination="h6z-4R-QDZ" eventType="valueChanged" id="MIM-Sz-z0E"/>
+                                                </connections>
                                             </switch>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EBM-qu-1d0" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="10" width="70" height="30"/>
@@ -681,6 +761,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="o7D-VH-O8L"/>
                                                 </constraints>
                                                 <color key="onTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="weeklyPriceToggle:" destination="h6z-4R-QDZ" eventType="valueChanged" id="sGh-F6-1wh"/>
+                                                </connections>
                                             </switch>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AxV-lv-BFs" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="10" width="70" height="30"/>
@@ -734,6 +817,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="u8D-Qw-r3V"/>
                                                 </constraints>
                                                 <color key="onTintColor" red="0.66274509800000003" green="0.3294117647" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="monthlyPriceToggle:" destination="h6z-4R-QDZ" eventType="valueChanged" id="dGx-oN-7xA"/>
+                                                </connections>
                                             </switch>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kT-A6-R8v" customClass="InsetTextField" customModule="theParker" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="10" width="70" height="30"/>
@@ -886,7 +972,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGr-S2-Ul3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5487" y="1816"/>
+            <point key="canvasLocation" x="5478" y="1813"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ocf-UK-HiG">
@@ -917,7 +1003,7 @@
         <image name="camera" width="33.333332061767578" height="33.333332061767578"/>
         <image name="covered" width="33.333332061767578" height="33.333332061767578"/>
         <image name="disabled" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="menu-16*16" width="12.800000190734863" height="12.800000190734863"/>
+        <image name="menu-16*16" width="16" height="16"/>
         <image name="onsiteStaff" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
 </document>

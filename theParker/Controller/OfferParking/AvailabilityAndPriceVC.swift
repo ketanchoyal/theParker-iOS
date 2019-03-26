@@ -163,4 +163,24 @@ class AvailabilityAndPriceVC: UIViewController {
         
     }
         
+    
+}
+
+extension AvailabilityAndPriceVC {
+    
+    @IBAction func hourlyPriceToggle(_ sender: Any) {
+        if hourlySwitch.isOn {
+            hourlyPrice.isEnabled = true
+        }
+    }
+    
+    @IBAction func dailyPriceToggle(_ sender: Any) {
+    }
+    
+    @IBAction func weeklyPriceToggle(_ sender: Any) {
+    }
+    
+    @IBAction func monthlyPriceToggle(_ sender: Any) {
+    }
+    
 }

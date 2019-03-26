@@ -44,7 +44,7 @@ class BookThisSpotVC: UIViewController, UIGestureRecognizerDelegate {
         addSwipe()
         
         activityIndicator.startAnimating()
-        DataService.instance.getPindataById(for: LocationId!) { (success) in
+        DataService.instance.getPindataById(for: LocationId!, get: .booking) { (success) in
             if success {
                 self.markerData = DataService.instance.selectedPin
                 DataService.instance.getUserDataById(forUser: (self.markerData?.by)!, completionHandler: { (success, user) in
