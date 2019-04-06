@@ -146,7 +146,7 @@ class WalletService {
                 let timestamp = earningTransaction.childSnapshot(forPath: "timestamp").value as! Double
                 
                 let timestamp_str = self.convertTimestamp(serverTimestamp: timestamp)
-                print(timestamp_str)
+                print("TimeStamp : \(timestamp_str)")
                 
                 let transId = earningTransaction.key
                 
@@ -206,7 +206,7 @@ class WalletService {
                 let timestamp = balanceTransaction.childSnapshot(forPath: "timestamp").value as! Double
                 
                 let timestamp_str = self.convertTimestamp(serverTimestamp: timestamp)
-                print(timestamp_str)
+                print("TimeStamp : \(timestamp_str)")
                 
                 let transId = balanceTransaction.key
                 

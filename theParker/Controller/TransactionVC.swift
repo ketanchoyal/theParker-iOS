@@ -157,8 +157,8 @@ extension TransactionVC : UITableViewDelegate, UITableViewDataSource {
         case .Balance:
             
             let transactions = walletFunc.balanceTransactions
-            print("ABC : \(transactions.count)")
-            print("ABC : \(transactions.keys)")
+//            print("ABC : \(transactions.count)")
+//            print("ABC : \(transactions.keys)")
             let key = Array(transactions.keys)[indexPath.row]
             let transaction = transactions[key]
             
@@ -168,8 +168,8 @@ extension TransactionVC : UITableViewDelegate, UITableViewDataSource {
         case .Earning:
             
             let transactions = walletFunc.earningTransactions
-            print("ABC : \(transactions.count)")
-            print("ABC : \(transactions.keys)")
+//            print("ABC : \(transactions.count)")
+//            print("ABC : \(transactions.keys)")
             let key = Array(transactions.keys)[indexPath.row]
             let transaction = transactions[key]
             

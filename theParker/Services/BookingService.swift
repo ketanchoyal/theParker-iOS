@@ -12,6 +12,9 @@ import Firebase
 class BookingService {
     static let instance = BookingService()
     
+    private var myBookingsKey = [String : Any]()
+    var myBookings = [String : Booking]()
+    
     let date = Date()
     let formatter = DateFormatter()
     
@@ -59,7 +62,47 @@ class BookingService {
             }
         }
         
+    }
+    
+    private func getMyBookingIds(completionHandler : @escaping (_ complete : Bool) -> ()) {
+        REF_USER_BOOKINGS.observe(.value) { (mybookingSnapshot) in
+            guard let mybookingSnapshot = mybookingSnapshot.value as? [String : Any] else {
+                completionHandler(false)
+                return }
+            
+            self.myBookingsKey = mybookingSnapshot
+            completionHandler(true)
+            
+        }
+    }
+    
+    func getMyBookings(completionHandler : @escaping (_ completion : Bool) -> ()) {
         
-        
+        self.getMyBookingIds { (success) in
+            if success {
+                for(key, _) in self.myBookingsKey {
+                    self.getBookingById(Id: key, completionHandler: { (_) in })
+                }
+            }
+        }
+    }
+    
+    func getBookingById(Id : String, completionHandler : @escaping (_ completion : Bool) -> ()) {
+        REF_GLOBAL_BOOKINGS.child(Id).observe(.value) { (bookingSnapshot) in
+            guard let bookingSnapshot = bookingSnapshot.value as? [String : Any] else {
+                completionHandler(false)
+                return  }
+            
+            let by = bookingSnapshot["by"] as! String
+            let car = bookingSnapshot["car"] as! String
+            let for_hours = bookingSnapshot["for_hours"] as! String
+            let from = bookingSnapshot["from"] as! String
+            let parking_placeId = bookingSnapshot["parking_placeId"] as! String
+            
+            let booking = Booking(by: by, car: car, for_hours: for_hours, from: from, parking_placeId: parking_placeId)
+            
+            self.myBookings[Id] = booking
+            
+        }
     }
 }

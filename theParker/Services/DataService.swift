@@ -228,7 +228,7 @@ class DataService {
     //Get parking details from location id
     func getPindataById(for id : String, get : detailFor ,handler : @escaping (_ complete : Bool) -> ()) {
         REF_GLOBAL_PINS.child(id).observe(.value) { (pinSnapshot) in
-            guard let pinSnapshot = pinSnapshot.value as? [String : AnyObject] else {
+            guard let pinSnapshot = pinSnapshot.value as? [String : Any] else {
                 handler(false)
                 return }
             
@@ -408,11 +408,7 @@ class DataService {
                 return
             }
             for(_,key) in pinKey {
-                self.getPindataById(for: key, get: .justdetails, handler: { (success) in
-                    if success {
-                        
-                    }
-                })
+                self.getPindataById(for: key, get: .justdetails, handler: { (_) in })
             }
         }
         completionHandler(true)
