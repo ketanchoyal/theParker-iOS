@@ -82,6 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             }
         }
         WalletService.instance.load_Balance_Earning()
+        BookingService.instance.getMyBookings { (_) in }
+        DataService.instance.getMyCars { (_) in }
     }
     
     func ConnectToFCM(_ choice:Bool) {

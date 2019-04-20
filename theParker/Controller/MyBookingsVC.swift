@@ -11,7 +11,9 @@ import UIKit
 class MyBookingsVC: UIViewController {
     
     @IBOutlet weak var menu: UIBarButtonItem!
-
+    
+    @IBOutlet weak var myBookingsTable: UITableView!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -28,9 +30,31 @@ class MyBookingsVC: UIViewController {
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        // Do any additional setup after loading the view.
+        myBookingsTable.delegate = self
+        myBookingsTable.dataSource = self
+        BookingService.instance.getMyBookings { (success) in
+            self.myBookingsTable.reloadData()
+        }
     }
     
+}
+
+extension MyBookingsVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return BookingService.instance.myBookings.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myBookingCell") as? MyBookingCell else { return UITableViewCell() }
+        
+        let bookings = BookingService.instance.myBookings
+        let key = Array(bookings.keys)[indexPath.row]
+        let booking = bookings[key]
+        cell.configureCell(booking!)
+        
+        return cell
+    }
     
     
 }
