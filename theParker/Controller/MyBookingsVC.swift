@@ -19,7 +19,6 @@ class MyBookingsVC: UIViewController {
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
     }
     
 
@@ -55,7 +54,6 @@ extension MyBookingsVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
     
 }
 

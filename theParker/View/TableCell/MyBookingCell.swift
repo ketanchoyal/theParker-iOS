@@ -33,7 +33,6 @@ class MyBookingCell: UITableViewCell {
         carModelLabel.text = car?.model
         
         parkingBookedHourLabel.text = "Parking Booked for : \(booking.for_hours) Hr."
-        
         setParkingTime(time: booking.from)
     }
     
@@ -49,7 +48,6 @@ class MyBookingCell: UITableViewCell {
             self.dateLabel.text = date
             self.yearLabel.text = year
             self.parkingBookedFromTimeLabel.text = time
-            
         }
         
         d?.addTimeInterval(1.0 * 60.0 * 60.0)
