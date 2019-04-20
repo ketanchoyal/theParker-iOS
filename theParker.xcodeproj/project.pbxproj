@@ -50,6 +50,7 @@
 		97DADE8F21E7D26400E46556 /* BookingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */; };
 		97DC3F45224AA8EB00169C73 /* MySpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DC3F44224AA8EB00169C73 /* MySpotCell.swift */; };
 		97E1B569226B17FF000BBF11 /* MyBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1B568226B17FF000BBF11 /* MyBookingCell.swift */; };
+		97E1B56B226B6203000BBF11 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E1B56A226B6203000BBF11 /* NotificationService.swift */; };
 		97E9EC5321D19161009D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5121D19161009D124F /* LaunchScreen.storyboard */; };
 		97E9EC5B21D1946F009D124F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC5A21D1946E009D124F /* GoogleService-Info.plist */; };
 		97E9EC9F21D1989F009D124F /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 97E9EC6621D1989E009D124F /* T.json */; };
@@ -172,6 +173,7 @@
 		97DADE8E21E7D26400E46556 /* BookingReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingReviewVC.swift; sourceTree = "<group>"; };
 		97DC3F44224AA8EB00169C73 /* MySpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpotCell.swift; sourceTree = "<group>"; };
 		97E1B568226B17FF000BBF11 /* MyBookingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookingCell.swift; sourceTree = "<group>"; };
+		97E1B56A226B6203000BBF11 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		97E9EC4521D19160009D124F /* theParker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theParker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E9EC5221D19161009D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E9EC5421D19161009D124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				97405CEE21D80A8600CD87D1 /* DataService.swift */,
 				972ABD8021E91900002CB296 /* BookingService.swift */,
 				97FE31B921EA87A4000DAC04 /* WalletService.swift */,
+				97E1B56A226B6203000BBF11 /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -834,6 +837,7 @@
 				972ABD8121E91900002CB296 /* BookingService.swift in Sources */,
 				97F01C8521D2D76E0015917F /* E-WalletVC.swift in Sources */,
 				97DADE8F21E7D26400E46556 /* BookingReviewVC.swift in Sources */,
+				97E1B56B226B6203000BBF11 /* NotificationService.swift in Sources */,
 				973E86D821E3C46500BB893D /* CarSelectCell.swift in Sources */,
 				97239C5B21F7A80000C5DEA8 /* Front.swift in Sources */,
 				97E9ECEF21D19B13009D124F /* PinLocationVC.swift in Sources */,

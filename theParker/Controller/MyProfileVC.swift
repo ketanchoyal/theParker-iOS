@@ -22,6 +22,7 @@ class MyProfileVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 
         // Do any additional setup after loading the view.
+        NotificationService.instance.setNotification("theParker", "Your parking Spot is ready!", "10-02-2019 2:40 AM", bookedfor: "1")
     }
 
    
