@@ -121,6 +121,7 @@ class MainPageVC: UIViewController , GMSMapViewDelegate, CLLocationManagerDelega
         floatingLocationButton.show()
         
         floatingLocationButton.action = {editButtonItem in self.gotoMyLocation()}
+        floatingLocationButton.action = {btn in NotificationService.instance.setNotification("theParker", "Your parking Spot is ready!", "10-02-2019 2:40 AM", bookedfor: "1")}
     }
     
     func createMarker(titleMarker: String, iconMarker: UIImage, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {

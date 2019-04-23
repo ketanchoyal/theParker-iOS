@@ -216,6 +216,14 @@ open class ActionButton: NSObject {
         }
     }
     
+    @objc func longTapped(_ gesture : UILongPressGestureRecognizer) {
+        animatePressingWithScale(1)
+        
+        if let unwrappedAction = self.action {
+            unwrappedAction(self)
+        }
+    }
+    
     //MARK: - Custom Methods
     /**
         Presents or hides all the ActionButton's actions
