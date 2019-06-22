@@ -26,5 +26,5 @@ It uses Firebase Realtime Database and Firebase Storage.(Currently it uses stati
 
 ## Screenshots
 
-<img src="appLanding.png" width="1131px" height="600px" /> 
+<img src="appLanding.png" width="1131px" height="500px" /> 
 
